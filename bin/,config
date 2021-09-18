@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# Quick access to config files so I don't have to remember where they all live
+
+while getopts ":h" option; do
+ case $option in
+  h)
+    echo 'bashrc'
+    echo 'bash_profile'
+    echo 'awesome'    
+    echo 'kitty'
+    echo 'vifm'
+    echo 'vim'
+    exit 0;;
+ esac
+done
+
+case $1 in
+  bashrc)
+    vim ~/.bashrc
+    ;;
+  bash_profile)
+    vim ~/.bash_profile
+    ;;
+  awesome)
+    vim ~/.config/awesome/rc.lua
+    ;;
+  kitty)
+    vim ~/.config/kitty/kitty.conf
+    ;;
+  vifm)
+    vim ~/.config/vifm/vifmrc
+    ;;
+  vim)
+    vim ~/.vimrc
+    ;;
+
+esac
+
