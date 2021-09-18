@@ -122,3 +122,4 @@ export PATH="$PATH:/home/josh/bin"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+set -o vi
