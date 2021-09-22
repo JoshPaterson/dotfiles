@@ -123,3 +123,5 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 set -o vi
+
+neofetch
