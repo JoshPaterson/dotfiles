@@ -17,6 +17,7 @@ while getopts ":h" option; do
     echo 'ranger'
     echo 'rifle'
     echo 'zathura'
+    echo 'starship'
     exit 0;;
  esac
 done
@@ -57,6 +58,9 @@ case $1 in
     ;;
   zathura)
     nvim ~/.config/zathura/zathurarc
+    ;;
+  starship)
+    nvim ~/.config/starship.toml
     ;;
 esac
 
