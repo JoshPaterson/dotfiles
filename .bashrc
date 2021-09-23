@@ -125,3 +125,5 @@ eval "$(pyenv virtualenv-init -)"
 set -o vi
 
 neofetch
+
+eval "$(starship init bash)"
