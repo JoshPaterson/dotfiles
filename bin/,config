@@ -44,7 +44,7 @@ case $1 in
     nvim ~/.config/neofetch/config.conf
     ;;
   neovim)
-    nvim ~/.config/neofetch/config.conf
+    nvim ~/.config/nvim/init.vim
     ;;
 esac
 
