@@ -16,6 +16,7 @@ while getopts ":h" option; do
     echo 'neovim'
     echo 'ranger'
     echo 'rifle'
+    echo 'zathura'
     exit 0;;
  esac
 done
@@ -53,6 +54,9 @@ case $1 in
     ;;
   rifle)
     nvim ~/.config/ranger/rifle.conf
+    ;;
+  zathura)
+    nvim ~/.config/zathura/zathurarc
     ;;
 esac
 
