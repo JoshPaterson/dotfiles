@@ -11,6 +11,7 @@ while getopts ":h" option; do
     echo 'kitty'
     echo 'vifm'
     echo 'vim'
+    echo 'rofi'
     exit 0;;
  esac
 done
@@ -34,6 +35,8 @@ case $1 in
   vim)
     vim ~/.vimrc
     ;;
-
+  rofi)
+    vim ~/.config/rofi/config.rasi
+    ;;
 esac
 
