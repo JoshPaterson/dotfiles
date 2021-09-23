@@ -12,31 +12,39 @@ while getopts ":h" option; do
     echo 'vifm'
     echo 'vim'
     echo 'rofi'
+    echo 'neofetch'
+    echo 'neovim'
     exit 0;;
  esac
 done
 
 case $1 in
   bashrc)
-    vim ~/.bashrc
+    nvim ~/.bashrc
     ;;
   bash_profile)
-    vim ~/.bash_profile
+    nvim ~/.bash_profile
     ;;
   awesome)
-    vim ~/.config/awesome/rc.lua
+    nvim ~/.config/awesome/rc.lua
     ;;
   kitty)
-    vim ~/.config/kitty/kitty.conf
+    nvim ~/.config/kitty/kitty.conf
     ;;
   vifm)
-    vim ~/.config/vifm/vifmrc
+    nvim ~/.config/vifm/vifmrc
     ;;
   vim)
-    vim ~/.vimrc
+    nvim ~/.vimrc
     ;;
   rofi)
-    vim ~/.config/rofi/config.rasi
+    nvim ~/.config/rofi/config.rasi
+    ;;
+  neofetch)
+    nvim ~/.config/neofetch/config.conf
+    ;;
+  neovim)
+    nvim ~/.config/neofetch/config.conf
     ;;
 esac
 
