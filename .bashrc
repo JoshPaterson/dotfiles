@@ -128,3 +128,5 @@ set -o vi
 neofetch
 
 eval "$(starship init bash)"
+
+alias e=nvim
