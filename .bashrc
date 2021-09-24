@@ -122,6 +122,7 @@ export PATH="$PATH:/home/josh/bin"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# enable vim editing mode on the command line
 set -o vi
 
 neofetch
