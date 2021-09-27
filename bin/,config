@@ -24,43 +24,43 @@ done
 
 case $1 in
   bashrc)
-    nvim ~/.bashrc
+    e ~/.bashrc
     ;;
   bash_profile)
-    nvim ~/.bash_profile
+    e ~/.bash_profile
     ;;
   awesome)
-    nvim ~/.config/awesome/rc.lua
+    e ~/.config/awesome/rc.lua
     ;;
   kitty)
-    nvim ~/.config/kitty/kitty.conf
+    e ~/.config/kitty/kitty.conf
     ;;
   vifm)
-    nvim ~/.config/vifm/vifmrc
+    e ~/.config/vifm/vifmrc
     ;;
   vim)
-    nvim ~/.vimrc
+    e ~/.vimrc
     ;;
   rofi)
-    nvim ~/.config/rofi/config.rasi
+    e ~/.config/rofi/config.rasi
     ;;
   neofetch)
-    nvim ~/.config/neofetch/config.conf
+    e ~/.config/neofetch/config.conf
     ;;
   neovim)
-    nvim ~/.config/nvim/init.vim
+    e ~/.config/nvim/init.vim
     ;;
   ranger)
-    nvim ~/.config/ranger/rc.conf
+    e ~/.config/ranger/rc.conf
     ;;
   rifle)
-    nvim ~/.config/ranger/rifle.conf
+    e ~/.config/ranger/rifle.conf
     ;;
   zathura)
-    nvim ~/.config/zathura/zathurarc
+    e ~/.config/zathura/zathurarc
     ;;
   starship)
-    nvim ~/.config/starship.toml
+    e ~/.config/starship.toml
     ;;
 esac
 
