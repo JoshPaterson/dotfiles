@@ -6,3 +6,5 @@ alias e=nvim
 
 alias veracrypt='veracrypt -t'
 
+alias ,todo='e ~/todo.txt'
+
