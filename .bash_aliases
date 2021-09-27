@@ -4,3 +4,5 @@ alias l='ls -CF'
 
 alias e=nvim
 
+alias veracrypt='veracrypt -t'
+
