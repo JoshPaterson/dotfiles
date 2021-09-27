@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ $1 == "mount" ]; then
+    veracrypt -t -k "" --pim=0 --protect-hidden=no /dev/sda1 /media/veracrypt1
+elif [ $1 == "unmount" ]; then
+    veracrypt -t -d /dev/sda1
+fi
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ -z "$1" ]; then
+    flatpak run org.gnucash.GnuCash
+else
+    flatpak run org.gnucash.GnuCash --fileforwarding @$1@
+fi
