@@ -124,3 +124,6 @@ neofetch
 
 eval "$(starship init bash)"
 
+export EDITOR="nvim"
+export RANGER_LOAD_DEFAULT_RC="FALSE"
+
