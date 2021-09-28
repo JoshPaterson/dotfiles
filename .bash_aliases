@@ -8,3 +8,6 @@ alias veracrypt='veracrypt -t'
 
 alias ,todo='e ~/todo.txt'
 
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
