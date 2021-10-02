@@ -18,6 +18,7 @@ while getopts ":h" option; do
     echo 'rifle'
     echo 'zathura'
     echo 'starship'
+    echo 'qtile'
     exit 0;;
  esac
 done
@@ -61,6 +62,9 @@ case $1 in
     ;;
   starship)
     e ~/.config/starship.toml
+    ;;
+  qtile)
+    e ~/.config/qtile/config.py
     ;;
 esac
 
