@@ -120,7 +120,7 @@ eval "$(pyenv virtualenv-init -)"
 # enable vim editing mode on the command line
 set -o vi
 
-neofetch
+pfetch
 
 eval "$(starship init bash)"
 
