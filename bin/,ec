@@ -2,6 +2,8 @@
 #
 # Quick access to config files so I don't have to remember where they all live
 
+e=nvim
+
 while getopts ":h" option; do
  case $option in
   h)
@@ -25,46 +27,46 @@ done
 
 case $1 in
   bashrc)
-    e ~/.bashrc
+    $e ~/.bashrc
     ;;
   bash_profile)
-    e ~/.bash_profile
+    $e ~/.bash_profile
     ;;
   awesome)
-    e ~/.config/awesome/rc.lua
+    $e ~/.config/awesome/rc.lua
     ;;
   kitty)
-    e ~/.config/kitty/kitty.conf
+    $e ~/.config/kitty/kitty.conf
     ;;
   vifm)
-    e ~/.config/vifm/vifmrc
+    $e ~/.config/vifm/vifmrc
     ;;
   vim)
-    e ~/.vimrc
+    $e ~/.vimrc
     ;;
   rofi)
-    e ~/.config/rofi/config.rasi
+    $e ~/.config/rofi/config.rasi
     ;;
   neofetch)
-    e ~/.config/neofetch/config.conf
+    $e ~/.config/neofetch/config.conf
     ;;
   neovim)
-    e ~/.config/nvim/init.vim
+    $e ~/.config/nvim/init.vim
     ;;
   ranger)
-    e ~/.config/ranger/rc.conf
+    $e ~/.config/ranger/rc.conf
     ;;
   rifle)
-    e ~/.config/ranger/rifle.conf
+    $e ~/.config/ranger/rifle.conf
     ;;
   zathura)
-    e ~/.config/zathura/zathurarc
+    $e ~/.config/zathura/zathurarc
     ;;
   starship)
-    e ~/.config/starship.toml
+    $e ~/.config/starship.toml
     ;;
   qtile)
-    e ~/.config/qtile/config.py
+    $e ~/.config/qtile/config.py
     ;;
 esac
 
