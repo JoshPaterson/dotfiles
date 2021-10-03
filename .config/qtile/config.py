@@ -95,8 +95,7 @@ screens = [
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
-#                widget.Prompt(),
-#                widget.WindowName(),
+                widget.WindowName(),
                 widget.Chord(
                     chords_colors={
                         'launch': ('#ff0000', '#ffffff'),
@@ -104,7 +103,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.Clock(format='%a %b %-d %H:%M'),
                 widget.Volume(),
             ],
             48,
