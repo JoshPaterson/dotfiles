@@ -49,6 +49,8 @@ keys = [
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
     Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
+    Key([mod], 'b', lazy.spawn('firefox'), desc='Launch Firefox'),
+    Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
 ]
 
 groups = [Group(i) for i in '123456789']
