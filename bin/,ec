@@ -14,6 +14,7 @@ while getopts ":h" option; do
     echo 'rofi'
     echo 'neofetch'
     echo 'neovim'
+    echo 'nvim'
     echo 'ranger'
     echo 'rifle'
     echo 'zathura'
@@ -50,6 +51,9 @@ case $1 in
     $EDITOR ~/.config/neofetch/config.conf
     ;;
   neovim)
+    $EDITOR ~/.config/nvim/init.vim
+    ;;
+  nvim)
     $EDITOR ~/.config/nvim/init.vim
     ;;
   ranger)
