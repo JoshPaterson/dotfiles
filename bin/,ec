@@ -19,6 +19,7 @@ while getopts ":h" option; do
     echo 'zathura'
     echo 'starship'
     echo 'qtile'
+    echo 'alacritty'
     exit 0;;
  esac
 done
@@ -65,6 +66,9 @@ case $1 in
     ;;
   qtile)
     $EDITOR ~/.config/qtile/config.py
+    ;;
+  alacritty)
+    $EDITOR ~/.config/alacritty/alacritty.yml
     ;;
 esac
 
