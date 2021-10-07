@@ -1,6 +1,8 @@
 call plug#begin("~/.local/share/nvim/plugged")
 Plug 'tpope/vim-sensible'
 Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 nmap <C-n> :NERDTreeToggle<CR>
