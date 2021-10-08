@@ -63,7 +63,6 @@ vim edit: xp          # transpose two letters (delete and paste)
 vim edit: .           # repeat last command
 vim edit: u           # undo
 vim edit: <Ctrl-r>    # redo
-
 vim visual: v                 # start visual mode, mark lines, then do a command (like y-yank)
 vim visual: V                 # start linewise visual mode
 vim visual: o                 # move to other end of marked area
@@ -170,7 +169,22 @@ vim command line: $q                # Delete until the last slash
 vim nerdtree: <Lead+nn>      # Toggle tree
 vim nerdtree: <Lead+nf>      # Tree from bookmark
 vim nerdtree: <Lead+nb>      # Open Bookmark
-vim surround: Si             # Surrounds a string with _() gettext annotation
+vim surround: ), }, ], >              # refers to surrounds but not inside spaces
+vim surround: (, {, [                 # refers to surrounds and inside spaces
+vim surround: w                       # operates on a word
+vim surround: W                       # operates on a WORD
+vim surround: s                       # operates on a sentence
+vim surround: p                       # operates on a paragraph
+vim surround: cs"'                    # change surrounding " to '
+vim surround: cs'<p>                  # change surrounding ' to <p></p>
+vim surround: cst"                    # change surrounding tag to "
+vim surround: ds"                     # delete surrounding "
+vim surround: ysiw]                   # add surrounding square brackets to iw text object
+vim surround: yssb or yss)            # add surrounding parentheses to entire line
+vim surround: ds{                     # delete surrounding braces
+vim surround: ysiw<em> or ysiwtem>    # add tag around iw text object
+vim surround: ysiwf{name}<Enter>      # wrap iw text object in function call
+vim surround: ysiwF{name}<Enter>      # wrap iw text object in function call with space inside parentheses
 vim custom: <Ctrl-n>                # Toggle nerdtree
 ranger bookmarks: m - letter      # create bookmark
 ranger bookmarks: um - letter     # delete bookmark
