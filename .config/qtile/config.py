@@ -48,7 +48,7 @@ keys = [
     # Program launch bindings
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
-    Key([mod], 'z', lazy.spawn(',cheatsheet'), desc='Show cheatsheet'),
+    Key([mod], 'z', lazy.spawn('keybindings'), desc='Show cheatsheet'),
     Key([mod], 'b', lazy.spawn('firefox'), desc='Launch Firefox'),
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
     Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
