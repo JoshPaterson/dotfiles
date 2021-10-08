@@ -1,1 +1,0 @@
-"$(cat ~/.config/rofi/rofi-shortcuts.conf | rofi -i -dmenu -p -lines 35 'shortcuts')"
