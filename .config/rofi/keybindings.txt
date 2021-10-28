@@ -1,258 +1,762 @@
-qtile window: <Super-{hjkl}>       # move focus
-qtile window: <Super-Shift-{hjkl}> # move window left 
-qtile window: <Super-Ctrl-{hjkl}>  # grow window left 
-qtile window: <Super-n>            # reset all window sizes
-qtile window: <Super-Shift-Enter>  # toggle between split and unsplit sides of stack
-qtile window: <Super-Tab>          # toggle between layouts
-qtile window: <Super-{1-9}>        # switch to group #
-qtile window: <Super-Shift-{1-9}>  # move focused window and switch to group #
-qtile program: <Super-Enter>       # launch terminal
-qtile program: <Super-r>           # launch rofi
-qtile program: <Super-b>           # launch firefox
-qtile program: <Super-t>           # launch thunderbird
-qtile program: <Super-f>           # launch ranger
-qtile program: <Super-w>           # kill focused window
-qtile: <Super-Ctrl-r>              # restart qtile
-qtile: <Super-Ctrl-q>              # shutdown qtile
-vim move: {hjkl}        # move cursor
-vim move: H             # jump to top of screen
-vim move: M             # jump to middle of screen
-vim move: L             # jump to bottom of screen
-vim move: w             # jump forwards to the start of a word
-vim move: W             # jump forwards to the start of a word (words can contain punctuation)
-vim move: e             # jump forwards to the end of a word
-vim move: E             # jump forwards to the end of a word (words can contain punctuation)
-vim move: b             # jump backwards to the start of a word
-vim move: B             # jump backwards to the start of a word (words can contain punctuation)
-vim move: 0             # jump to the start of the line
-vim move: ^             # jump to the first non-blank character of the line
-vim move: $             # jump to the end of the line
-vim move: g_            # jump to the last non-blank character of the line
-vim move: gg            # go to the first line of the document
-vim move: G             # go to the last line of the document
-vim move: 5G            # go to line 5
-vim move: fx            # jump to next occurrence of character x
-vim move: tx            # jump to before next occurrence of character x
-vim move: }             # jump to next paragraph (or function/block, when editing code)
-vim move: {             # jump to previous paragraph (or function/block, when editing code)
-vim move: zz            # center cursor on screen
-vim move: <Ctrl-b>      # move back one full screen
-vim move: <Ctrl-f>      # move forward one full screen
-vim move: <Ctrl-d>      # move forward 1/2 a screen
-vim move: <Ctrl-u>      # move back 1/2 a screen
-vim move: <Lead-{hjkl}> # move window
-vim move: <Lead-cd>     # cd current file's dir
-vim insert: i         # insert before the cursor
-vim insert: I         # insert at the beginning of the line
-vim insert: a         # insert (append) after the cursor
-vim insert: A         # insert (append) at the end of the line
-vim insert: o         # append (open) a new line below the current line
-vim insert: O         # append (open) a new line above the current line
-vim insert: ea        # insert (append) at the end of the word
-vim edit: r           # replace a single character
-vim edit: J           # join line below to the current one
-vim edit: cc          # change (replace) entire line
-vim edit: cw          # change (replace) to the start of the next word
-vim edit: ce          # change (replace) to the end of the next word
-vim edit: cb          # change (replace) to the start of the previous word
-vim edit: c0          # change (replace) to the start of the line
-vim edit: c$          # change (replace) to the end of the line
-vim edit: s           # delete character and substitute text
-vim edit: S           # delete line and substitute text (same as cc)
-vim edit: xp          # transpose two letters (delete and paste)
-vim edit: .           # repeat last command
-vim edit: u           # undo
-vim edit: <Ctrl-r>    # redo
-vim visual: v                 # start visual mode, mark lines, then do a command (like y-yank)
-vim visual: V                 # start linewise visual mode
-vim visual: o                 # move to other end of marked area
-vim visual: O                 # move to other corner of block
-vim visual: aw                # mark a word
-vim visual: ab                # a block with ()
-vim visual: aB                # a block with {}
-vim visual: ib                # inner block with ()
-vim visual: iB                # inner block with {}
-vim visual: Esc               # exit visual mode
-vim visual: <Ctrl-v>          # start visual block mode
-vim visual: <Lead-*>          # search current selection next
-vim visual: <Lead-#>          # search current selection prev
-vim visual: <Lead-gv>         # quick search selection
-vim visual: <Lead-r>          # search and replace selection
-vim visual: $1 $2 $3 $$ $q $e # surround sel. with (),[],[],"",'',""
-vim visual c: >       # shift text right
-vim visual c: <       # shift text left
-vim visual c: y       # yank (copy) marked text
-vim visual c: d       # delete marked text
-vim visual c: ~       # switch case
-vim cut paste: yy         # yank (copy) a line
-vim cut paste: 2yy        # yank (copy) 2 lines
-vim cut paste: yw         # yank (copy) the characters of the word from the cursor position to the start of the next word
-vim cut paste: y$         # yank (copy) to end of line
-vim cut paste: p          # put (paste) the clipboard after cursor
-vim cut paste: P          # put (paste) before cursor
-vim cut paste: dd         # delete (cut) a line
-vim cut paste: 2dd        # delete (cut) 2 lines
-vim cut paste: dw         # delete (cut) the characters of the word from the cursor position to the start of the next word
-vim cut paste: D          # delete (cut) to the end of the line
-vim cut paste: d$         # delete (cut) to the end of the line
-vim cut paste: d^         # delete (cut) to the first non-blank character of the line
-vim cut paste: d0         # delete (cut) to the begining of the line
-vim cut paste: x          # delete (cut) character
-vim cut paste: <Lead-pp>  # toggle paste mode
-vim search replace: <Space>         # search
-vim search replace: <Ctrl+Space>    # search prev
-vim search replace: <Lead+g>        # quick search
-vim search replace: /pattern      # search for pattern
-vim search replace: ?pattern      # search backward for pattern
-vim search replace: \vpattern     # 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols (no escaping needed)
-vim search replace: n               # repeat search in same direction
-vim search replace: N               # repeat search in opposite direction
-vim search replace: :%s/old/new/g   # replace all old with new throughout file
-vim search replace: :%s/old/new/gc  # replace all old with new throughout file with confirmations
-vim search replace: :noh            # remove highlighting of search matches
-vim search multi: :cn                       # jump to the next match
-vim search multi: :cp                       # jump to the previous match
-vim search multi: :copen                    # open a window containing the list of matches
-vim exit: :w or :w /path                    # write (save) the file, but don't exit
-vim exit: :W                                # write (save) the file as sudo, but don't exit
-vim exit: :w !sudo tee %                    # write out the current file using sudo
-vim exit: :wq or :x or ZZ                   # write (save) and quit
-vim exit: :q                                # quit (fails if there are unsaved changes)
-vim exit: :q! or ZQ                         # quit and throw away unsaved changes
-vim exit: :bd or bd!                        # Close the file (buffer)
-vim multi file: <Lead-q>              # Open buffer for scripbble
-vim multi file: <Lead-bd>             # close current buffer
-vim multi file: <Lead-ba>             # close all buffers
-vim multi file: :e file               # edit a file in a new buffer
-vim multi file: :bnext or :bn         # go to the next buffer
-vim multi file: :bprev or :bp         # go to the previous buffer
-vim multi file: :bd                   # delete a buffer (close a file)
-vim multi file: :ls                   # list all open buffers
-vim multi file: :sp file              # open a file in a new buffer and split window
-vim multi file: :vsp file             # open a file in a new buffer and vertically split window
-vim multi file: <Ctrl-wv>             # split window vertically 
-vim multi file: <Ctrl-ws>             # split window horizontally
-vim multi file: <Ctrl-ww>             # switch windows
-vim multi file: <Ctrl-wq>             # quit a window
-vim multi file: <Ctrl-wv>             # split window vertically
-vim multi file: <Ctrl-wh>             # move cursor to the left window (vertical split)
-vim multi file: <Ctrl-wl>             # move cursor to the right window (vertical split)
-vim multi file: <Ctrl-wj>             # move cursor to the window below (horizontal split)
-vim multi file: <Ctrl-wk>             # move cursor to the window above (horizontal split)
-vim tabs: lead+tn                   # open a file in a new tab
-vim tabs: lead+to                   # tab only
-vim tabs: lead+tc                   # tab close
-vim tabs: lead+tm                   # tab move 
-vim tabs: lead+te                   # tab edit
-vim tabs: {number}gt                # move to tab <number>
-vim tabs: <Ctrl-wT>                 # move the current split window into its own tab
-vim tabs: gt or :tabnext or :tabn   # move to the next tab
-vim tabs: gT or :tabprev or :tabp   # move to the previous tab
-vim tabs: :tabmove {number}         # move current tab to the <number>th position (indexed from 0)
-vim tabs: :tabclose or :tabc        # close the current tab and all its windows
-vim tabs: :tabonly or :tabo         # close all tabs except for the current one
-vim tabs: :tabdo command            # run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
-vim folding: zo / zO                # Open
-vim folding: zc / zC                # Close
-vim folding: za / zA                # Toggle
-vim folding: zv                     # Open folds for this line
-vim folding: zM                     # Close all
-vim folding: zR                     # Open all
-vim folding: zm                     # Fold more (foldlevel += 1)
-vim folding: zr                     # Fold less (foldlevel -= 1)
-vim folding: zx                     # Update folds
-vim folding: ADVICE                 # I recommend using vim-anyfold for better folding.
-vim sessions: ":mksession /path"    # Save the curren vim session.
-vim sessions: ":source /path"       # Load the specified vim session.
-vim command line: iab               # Insert timestamp
-vim command line: $q                # Delete until the last slash
-vim nerdtree: <Lead+nn>      # Toggle tree
-vim nerdtree: <Lead+nf>      # Tree from bookmark
-vim nerdtree: <Lead+nb>      # Open Bookmark
-vim surround: ), }, ], >              # refers to surrounds but not inside spaces
-vim surround: (, {, [                 # refers to surrounds and inside spaces
-vim surround: w                       # operates on a word
-vim surround: W                       # operates on a WORD
-vim surround: s                       # operates on a sentence
-vim surround: p                       # operates on a paragraph
-vim surround: cs"'                    # change surrounding " to '
-vim surround: cs'<p>                  # change surrounding ' to <p></p>
-vim surround: cst"                    # change surrounding tag to "
-vim surround: ds"                     # delete surrounding "
-vim surround: ysiw]                   # add surrounding square brackets to iw text object
-vim surround: yssb or yss)            # add surrounding parentheses to entire line
-vim surround: ds{                     # delete surrounding braces
-vim surround: ysiw<em> or ysiwtem>    # add tag around iw text object
-vim surround: ysiwf{name}<Enter>      # wrap iw text object in function call
-vim surround: ysiwF{name}<Enter>      # wrap iw text object in function call with space inside parentheses
-vim custom: <Ctrl-n>                # Toggle nerdtree
-ranger bookmarks: m - letter      # create bookmark
-ranger bookmarks: um - letter     # delete bookmark
-ranger bookmarks: ' or `          # go to a bookmark
-ranger bookmarks: gh              # go to home
-ranger tabs: C-n                  # create new tab
-ranger tabs: C-w                  # close current tab
-ranger tabs: tab                  # next tab
-ranger tabs: <Shift-Tab>          # previous tab
-ranger tabs: <Alt-{1-9}>          # goto / create tab #
-ranger movement: k                # up
-ranger movement: j                # down
-ranger movement: h                # parent directory
-ranger movement: l                # subdirectory
-ranger movement: gg               # go to top of list
-ranger movement: G                # go to bottom of list
-ranger movement: J                # half page down
-ranger movement: K                # half page up
-ranger movement: H                # history Back
-ranger movement: L                # history Forward
-ranger files: <Enter>             # open
-ranger files: r                   # open file with
-ranger files: z                   # toggle settings
-ranger files: o                   # change sort order
-ranger files: zh                  # view hidden files
-ranger files: cw                  # rename current file
-ranger files: yy                  # yank / copy
-ranger files: dd                  # cut
-ranger files: pp                  # paste
-ranger files: /                   # search for files :search
-ranger files: n                   # next match
-ranger files: N                   # prev match
-ranger files: <del>               # delete
-ranger: 1l                        # unzip selected file (uncompress)
-ranger commands: :                # execute Range Command
-ranger commands: !                # execute Shell Command
-ranger commands: chmod            # change file Permissions
-ranger commands: du               # disk Usage Current Directory
-ranger subst: %f                  # substitute highlighted file
-ranger subst: %d                  # substitute current directory
-ranger subst: %s                  # substitute currently selected files
-ranger subst: %t                  # substitute currently tagged files
-ranger subst: :bulkrename %s      # example for substitution
-firefox current pag: F6           # move to the next frame
-firefox current pag: Shift + F6   # move to the prev frame
-firefox edit: Ctrl + Backspace      # Delete Word to the Left   
-firefox edit: Ctrl + Del            # Delete Word to the Right  
-firefox edit: Ctrl + ←              # Go one Word to the Left   
-firefox edit: Ctrl + →              # Go one Word to the Right  
-firefox edit: Ctrl + Home           # Go to Beginning of Text   
-firefox edit: Ctrl + End            # Go to End of Text   
-firefox search: Ctrl + F                       # Find
-firefox search: F3 Ctrl + G                    # Find Again   
-firefox search: Shift + F3 Ctrl + Shift + G    # Find Previous  
-firefox search: '                              # Quick Find within link-text only
-firefox search: /                              # Quick Find
-firefox search: Esc                            # Close the Find or Quick Find bar - when the Find or Quick Find bar is focused  
-firefox search: Alt + ↓↑                       # Switch Search Engine - after you have written something in the address bar   
-firefox search: Ctrl + K Ctrl + J              # Focus Address bar for Web Search (writes "? " there)  - if search bar is not shown   
-firefox search: Ctrl + K Ctrl + J              # Focus Search bar - if search bar is shown  
-firefox search: Ctrl + ↓ Ctrl + ↑              # Change the Default Search Engine - in the Search bar or the Search field of the New Tab page.  
-firefox search: Alt + ↓ Alt + ↑ F4             # View menu to switch, add or manage search engines - when the Search bar is focused 
+qtile window: <Super-{hjkl}>          # move focus
+qtile window: <Super-Shift-{hjkl}>    # move window left
+qtile window: <Super-Ctrl-{hjkl}>     # grow window left
+qtile window: <Super-n>               # reset all window sizes
+qtile window: <Super-Shift-Enter>     # toggle between split and unsplit sides of stack
+qtile window: <Super-Tab>             # toggle between layouts
+qtile window: <Super-{1-9}>           # switch to group #
+qtile window: <Super-Shift-{1-9}>     # move focused window and switch to group #
+qtile program: <Super-Enter>          # launch terminal
+qtile program: <Super-r>              # launch rofi
+qtile program: <Super-b>              # launch firefox
+qtile program: <Super-t>              # launch thunderbird
+qtile program: <Super-f>              # launch ranger
+qtile program: <Super-Shift-Enter>    # launch vim
+qtile program: <Super-w>              # kill focused window
+qtile: <Super-Ctrl-r>                 # restart qtile
+qtile: <Super-Ctrl-q>                 # shutdown qtile
+vim move: {hjkl}                      # (n) move cursor
+vim move: gj                          # (n) move cursor down a display line
+vim move: gk                          # (n) move cursor up a display line
+vim move: H                           # (n) jump to top of screen
+vim move: M                           # (n) jump to middle of screen
+vim move: L                           # (n) jump to bottom of screen
+vim move: w                           # (n) jump forwards to the start of a word
+vim move: W                           # (n) jump forwards to the start of a WORD
+vim move: e                           # (n) jump forwards to the end of a word
+vim move: E                           # (n) jump forwards to the end of a WORD
+vim move: ge                          # (n) jump backwards to the end of a word
+vim move: gE                          # (n) jump backwards to the end of a WORD
+vim move: b                           # (n) jump backwards to the start of a word
+vim move: B                           # (n) jump backwards to the start of a WORD
+vim move: 0                           # (n) jump to the start of the line
+vim move: ^                           # (n) jump to the first non-blank character of the line
+vim move: $                           # (n) jump to the end of the line
+vim move: g_                          # (n) jump to the last non-blank character of the line
+vim move: gg                          # (n) go to the first line of the document
+vim move: G                           # (n) go to the last line of the document
+vim move: {count}G                    # (n) go to line {count}
+vim move: fx                          # (n) jump to next occurrence of character x
+vim move: tx                          # (n) jump to before next occurrence of character x
+vim move: }                           # (n) jump to next paragraph (or function/block, when editing code)
+vim move: {                           # (n) jump to previous paragraph (or function/block, when editing code)
+vim move: zz                          # (n) move cursor to center of screen
+vim move: zt                          # (n) move cursor to top of screen
+vim move: zb                          # (n) move cursor to bottom of screen
+vim move: <Ctrl-b>                    # (n) scroll back {count} full screens
+vim move: <Ctrl-f>                    # (n) scroll forward {count} full screens
+vim move: <Ctrl-d>                    # (n) scroll forward {count} half screens
+vim move: <Ctrl-u>                    # (n) scroll back {count} half screens
+vim move: <Ctrl-e>                    # (n) scroll forward {count} lines
+vim move: <Ctrl-y>                    # (n) scroll back {count} lines
+vim edit: i                           # (n) insert before the cursor
+vim edit: I                           # (n) insert at the beginning of the line
+vim edit: a                           # (n) insert (append) after the cursor
+vim edit: A                           # (n) insert (append) at the end of the line
+vim edit: o                           # (n) append (open) a new line below the current line
+vim edit: O                           # (n) append (open) a new line above the current line
+vim edit: ea                          # (n) insert (append) at the end of the word
+vim edit: <Ctrl-w>                    # (n) delete word in insert mode
+vim edit: <Ctrl-u>                    # (n) delete line in insert mode
+vim edit: <Ctrl-o>                    # (n) switch to insert-normal mode from insert
+vim edit: r                           # (n) replace a single character
+vim edit: J                           # (n) join/ combine lines removing indents
+vim edit: gJ                          # (n) join/ combine lines without removing indents
+vim edit: cc                          # (n) change (replace) entire line
+vim edit: C                           # (n) change (replace) from cursor to end of line
+vim edit: cw                          # (n) change (replace) to the start of the next word
+vim edit: ce                          # (n) change (replace) to the end of the next word
+vim edit: cb                          # (n) change (replace) to the start of the previous word
+vim edit: c0                          # (n) change (replace) to the start of the line
+vim edit: c$                          # (n) change (replace) to the end of the line
+vim edit: s                           # (n) delete character and substitute text
+vim edit: S                           # (n) delete line and substitute text (same as cc)
+vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
+vim edit: ddp                         # (n) swap/ transpose two lines (delete and paste)
+vim edit: .                           # (n) repeat last command
+vim edit: ~                           # (n) swap case
+vim edit: c{motion}                   # (n) operator, change
+vim edit: d{motion}                   # (n) operator, delete (cut)
+vim edit: y{motion}                   # (n) operator, yank (copy)
+vim edit: g~{motion}                  # (n) operator, swaps case
+vim edit: gu{motion}                  # (n) operator, make lowercase
+vim edit: gU{motion}                  # (n) operator, make uppercase
+vim edit: g>{motion}                  # (n) operator, indent
+vim edit: g<{motion}                  # (n) operator, unindent
+vim edit: g={motion}                  # (n) operator, autoindent
+vim edit: g!{motion}                  # (n) operator, filter lines through external program
+vim edit custom: -                    # (n) move current line or lines down (normal and visual mode)
+vim edit custom: _                    # (n) move current line or lines up (normal and visual mode)
+vim edit: u                           # (n) undo
+vim edit: <Ctrl-r>                    # (n) redo
+vim edit: <Ctrl-a>                    # (n) add {count} to the next number in the line
+vim edit: <Ctrl-x>                    # (n) subtract {count} from the next number
+vim edit: g<Ctrl-a>                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
+vim: <Ctrl-c>                         # (n) interrupt current command (same as <Esc>) (reuse?)
+vim: <Ctrl-g>                         # (n) prints file name as typed, cursor position, file status
+vim: 1<Ctrl-g>                        # (n) prints full file path, cursor position, file status
+vim: 2<Ctrl-g>                        # (n) prints buffer number, full file path, cursor position, file status
+vim: g<Ctrl-g>                        # (n) prints cursor position: column, line, word, character, and byte
+vim: <Ctrl-h>                         # (n) move {count} characters left (same as h) (reuse?)
+vim: <Ctrl-j>                         # (n) move cursor down {count} lines (same as plain j) (reuse?)
+vim: <Ctrl-k>                         # (n) nothing (reuse?)
+vim: <Ctrl-l>                         # (n) redraw screen
+vim: <Ctrl-m>                         # (n) move {count} lines down to first non blank character
+vim: <Ctrl-n>                         # (n) move {count} lines down (same as plain j) (reuse?)
+vim: <Ctrl-p>                         # (n) move {count} lines up (same as plain k) (reuse?)
+vim: <Ctrl-q>                         # (n) start visual block mode (same as <C-v>) (reuse?)
+vim: <Ctrl-s>                         # (n) nothing (reuse?)
+vim: <Ctrl-t>                         # (n) jump to {count} older entry in tag stack
+vim: <Ctrl-z>                         # (n) suspend nvim
+vim insert: :h ins-special-keys       # (c) show help for control keys in insert mode
+vim insert: <Ctrl-a>                  # (i) insert previously inserted text
+vim insert: <Ctrl-b>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-c>                  # (i) quit insert mode
+vim insert: <Ctrl-d>                  # (i) remove tab at beginning of line
+vim insert: 0<Ctrl-d>                 # (i) remove all indent from current line
+vim insert: ^<Ctrl-d>                 # (i) remove all indent from current line, indent restored for next line
+vim insert: <Ctrl-e>                  # (i) insert character from below cursor
+vim insert: <Ctrl-f>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-g>j                 # (i) move cursor down {count} lines, stay in insert mode
+vim insert: <Ctrl-g>k                 # (i) move cursor up {count} lines, stay in insert mode
+vim insert: <Ctrl-h>                  # (i) delete character before the cursor (same as <BS>) (reuse?)
+vim insert: <Ctrl-i>                  # (i) insert a tab (same as <Tab>) (reuse?)
+vim insert: <Ctrl-j>                  # (i) begin new line (same as <CR>) (reuse?)
+vim insert: <Ctrl-k>                  # (i) begin digraph entry
+vim insert: <Ctrl-l>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-m>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-n>                  # (i) find next location from last search
+vim insert: <Ctrl-o>                  # (i) go to insert-normal mode
+vim insert: <Ctrl-p>                  # (i) find previous location from last search
+vim insert: <Ctrl-q>                  # (i) insert next non-digit literally (same as ctrl-v) (reuse?)
+vim insert: <Ctrl-r>{register}        # (i) paste from register in insert mode
+vim insert: <Ctrl-r>+                 # (i) paste from X11 system clipboard in insert mode
+vim insert: <C-r><C-r>{register}      # (i) paste contents of register literally
+vim insert: <C-r><C-o>{register}      # (i) paste contents of register literally, don't auto-indent
+vim insert: <C-r><C-p>{register}      # (i) paste contents of register literally and fix indent
+vim insert: <Ctrl-s>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-t>                  # (i) insert tab at beginning of line
+vim insert: <Ctrl-u>                  # (i) delete all newly entered characters before the cursor
+vim insert: <Ctrl-v>                  # (i) insert next non-digit literally
+vim insert: <Ctrl-w>                  # (i) delete word before the cursor
+vim insert: <Ctrl-x>                  # (i) enter Ctrl-x mode (completion)
+vim insert: <Ctrl-y>                  # (i) insert character from above cursor
+vim insert: <Ctrl-z>                  # (i) nothing (reuse?)
+vim insert: <Ctrl-@>                  # (i) insert previously inserted text and leave insert mode
+vim insert: <Ctrl-_>                  # (i) switch languages (e.g. English to Hebrew)
+vim insert: <Ctrl-^>                  # (i) toggle use of typing language characters
+vim insert: <Ctrl-]>                  # (i) trigger abbreviation without inserting a character
+vim edit: :r [filename]               # (c) read/ add contents of file below cursor
+vim edit: :0r [filename]              # (c) read/ add contents of file at first line
+vim edit: :r [filename]               # (c) read/ add contents of file at last line
+vim visual: v                         # (n) start visual mode
+vim visual: V                         # (n) start linewise visual mode
+vim visual: <Ctrl-v>                  # (n) start visual block mode
+vim visual: o                         # (v)(vl)(vb) move to other end of marked area
+vim visual: O                         # (vb) move to other corner of block
+vim visual: aw                        # (object) around word
+vim visual: ab                        # (object) around () block
+vim visual: aB                        # (object) around {} block
+vim visual: ib                        # (object) inside ()
+vim visual: iB                        # (object) inside {}
+vim visual: <Esc>                     # (n) return to normal mode
+vim cut paste: yy                     # (n) yank (copy) {count} lines
+vim cut paste: y{motion}              # (n) yank (copy) from cursor to {motion}
+vim cut paste custom: Y               # (n) yank (copy) from cursor to end of line
+vim cut paste: p                      # (n) put (paste) unnamed register (") after cursor
+vim cut paste: gp                     # (n) put (paste) unnamed register (") after cursor and move cursor to end of pasted text
+vim cut paste: P                      # (n) put (paste) unnamed register (") before cursor
+vim cut paste: gP                     # (n) put (paste) unnamed register (") before cursor and move cursor to end of pasted text
+vim cut paste: dd                     # (n) delete (cut) {count} lines
+vim cut paste: d{motion}              # (n) delete (cut) from cursor to {motion}
+vim cut paste: D or d$                # (n) delete (cut) to the end of the line
+vim cut paste: x                      # (n) delete (cut) {count} characters
+vim search replace: /{pattern}        # (c) search for pattern
+vim search replace: ?{pattern}        # (c) search backward for pattern
+vim search replace: \v{pattern}       # (c) 'very magic' pattern: non-alphanumeric characters are interpreted as special regex symbols
+vim search replace: n                 # (n) repeat search in same direction
+vim search replace: N                 # (n) repeat search in opposite direction
+vim search replace: :%s/old/new/g     # (c) replace all old with new throughout file
+vim search replace: :%s/old/new/gc    # (c) replace all old with new throughout file with confirmations
+vim search replace: :noh              # (c) remove highlighting of search matches
+vim search multi: :cn                 # (c) jump to the next match
+vim search multi: :cp                 # (c) jump to the previous match
+vim search multi: :copen              # (c) open a window containing the list of matches
+vim search: :/ $                      # (c) find trailing whitespace
+vim exit: :w or :w /path              # (c) write (save) the file, but don't exit
+vim exit: :W                          # (c) write (save) the file as sudo, but don't exit
+vim exit: :w !sudo tee %              # (c) write out the current file using sudo
+vim exit: :wq or :x or ZZ             # (c) write (save) and quit
+vim exit: :q                          # (c) quit (fails if there are unsaved changes)
+vim exit: :q! or ZQ                   # (c) quit and throw away unsaved changes
+vim exit: :bd or bd!                  # (c) Close the file (buffer)
+vim window: :e file                   # (c) edit a file in a new buffer
+vim window: :bnext or :bn             # (c) go to the next buffer
+vim window: :bprev or :bp             # (c) go to the previous buffer
+vim window: :bd                       # (c) delete a buffer (close a file)
+vim window: :ls                       # (c) list all open buffers
+vim window: :sp file                  # (c) open a file in a new buffer and split window
+vim window: :vsp file                 # (c) open a file in a new buffer and vertically split window
+vim window: <Ctrl-wv>                 # (n) split window vertically
+vim window: <Ctrl-ws>                 # (n) split window horizontally
+vim window: <Ctrl-ww>                 # (n) switch windows
+vim window: <Ctrl-wq>                 # (n) quit a window
+vim window: <Ctrl-wv>                 # (n) split window vertically
+vim window: <Ctrl-wh>                 # (n) move cursor to the left window (vertical split)
+vim window: <Ctrl-wl>                 # (n) move cursor to the right window (vertical split)
+vim window: <Ctrl-wj>                 # (n) move cursor to the window below (horizontal split)
+vim window: <Ctrl-wk>                 # (n) move cursor to the window above (horizontal split)
+vim window: <Ctrl-w=>                 # (n) make all windows equally high and wide
+vim window: <Ctrl-w+>                 # (n) make active window taller
+vim window: <Ctrl-w->                 # (n) make active window shorter
+vim window: <Ctrl-w<>                 # (n) make active window narrower
+vim window: <Ctrl-w>>                 # (n) make active window wider
+vim window: z{count}<CR>              # (n) make active window {count} lines tall
+vim window: <Ctrl-Shift-+>            # (n) make text bigger, zoom in
+vim window: <Ctrl-Shift-->            # (n) make text smaller, zoom out
+vim tabs: {n}gt                       # (n) move to tab n
+vim tabs: <Ctrl-wT>                   # (n) move the current split window into its own tab
+vim tabs: gt or :tabnext or :tabn     # (n) move to the next tab
+vim tabs: gT or :tabprev or :tabp     # (n) move to the previous tab
+vim tabs: :tabmove {n}                # (c) move current tab to the nth position (indexed from 0)
+vim tabs: :tabclose or :tabc          # (c) close the current tab and all its windows
+vim tabs: :tabonly or :tabo           # (c) close all tabs except for the current one
+vim tabs: :tabdo command              # (c) run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
+vim registers: "_                     # black hole register
+vim registers: ""                     # unnamed register
+vim registers: "0                     # yank register
+vim registers: "-                     # small delete (less than 1 line) register
+vim registers: "+                     # X11 system clipboard register
+vim registers: "*                     # X11 primary cliipboard register
+vim registers: "=                     # expression register
+vim registers: "%                     # current filename (read only register)
+vim registers: "#                     # filename of alternate file (read only register)
+vim registers: ".                     # last inserted text (read only register)
+vim registers: ":                     # last ex command (read only register)
+vim registers: "/                     # last search pattern (read only register)
+vim marks: m{a-zA-Z}                  # (n) set mark
+vim marks: `{a-z}                     # (n) jump to exact mark
+vim marks: '{A-Z}                     # (n) jump to first non-whitespace character in mark's line
+vim marks: '<                         # (n) jump to last line of last visually selected block
+vim marks: '>                         # (n) jump to last line of last visually selected block
+vim marks: `<                         # (n) jump to exact position of end of last visually selected block
+vim marks: `>                         # (n) jump to exact position of end of last visually selected block
+vim jump: :jumps                      # (c) show jump list
+vim jump: <Ctrl-o>                    # (n) move back on jump list
+vim jump: <Ctrl-i>                    # (n) move forward on jump list
+vim jump: (                           # (n) jump to previous sentence
+vim jump: )                           # (n) jump to next sentence
+vim jump: {                           # (n) jump to previous paragraph
+vim jump: }                           # (n) jump to next paragraph
+vim jump: :{count}                    # (n) jump to line number
+vim jump: {count}G                    # (n) jump to line number
+vim jump: gf                          # (n) jump to filename under cursor
+vim jump: gx                          # (n) opens url under cursor in browser
+vim changes: :changes                 # (c) show change list
+vim changes: g;                       # (n) go to previous location in change list
+vim changes: g,                       # (n) go to next location in change list
+vim changes: gi                       # (n) go to last insertion and return to insert mode
+vim: Q                                # (n) go to ex mode
+vim: :reg                             # (c) show contents of all registers
+vim: :so %                            # (c) reload current vim settings file while open
+vim: :so $MYVIMRC                     # (c) reload vim settings from a different file
+vim: :h key-notation                  # (c) shows how to indicate keys in vim script
+vim: :map                             # (c) shows all key mappings
+vim: :map gx                          # (c) shows what commands are mapped to gx
+vim: :nmap                            # (c) shows all key mappings for normal mode only
+vim: :imap                            # (c) shows all key mappings for insert mode only
+vim: :omap                            # (c) shows all key mappings for text objects
+vim: :vmap                            # (c) shows all key mappings for visual mode only
+vim: :verbose map                     # (c) shows all key mappings and where they were defined
+vim: :version                         # (c) show version and information about installed features
+vim: :marks                           # (c) show all marks
+vim: :ju[mps]                         # (c) show jump list
+vim: :color [theme_name]              # (c) change color theme
+vim: :normal [commands]               # (c) perform normal mode commands on range
+vim: <Ctrl-^>                         # (n) open alternate file
+vim range: {count}:                   # (n) becomes :.,.+{count-1} to apply command to next {count} lines
+vim range: :%                         # (c) applies to entire file
+vim range: :. or :                    # (c) applies to current line
+vim range: :.,.+{n} or :,+{n}         # (c) applies to current line and next {n}
+vim range: :.-{n},. or :-{n},         # (c) applies to previous {n} lines and current
+vim range: :'<,'>                     # (c) applies to lines in last visually selected block
+vim range: :'a,'b                     # (c) applies to lines from mark a to mark b
+vim range: :.,$                       # (c) applies to current line through end of file
+vim lsp: :LspInfo                     # (c) show information about lsp servers
+vim folding: zo / zO                  # (n) open
+vim folding: zc / zC                  # (n) close
+vim folding: za / zA                  # (n) toggle
+vim folding: zv                       # (n) open folds for this line
+vim folding: zM                       # (n) close all
+vim folding: zR                       # (n) open all
+vim folding: zm                       # (n) fold more (foldlevel += 1)
+vim folding: zr                       # (n) fold less (foldlevel -= 1)
+vim folding: zx                       # (n) update folds
+vim sessions: ":mksession /path"      # (c) save the current vim session.
+vim sessions: ":source /path"         # (c) load the specified vim session.
+vim surround: ), }, ], >              # (object) refers to surrounds but not inside spaces
+vim surround: (, {, [                 # (object) refers to surrounds and inside spaces
+vim surround: w                       # (object) operates on a word
+vim surround: W                       # (object) operates on a WORD
+vim surround: s                       # (object) operates on a sentence
+vim surround: p                       # (object) operates on a paragraph
+vim surround: cs"'                    # (n) change surrounding " to '
+vim surround: cs'<p>                  # (n) change surrounding ' to <p></p>
+vim surround: cst"                    # (n) change surrounding tag to "
+vim surround: ds"                     # (n) delete surrounding "
+vim surround: ysiw]                   # (n) add surrounding square brackets to iw text object
+vim surround: yssb or yss)            # (n) add surrounding parentheses to entire line
+vim surround: ds{                     # (n) delete surrounding braces
+vim surround: ysiw<em> or ysiwtem>    # (n) add em tag around iw text object
+vim surround: ysiwf{name}<CR>         # (n) wrap iw text object in function call
+vim surround: ysiwF{name}<CR>         # (n) wrap iw text object in function call with space inside parentheses
+vim commentary: gc{motion}            # (n) toggle comments on lines in motion
+vim commentary: gcc                   # (n) toggle comments on {count} lines
+vim commentary: gc                    # (n) (object) group of commented lines
+vim commentary: gcgc or gcu           # (n) toggle comments for group of commented lines
+vim commentary: :[range]Commentary    # (c) toggle comments for lines in range
+vim-textobj-entire: ae                # (object) all lines in current buffer
+vim-textobj-entire: ie                # (object) all lines in current buffer except outer whitespace lines
+vim-textobj-line: al                  # (object) current line
+vim-textobj-line: il                  # (object) current line except outer whitespace
+vim-indent-object: ai                 # (object) indent block and line above
+vim-indent-object: {count}ai          # (object) indent block n levels up
+vim-indent-object: ii or iI           # (object) indent block only
+vim-indent-object: iI                 # (object) indent block and lines above and below
+vim-unimpaired: [a ]a                 # {motion} to previous and next file
+vim-unimpaired: [A ]A                 # {motion} to first and last file
+vim-unimpaired: [A ]A                 # {motion} to first and last file
+vim-unimpaired: [b ]b                 # {motion} to previous and next buffer
+vim-unimpaired: [B ]B                 # {motion} to first and last buffer
+vim-unimpaired: [l ]l                 # {motion} to previous and next location
+vim-unimpaired: [L ]L                 # {motion} to first and last location
+vim-unimpaired: [<C-l> ]<C-l>         # {motion} to first location in previous and next file
+vim-unimpaired: [q ]q                 # {motion} to previous and next location in quick fix list
+vim-unimpaired: [Q ]Q                 # {motion} to first and last location in quick fix list
+vim-unimpaired: [<C-q> ]<C-q>         # {motion} to quick fix location in previous and next file
+vim-unimpaired: [t ]t                 # {motion} to previous and next tag
+vim-unimpaired: [T ]T                 # {motion} to first and last tag
+vim-unimpaired: [<C-t> ]<C-t>         # (n) preview previous and next tag
+vim-unimpaired: [f ]f                 # {motion} to previous and next alphabetical file in directory
+vim-unimpaired: [n ]n                 # {motion} to previous and next git conflict or hunk
+vim-unimpaired: [ob ]ob yob           # (n) on, off, & toggle background (dark is off, light is on)
+vim-unimpaired: [oc ]oc yoc           # (n) on, off, & toggle cursorline
+vim-unimpaired: [od ]od yod           # (n) on, off, & toggle diff (:diffthis & :diffoff)
+vim-unimpaired: [oh ]oh yoh           # (n) on, off, & toggle search highlight (hlsearch)
+vim-unimpaired: [oi ]oi yoi           # (n) on, off, & toggle ignorecase
+vim-unimpaired: [ol ]ol yol           # (n) on, off, & toggle list
+vim-unimpaired: [on ]on yon           # (n) on, off, & toggle number
+vim-unimpaired: [or ]or yor           # (n) on, off, & toggle relative number
+vim-unimpaired: [os ]os yos           # (n) on, off, & toggle spell
+vim-unimpaired: [ou ]ou you           # (n) on, off, & toggle cursorcolumn
+vim-unimpaired: [ov ]ov yov           # (n) on, off, & toggle virtualedit
+vim-unimpaired: [ow ]ow yow           # (n) on, off, & toggle wrap
+vim-unimpaired: [ox ]ox yox           # (n) on, off, & toggle cursorline and cursorcolumn
+vim-unimpaired: [x{motion}            # (n) XML encode
+vim-unimpaired: [xx                   # (n) XML encode current line
+vim-unimpaired: ]x{motion}            # (n) XML decode
+vim-unimpaired: ]xx                   # (n) XML decode current line
+vim-unimpaired: [u{motion}            # (n) URL encode
+vim-unimpaired: [uu                   # (n) URL encode current line
+vim-unimpaired: ]u{motion}            # (n) URL decode
+vim-unimpaired: ]uu                   # (n) URL decode current line
+vim-unimpaired: [y{motion}            # (n) C string encode
+vim-unimpaired: [yy                   # (n) C string encode current line
+vim-unimpaired: ]y{motion}            # (n) C string decode
+vim-unimpaired: ]yy                   # (n) C string decode current line
+vim-plug: :PlugInstall                # (c) install plugins
+vim-plug: :PlugClean                  # (c) remove unlisted plugins
+vim-plug: :PlugClean!                 # (c) remove unlisted plugins without prompt
+vim-plug: :PlugUpdate                 # (c) update all plugins
+vim-plug: :PlugUpdate [name ...]      # (c) update specific plugins
+vim-plug: :PlugUpgrade                # (c) update vim-plug itself
+vim-plug: :PlugStatus                 # (c) check status of plugins
+vim-plug: :PlugDiff                   # (c) show changes from last update and pending changes
+vim-plug: :PlugSnapshot [output path] # (c) generate script for restoring current plugins
+vim-cmp: :CmpStatus                   # (c) show status of nvim-cmp
+vim-cmp: <Ctrl-j>                     # (i) move cursor down in menu
+vim-cmp: <Ctrl-k>                     # (i) move cursor up in menu
+vim-cmp: <Ctrl-Space>                 # (n) manual completion
+vim-cmp: <Ctrl-Space>                 # (i) choose menu item
+vim-cmp: <Ctrl-q>                     # (i) close completion menu
+vimwiki: <Lead>ww                     # (n) open wiki index
+vimwiki: <Lead>wt                     # (n) open wiki index in new tab
+vimwiki: <Lead>ws                     # (n) list and select available wikis
+vimwiki: <Lead>wd                     # (n) delete wiki page
+vimwiki: <Lead>wr                     # (n) rename wiki page
+vimwiki: <Lead>wh                     # (n) convert current wiki page to HTML
+vimwiki: <Lead>whh                    # (n) convert current wiki page to HTML and open in browser
+vimwiki navigation: <CR>              # (n) follow or create wiki link
+vimwiki navigation: <Shift-CR>        # (n) follow or create wiki link in new horizontal split
+vimwiki navigation: <Ctrl-CR>         # (n) follow or create wiki link in new vertical split
+vimwiki navigation: <Ctrl-Shift-CR>   # (n) follow or create wiki link in new tab
+vimwiki navigation: <Backspace>       # (n) go back to previous wiki page
+vimwiki navigation: <Tab>             # (n) go to next link on wiki page
+vimwiki navigation: <Shift-Tab>       # (n) go to previous link on wiki page
+vimwiki navigation: [[                # (n) go to previous header
+vimwiki navigation: ]]                # (n) go to next header
+vimwiki navigation: [=                # (n) go to previous header with the same level
+vimwiki navigation: ]=                # (n) go to next header with the same level
+vimwiki navigation: ]u or [u          # (n) go to the header that is one level up
+vimwiki navigation: gnt               # (n) find next unfinished task on page
+vimwiki list edit: gl<Space>          # (n) remove checkbox from list item
+vimwiki list edit: gL<Space>          # (n) remove checkbox from all sibling items
+vimwiki list edit: gln                # (n) increase done status of checkbox
+vimwiki list edit: glp                # (n) decrease done status of checkbox
+vimwiki list edit: gll                # (n) increase level of list item
+vimwiki list edit: gLl                # (n) increase level of list item and all child items
+vimwiki list edit: glh                # (n) decrease level of list item
+vimwiki list edit: gLh                # (n) decrease level of list item and all child items
+vimwiki list edit: glr                # (n) renumber list items when on numbered list item
+vimwiki list edit: gLr                # (n) renumber list items in entire file when on numbered list item
+vimwiki list edit: gl* gl8            # (n) make list item out of current line, change item symbol to *
+vimwiki list edit: gL* gl8            # (n) change symbol of current list to *
+vimwiki list edit: gl # gl3           # (n) make list item out of current line, change item symbol to #
+vimwiki list edit: gL # gl3           # (n) change symbol of current list to #
+vimwiki list edit: gl-                # (n) make list item out of current line, change item symbol to -
+vimwiki list edit: gL-                # (n) change symbol of current list to -
+vimwiki list edit: gl1                # (n) make list item out of current line, change item to numbered
+vimwiki list edit: gL1                # (n) change current list to numbered
+vimwiki list edit: gla                # (n) make list item out of current line, change symbol to a)
+vimwiki list edit: gLa                # (n) change current list symbol to a) b) c)
+vimwiki list edit: glA                # (n) make list item out of current line, change symbol to A)
+vimwiki list edit: gLA                # (n) change current list symbol to A) B) C)
+vimwiki list edit: gli                # (n) make list item out of current line, change symbol to i)
+vimwiki list edit: gLi                # (n) change current list symbol to i) ii) iii)
+vimwiki list edit: glI                # (n) make list item out of current line, change symbol to I)
+vimwiki list edit: gLI                # (n) change current list symbol to I) II) III)
+vimwiki list edit: glx                # (n) toggle checkbox of a list item disabled/off (-)
+vimwiki list edit: glm                # (n) increase indent of list item
+vimwiki list edit: gll                # (n) decrease indent of list item
+vimwiki list edit: <Ctrl-T>           # (n) increase indent of list item in insert mode
+vimwiki list edit: <Ctrl-D>           # (n) decrease indent of list item in insert mode
+vimwiki list edit: <Ctrl-Space>       # (n) add or checkbox or toggle between done and not done
+vimwiki table edit: gqq or gww        # (n) format table (check entire table)
+vimwiki table edit: gq1 or gw1        # (n) fast format table (check previous few lines)
+vimwiki table edit: <A-Left>          # (n) move current table column to the left
+vimwiki table edit: <A-Right>         # (n) move current table column to the right
+vimwiki table: <Alt-Left>             # (n) move column left
+vimwiki table: <Alt-Right>            # (n) move column right
+vimwiki table: <CR>                   # (n) (insert mode) go down/ create cell
+vimwiki table: <Tab>                  # (n) (insert mode) go next/ create cell
+vimwiki header edit: =                # (n) add header level
+vimwiki header edit: -                # (n) remove header level
+vimwiki edit: +                       # (n) create or decorate links
+vimwiki: ah                           # (object) section including header & empty trailing lines
+vimwiki: ih                           # (object) section excluding header & empty trailing lines
+vimwiki: aH                           # (object) section & subsections including header & empty trailing lines
+vimwiki: iH                           # (object) section & subsections excluding header & empty trailing lines
+vimwiki: a\                           # (object) table cell
+vimwiki: i\                           # (object) inner table cell
+vimwiki: ac                           # (object) table column
+vimwiki: ic                           # (object) inner table column
+vimwiki: al                           # (object) list item with its children
+vimwiki: il                           # (object) single list item
+vimwiki diary: {number}<Lead>wi       # (n) open diary index file for wiki
+vimwiki diary: <Lead>w<Lead>i         # (n) update current diary index
+vimwiki diary: {number}<Lead>w<Lead>w # (n) open today's diary file for wiki
+vimwiki diary: {number}<Lead>w<Lead>t # (n) open today's diary file for wiki in new tab
+vimwiki diary: <Ctrl-Up>              # (n) open previous day's diary
+vimwiki diary: <Ctrl-Down>            # (n) open next day's diary
+vimwiki diary: <Lead>W<Lead>i         # (n) update diary section (delete old, insert new)
+vim-snippets python: #!               # (i) python3 shebang
+vim-snippets python: imp              # (i) import statement
+vim-snippets python: uni              # (i) unicode dunder method
+vim-snippets python: from             # (i) import from statement
+vim-snippets python: docs             # (i) doc string for file or module
+vim-snippets python: wh               # (i) while loop
+vim-snippets python: dowh             # (i) do while true loop
+vim-snippets python: with             # (i) context manager block
+vim-snippets python: awith            # (i) async context manager block
+vim-snippets python: cl               # (i) class definition with inheritance, doc string, and init method
+vim-snippets python: cla              # (i) class definition with doc string
+vim-snippets python: clai             # (i) class definition with doc string and init method
+vim-snippets python: def              # (i) function definition with doc string
+vim-snippets python: deff             # (i) function definition with no doc string
+vim-snippets python: adef             # (i) async function definition with doc string
+vim-snippets python: adeff            # (i) async function definition with no doc string
+vim-snippets python: defi             # (i) init method definition
+vim-snippets python: defm             # (i) method definition
+vim-snippets python: adefm            # (i) async method definition
+vim-snippets python: property         # (i) property definition with decorator and setter method
+vim-snippets python: if               # (i) if statement block definition
+vim-snippets python: el               # (i) else statement block definition
+vim-snippets python: ei               # (i) elif statement block definition
+vim-snippets python: for              # (i) for statement block definition
+vim-snippets python: cutf8            # (i) encoding shebang for utf8
+vim-snippets python: clatin1          # (i) encoding shebang for latin1
+vim-snippets python: cascii           # (i) encoding shebang for ascii
+vim-snippets python: ld               # (i) lambda function definition
+vim-snippets python: ret              # (i) return statement
+vim-snippets python: .                # (i) "self."
+vim-snippets python: sa               # (i) self.attribute definition
+vim-snippets python: try              # (i) try-except statement definition
+vim-snippets python: trye             # (i) try-except-else statement definition
+vim-snippets python: tryf             # (i) try-except-finally statement definition
+vim-snippets python: tryef            # (i) try-except-else-finally statement definition
+vim-snippets python: ifmain           # (i) if __name__ == "__main__":
+vim-snippets python: _                # (i) ipython magic command
+vim-snippets python: "                # (i) doc string
+vim-snippets python: "=               # (i) self.assertEqual
+vim-snippets python: test             # (i) test function block definition
+vim-snippets python: tgwt             # (i) test given when then
+vim-snippets python: fut              # (i) from __future__ import
+vim-snippets python: kwg              # (i) set attribute from kwargs dictionary
+vim-snippets python: lkwg             # (i) set variable from kwargs dictionary
+vim-snippets python: args             # (i) *args
+vim-snippets python: kwargs           # (i) **kwargs
+vim-snippets python: akw              # (i) *args, **kwargs
+vim-snippets python: lcp              # (i) list comprehension
+vim-snippets python: dcp              # (i) dictionary comprehension
+vim-snippets python: scp              # (i) set comprehension
+vim-snippets python: contain          # (i) methods for emulating a container type
+vim-snippets python: context          # (i) context manager methods
+vim-snippets python: attr             # (i) methods for controlling attribute access
+vim-snippets python: desc             # (i) methods implementing descriptors
+vim-snippets python: cmp              # (i) methods implementing rich comparison
+vim-snippets python: repr             # (i) methods implenting string representation
+vim-snippets python: numeric          # (i) methods for emulating a numeric type
+vim-snippets django template: %                 # (i) tag
+vim-snippets django template: %%                # (i) start and end tags
+vim-snippets django template: {                 # (i) double braces tag
+vim-snippets django template: autoescape        # (i) autoescape start and end tags
+vim-snippets django template: block             # (i) block start and end tags
+vim-snippets django template: #                 # (i) single pound tag
+vim-snippets django template: comment           # (i) comment start and end tags
+vim-snippets django template: cycle             # (i) cycle tag
+vim-snippets django template: debug             # (i) debug tag
+vim-snippets django template: extends           # (i) extends tag
+vim-snippets django template: filter            # (i) filter block start and end tags
+vim-snippets django template: firstof           # (i) firstof tag
+vim-snippets django template: for               # (i) for block start and end tags
+vim-snippets django template: empty             # (i) empty tag
+vim-snippets django template: if                # (i) if block start and end tags
+vim-snippets django template: el                # (i) else tag
+vim-snippets django template: eif               # (i) elif tag
+vim-snippets django template: ifchanged         # (i) ifchanged start and end tags
+vim-snippets django template: ifequal           # (i) ifequal start and end tags
+vim-snippets django template: ifnotequal        # (i) ifnotequal start and end tags
+vim-snippets django template: include           # (i) include tag
+vim-snippets django template: load              # (i) load tag
+vim-snippets django template: now               # (i) now tag
+vim-snippets django template: regroup           # (i) regroup tag
+vim-snippets django template: spaceless         # (i) spaceless tag
+vim-snippets django template: ssi               # (i) ssi tag
+vim-snippets django template: trans             # (i) trans
+vim-snippets django template: url               # (i) url
+vim-snippets django template: widthratio        # (i) widthratio tag
+vim-snippets django template: with              # (i) with block start and end tags
+vim-snippets django template: add               # (i) filter
+vim-snippets django template: center            # (i) filter
+vim-snippets django template: cut               # (i) filter
+vim-snippets django template: date              # (i) filter
+vim-snippets django template: default           # (i) filter
+vim-snippets django template: defaultifnone     # (i) filter
+vim-snippets django template: dictsort          # (i) filter
+vim-snippets django template: dictsortrev       # (i) filter
+vim-snippets django template: divisibleby       # (i) filter
+vim-snippets django template: floatformat       # (i) filter
+vim-snippets django template: getdigit          # (i) filter
+vim-snippets django template: join              # (i) filter
+vim-snippets django template: lengthis          # (i) filter
+vim-snippets django template: pluralize         # (i) filter
+vim-snippets django template: removetags        # (i) filter
+vim-snippets django template: slice             # (i) filter
+vim-snippets django template: stringformat      # (i) filter
+vim-snippets django template: time              # (i) filter
+vim-snippets django template: truncatewords     # (i) filter
+vim-snippets django template: truncatewordshtml # (i) filter
+vim-snippets django template: urlizetrunc       # (i) filter
+vim-snippets django template: wordwrap          # (i) filter
+vim-snippets django: auto                 # (i) model field
+vim-snippets django: bigint               # (i) model field
+vim-snippets django: binary               # (i) model field
+vim-snippets django: bool                 # (i) model field
+vim-snippets django: char                 # (i) model field
+vim-snippets django: comma                # (i) model field
+vim-snippets django: date                 # (i) model field
+vim-snippets django: datetime             # (i) model field
+vim-snippets django: decimal              # (i) model field
+vim-snippets django: email                # (i) model field
+vim-snippets django: file                 # (i) model field
+vim-snippets django: filepath             # (i) model field
+vim-snippets django: float                # (i) model field
+vim-snippets django: image                # (i) model field
+vim-snippets django: int                  # (i) model field
+vim-snippets django: ip                   # (i) model field
+vim-snippets django: nullbool             # (i) model field
+vim-snippets django: posint               # (i) model field
+vim-snippets django: possmallint          # (i) model field
+vim-snippets django: slug                 # (i) model field
+vim-snippets django: smallint             # (i) model field
+vim-snippets django: text                 # (i) model field
+vim-snippets django: time                 # (i) model field
+vim-snippets django: url                  # (i) model field
+vim-snippets django: xml                  # (i) model field
+vim-snippets django: fk                   # (i) foreign key model field
+vim-snippets django: m2m                  # (i) many to many model field
+vim-snippets django: o2o                  # (i) one to one model field
+vim-snippets django: form                 # (i) forms.Form definition
+vim-snippets django: model                # (i) models.Model definition
+vim-snippets django: modeladmin           # (i) admin.ModelAdmin
+vim-snippets django: tabularinline        # (i) admin.TabularInline
+vim-snippets django: stackedinline        # (i) admin.StackedInline
+vim-snippets django: r2r                  # (i) render to response
+vim-snippets snippet: snip                # (i) snippet
+vim-snippets snippet: v                   # (i) {VISUAL}
+vim-snippets snippet: $                   # (i) ${ : }
+vim-snippets jinja: %                     # (i) tag
+vim-snippets jinja: %%                    # (i) start and end tags
+vim-snippets jinja: {                     # (i) double brace tag
+vim-snippets jinja: autoescape            # (i) autoescape start and end tag
+vim-snippets jinja: block                 # (i) block start and end tags
+vim-snippets jinja: #                     # (i) single # tag
+vim-snippets jinja: comment               # (i) comment start and end tag
+vim-snippets jinja: cycle                 # (i) cycle tag
+vim-snippets jinja: debug                 # (i) debug tag
+vim-snippets jinja: extends               # (i) extends tag
+vim-snippets jinja: filter                # (i) filter start and end tag
+vim-snippets jinja: firstof               # (i) firstof tag
+vim-snippets jinja: for                   # (i) for block start and end tag
+vim-snippets jinja: empty                 # (i) empty tag
+vim-snippets jinja: if                    # (i) if block start and end tag
+vim-snippets jinja: el                    # (i) else tag
+vim-snippets jinja: eif                   # (i) elif tag
+vim-snippets jinja: ifchanged             # (i) ifchanged start and end tag
+vim-snippets jinja: ifequal               # (i) ifequal start and end tag
+vim-snippets jinja: ifnotequal            # (i) ifnotequal start and end tag
+vim-snippets jinja: include               # (i) include tag
+vim-snippets jinja: load                  # (i) load tag
+vim-snippets jinja: now                   # (i) now tag
+vim-snippets jinja: regroup               # (i) regroup tag
+vim-snippets jinja: spaceless             # (i) spaceless start and end tag
+vim-snippets jinja: ssi                   # (i) ssi tag
+vim-snippets jinja: trans                 # (i) trans start and end tag
+vim-snippets jinja: url                   # (i) url tag
+vim-snippets jinja: widthratio            # (i) widthratio tag
+vim-snippets jinja: with                  # (i) with block start and end tag
+vim-snippets jinja: add                   # (i) filter
+vim-snippets jinja: center                # (i) filter
+vim-snippets jinja: cut                   # (i) filter
+vim-snippets jinja: date                  # (i) filter
+vim-snippets jinja: default               # (i) filter
+vim-snippets jinja: defaultifnone         # (i) filter
+vim-snippets jinja: dictsort              # (i) filter
+vim-snippets jinja: dictsortrev           # (i) filter
+vim-snippets jinja: divisibleby           # (i) filter
+vim-snippets jinja: floatformat           # (i) filter
+vim-snippets jinja: getdigit              # (i) filter
+vim-snippets jinja: join                  # (i) filter
+vim-snippets jinja: lenthis               # (i) filter
+vim-snippets jinja: pluralize             # (i) filter
+vim-snippets jinja: removetags            # (i) filter
+vim-snippets jinja: slice                 # (i) filter
+vim-snippets jinja: stringformat          # (i) filter
+vim-snippets jinja: time                  # (i) filter
+vim-snippets jinja: truncatewords         # (i) filter
+vim-snippets jinja: truncatewordshtml     # (i) filter
+vim-snippets jinja: urlizetrunc           # (i) filter
+vim-snippets jinja: wordwrap              # (i) filter
+vim sessions startify: :SLoad         # (c) load session
+vim sessions startify: :SSave[!]      # (c) save session optionally without prompt
+vim sessions startify: :SDelete[!]    # (c) delete session optionally without prompt
+vim sessions startify: :SClose        # (c) close session
+vim startify custom: <Lead>s          # (n) open startify
+vim codi: :Codi                       # (c) start codi for current buffer
+vim codi: :Codi!                      # (c) stop codi for current buffer
+vim codi: :Codi!!                     # (c) toggle codi for current buffer
+vim codi custom: <Lead>c              # (n) toggle codi for current buffer
+vim loupe: <Lead>n                    # (n) turn off search highlighting
+vim: <Lead-a>                         # (n) nothing (reuse?)
+vim: <Lead-b>                         # (n) nothing (reuse?)
+vim: <Lead-d>                         # (n) nothing (reuse?)
+vim: <Lead-e>                         # (n) nothing (reuse?)
+vim: <Lead-f>                         # (n) nothing (reuse?)
+vim: <Lead-g>                         # (n) nothing (reuse?)
+vim: <Lead-h>                         # (n) nothing (reuse?)
+vim: <Lead-i>                         # (n) nothing (reuse?)
+vim: <Lead-j>                         # (n) nothing (reuse?)
+vim: <Lead-k>                         # (n) nothing (reuse?)
+vim: <Lead-l>                         # (n) nothing (reuse?)
+vim: <Lead-m>                         # (n) nothing (reuse?)
+vim: <Lead-o>                         # (n) nothing (reuse?)
+vim: <Lead-p>                         # (n) nothing (reuse?)
+vim: <Lead-q>                         # (n) nothing (reuse?)
+vim: <Lead-r>                         # (n) nothing (reuse?)
+vim: <Lead-t>                         # (n) nothing (reuse?)
+vim: <Lead-u>                         # (n) nothing (reuse?)
+vim: <Lead-v>                         # (n) nothing (reuse?)
+vim: <Lead-w>                         # (n) starts most vimwiki commands
+vim: <Lead-x>                         # (n) nothing (reuse?)
+vim: <Lead-y>                         # (n) nothing (reuse?)
+vim: <Lead-z>                         # (n) nothing (reuse?)
+ranger bookmarks: m - letter          # create bookmark
+ranger bookmarks: um - letter         # delete bookmark
+ranger bookmarks: ' or `              # go to a bookmark
+ranger bookmarks: gh                  # go to home
+ranger tabs: C-n                      # create new tab
+ranger tabs: C-w                      # close current tab
+ranger tabs: tab                      # next tab
+ranger tabs: <Shift-Tab>              # previous tab
+ranger tabs: <Alt-{1-9}>              # goto / create tab #
+ranger movement: k                    # up
+ranger movement: j                    # down
+ranger movement: h                    # parent directory
+ranger movement: l                    # subdirectory
+ranger movement: gg                   # go to top of list
+ranger movement: G                    # go to bottom of list
+ranger movement: J                    # half page down
+ranger movement: K                    # half page up
+ranger movement: H                    # history Back
+ranger movement: L                    # history Forward
+ranger files: <CR>                    # open
+ranger files: r                       # open file with
+ranger files: z                       # toggle settings
+ranger files: o                       # change sort order
+ranger files: zh                      # view hidden files
+ranger files: cw                      # rename current file
+ranger files: yy                      # yank / copy
+ranger files: dd                      # cut
+ranger files: pp                      # paste
+ranger files: /                       # search for files :search
+ranger files: n                       # next match
+ranger files: N                       # prev match
+ranger files: <del>                   # delete
+ranger: 1l                            # unzip selected file (uncompress)
+ranger commands: :                    # execute Range Command
+ranger commands: :mkdir [dir_name]    # make new directory
+ranger commands: !                    # execute Shell Command
+ranger commands: chmod                # change file Permissions
+ranger commands: du                   # disk Usage Current Directory
+ranger subst: %f                      # substitute highlighted file
+ranger subst: %d                      # substitute current directory
+ranger subst: %s                      # substitute currently selected files
+ranger subst: %t                      # substitute currently tagged files
+ranger subst: :bulkrename %s          # example for substitution
+firefox current pag: F6               # move to the next frame
+firefox current pag: Shift + F6       # move to the prev frame
+firefox edit: <Ctrl+Backspace>        # delete word to the left
+firefox edit: Ctrl + Del              # delete word to the right
+firefox edit: Ctrl + ←                # go one word to the left
+firefox edit: Ctrl + →                # go one word to the right
+firefox edit: Ctrl + Home             # go to beginning of text
+firefox edit: Ctrl + End              # go to end of text
+firefox search: Ctrl + F                       # find
+firefox search: F3 Ctrl + G                    # find again
+firefox search: Shift + F3 Ctrl + Shift + G    # find previous
+firefox search: '                              # quick find within link-text only
+firefox search: /                              # quick find
+firefox search: Esc                            # close the find or quick find bar if focused
+firefox search: Alt + ↓↑                       # switch search engine while writing in address bar
+firefox search: Ctrl + K Ctrl + J              # focus address bar for web search
+firefox search: Ctrl + K Ctrl + J              # focus search bar - if search bar is shown
+firefox search: Ctrl + ↓ Ctrl + ↑              # change the default search engine if in the search bar
+firefox search: Alt + ↓ Alt + ↑ F4             # View menu to switch or manage search engines if search bar is focused
 firefox tabs: Ctrl + W Ctrl + F4              # Close Tab - except for Pinned Tabs
-firefox tabs: Ctrl + Shift + W Alt + F4       # Close Window  
-firefox tabs: Ctrl + Tab                      # Cycle through Tabs in Recently Used Order -if enabled in Preferences 
+firefox tabs: Ctrl + Shift + W Alt + F4       # Close Window
+firefox tabs: Ctrl + Tab                      # Cycle through Tabs in Recently Used Order -if enabled in Preferences
 firefox tabs: Ctrl + Q                        # Quit
 firefox tabs: Ctrl+Page Up, Ctrl+Shift+Tab    # Go one Tab to the Left
-firefox tabs: Ctrl + Page Down Ctrl + Tab     # Go one Tab to the Right * if the setting Ctrl+Tab cycles through tabs in recently used order is disabled in Preferences
 firefox tabs: Alt + 1                         # to 8 Go to Tab 1 to 8
 firefox tabs: Alt + 9                         # Go to Last Tab
 firefox tabs: Ctrl + Shift + Page Up          # Move Tab Left
@@ -278,11 +782,11 @@ firefox tabs: Ctrl + Shift + T                # Undo Close Tab
 firefox tabs: Ctrl + Shift + N                # Undo Close Window
 firefox tabs: Ctrl + Shift + X                # Moves the URL left or right (if cursor is in the address bar)
 firefox history: Ctrl + H                     # History sidebar
-firefox history: Ctrl + Shift + H             # Library window (History)  
+firefox history: Ctrl + Shift + H             # Library window (History)
 firefox history:  Ctrl + Shift + Del          # Clear Recent History
 firefox marks: Ctrl + D                       # Bookmark This Page
 firefox marks: Ctrl + B                       # Bookmarks sidebar
-firefox marks: Ctrl + Shift + O               # Library window (Bookmarks)  
+firefox marks: Ctrl + Shift + O               # Library window (Bookmarks)
 firefox tools: Ctrl + Shift + Y               # Downloads
 firefox tools: Ctrl + Shift + A               # Add-ons
 firefox tools: F12, Ctrl + Shift + I          # Toggle Developer Tools
@@ -297,26 +801,26 @@ firefox tools: Ctrl + Shift + M               # Responsive Design View
 firefox tools: Shift + F4                     # Scratchpad
 firefox tools: Ctrl + U                       # Page Source
 firefox tools: Ctrl + Shift + J               # Browser Console
-firefox tools: Ctrl + I                       # Page Info 
+firefox tools: Ctrl + I                       # Page Info
 firefox pdf: N or J or →                      # Next page
 firefox pdf: P or K or ←                      # Previous page
 firefox pdf: Ctrl +                           # Zoom in
 firefox pdf: Ctrl -                           # Zoom out
 firefox pdf: Ctrl + 0                         # Automatic Zoom
 firefox pdf: R                                # Rotate the document clockwise
-firefox pdf: Shift + R                        # Rotate counterclockwise 
+firefox pdf: Shift + R                        # Rotate counterclockwise
 firefox pdf: Ctrl + Alt + P                   # Switch to Presentation Mode
 firefox pdf: S                                # Choose Text Selection Tool
 firefox pdf: H                                # Choose Hand Tool
 firefox pdf: Ctrl + Alt + G                   # Focus the Page Number input box
-firefox misc: Ctrl + Enter                    # Complete .com Address   
+firefox misc: Ctrl + Enter                    # Complete .com Address
 firefox misc: Shift + Del                     # Delete Selected Autocomplete Entry
-firefox misc: F11                             # Toggle Full Screen  
+firefox misc: F11                             # Toggle Full Screen
 firefox misc: Alt or F10                      # Toggle Menu Bar activation (showing it temporarily when hidden)
 firefox misc: Ctrl + Alt + R                  # Toggle Reader Mode
 firefox misc: F7                              # Caret Browsing
 firefox misc: F6, Alt + D, Ctrl + L           # Focus Address Bar
-firefox misc: F6, Ctrl + F                    # Focus Search Field in Library   
+firefox misc: F6, Ctrl + F                    # Focus Search Field in Library
 firefox misc: Esc                             # Stop Autoscroll Mode
 firefox misc: Shift + F10                     # Toggle Context Menu
 firefox misc: Ctrl + space                    # Show groups
@@ -340,8 +844,8 @@ vimium nav: p                    # Open the clipboard's URL in the current tab
 vimium nav: P                    # Open the clipboard's URL in N new tab(s)
 vimium nav: gu                   # Go up the URL hierarchy (use trailingSlash=null/true/false)
 vimium nav: gU                   # Go to root of current URL hierarchy
-vimium nav: gi                   # Focus the first visible text box on the page and cycle using tab (use keep, select=""/all/all-line/start/end)
-vimium nav: f                    # Open a link in the current tab (use button=""/right, touch=false/true/"auto")
+vimium nav: gi                   # Focus the first visible text box on the page and cycle using tab
+vimium nav: f                    # Open a link in the current tab
 vimium nav: F                    # Open a link in a new tab
 vimium nav: <a-f>                # Open multiple links in a new tab
 vimium nav: [[                   # Follow the link labeled previous or "<"
@@ -363,14 +867,14 @@ vimium vomni:gn                  # Toggle styles of vomnibar page (use style=dar
 vimium find: /                   # Enter find mode (use last, selected=true)
 vimium find: n                   # Cycle forward to the next find match
 vimium find: N                   # Cycle backward to the previous find match
-vimium find: <a-n>               # Find the second or even earlier query words 
+vimium find: <a-n>               # Find the second or even earlier query words
 vimium history: H                # Go back in history (use reuse=-2/-1)
 vimium history: L                # Go forward in history (use reuse=-2/-1)
-vimium history: <a-R>            # Reopen current page 
+vimium history: <a-R>            # Reopen current page
 vimium tabs: K                   # Go one tab right
 vimium tabs: J                   # Go one tab left
-vimium tabs: g0                  # Go to the first N-th tab
-vimium tabs: g$                  # Go to the last N-th tab
+vimium tabs: g0                  # Go to the first tab
+vimium tabs: g$                  # Go to the last tab
 vimium tabs: t                   # Create new tab(s)
 vimium tabs: yt                  # Duplicate current tab for N times
 vimium tabs: x                   # Close N tab(s) (use mayClose, goto=""/left/right/previous)
@@ -380,36 +884,71 @@ vimium tabs: <a-p>               # Pin or unpin N tab(s)
 vimium tabs: <a-m>               # Mute or unmute current tab (use all, other)
 vimium tabs: ^                   # Go to previously-visited tab on current window
 vimium tabs: <<                  # Move tab to the left
-vimium tabs: >>                  # Move tab to the right 
-rofi: Ctrl-v                      # Insert: Paste from clipboard
-rofi: Ctrl-Shift-v, Shift-Insert: # Paste primary selection
-rofi: Ctrl-u                      # Clear the line
-rofi: Ctrl-                       # Beginning of line
-rofi: Ctrl-e                      # End of line
-rofi: Ctrl-f Right                # Forward one character
-rofi: Alt-f, Ctrl-Right           # Forward one word
-rofi: Ctrl-b, Left                # Back one character
-rofi: Alt-b, Ctrl-Left            # Back one word
-rofi: Ctrl-d, Delete              # Delete character
-rofi: Ctrl-Alt-d                  # Delete word
+vimium tabs: >>                  # Move tab to the right
+rofi: Ctrl-v                          # Insert: Paste from clipboard
+rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
+rofi: Ctrl-u                          # Clear the line
+rofi: Ctrl-                           # Beginning of line
+rofi: Ctrl-e                          # End of line
+rofi: Ctrl-f Right                    # Forward one character
+rofi: Alt-f, Ctrl-Right               # Forward one word
+rofi: Ctrl-b, Left                    # Back one character
+rofi: Alt-b, Ctrl-Left                # Back one word
+rofi: Ctrl-d, Delete                  # Delete character
+rofi: Ctrl-Alt-d                      # Delete word
 rofi: Ctrl-h, Backspace, Shift-Backspace # Backspace (delete previous character)
-rofi: Ctrl-Alt-h                  # Delete previous word
-rofi: Ctrl-j,Ctrl-m,Enter         # Accept entry
-rofi: Ctrl-n,Down                 # Select next entry
-rofi: Ctrl-p,Up                   # Select previous entry
-rofi: Page Up                     # Go to previous page
-rofi: Page Down                   # Go to next page
-rofi: Ctrl-Page Up                # Go to previous column
-rofi: Ctrl-Page Down              # Go to next column
-rofi: Ctrl-Enter                  # Use entered text as a command (in ssh/run modi)
-rofi: Shift-Enter                 # Launch the application in a terminal (in run mode)
-rofi: Shift-Enter                 # Return the selected entry and move to the next item while keeping rofi open. (in dmenu)
-rofi: Shift-Right                 # Switch to the next mode. The list can be customized with the -switchers argument.
-rofi: Shift-Left                  # Switch to the previous mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-Tab                    # Switch to the next mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-Shift-Tab              # Switch to the previous mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-space                  # Set selected item as input text.
-rofi: Shift-Del                   # Delete entry from history.
-rofi: grave                       # Toggle case sensitivity.
-rofi: Alt-grave                   # Toggle sorting.
-rofi: Alt-Shift-S                 # Take a screenshot and store it in the Pictures directory.
+rofi: Ctrl-Alt-h                      # Delete previous word
+rofi: Ctrl-j,Ctrl-m,Enter             # Accept entry
+rofi: Ctrl-n,Down                     # Select next entry
+rofi: Ctrl-p,Up                       # Select previous entry
+rofi: Page Up                         # Go to previous page
+rofi: Page Down                       # Go to next page
+rofi: Ctrl-Page Up                    # Go to previous column
+rofi: Ctrl-Page Down                  # Go to next column
+rofi: Ctrl-Enter                      # Use entered text as a command (in ssh/run modi)
+rofi: Shift-Enter                     # Launch the application in a terminal (in run mode)
+rofi: Shift-Enter                     # Return the selected entry and move to the next item while keeping rofi open. (in dmenu)
+rofi: Shift-Right                     # Switch to the next mode. The list can be customized with the -switchers argument.
+rofi: Shift-Left                      # Switch to the previous mode. The list can be customized with the -switchers argument.
+rofi: Ctrl-Tab                        # Switch to the next mode. The list can be customized with the -switchers argument.
+rofi: Ctrl-Shift-Tab                  # Switch to the previous mode. The list can be customized with the -switchers argument.
+rofi: Ctrl-space                      # Set selected item as input text.
+rofi: Shift-Del                       # Delete entry from history.
+rofi: grave                           # Toggle case sensitivity.
+rofi: Alt-grave                       # Toggle sorting.
+rofi: Alt-Shift-S                     # Take a screenshot and store it in the Pictures directory.
+markdown: # H1                        # heading 1
+markdown: ## H2                       # heading 2
+markdown: ### H3                      # heading 3
+markdown: # H1 {#custom-id}           # heading with id
+markdown: **bold text**               # bold
+markdown: *italic text*               # italic
+markdown: > block quote               # block quote
+markdown: ~~text~~                    # strikethrough
+markdown: 1. item 2. item 3. item     # ordered/ numbered list
+markdown: - item - item - item        # unordered list
+markdown: `code`                      # inline code
+markdown: ```code```                  # code block
+markdown: ---                         # horizontal rule
+markdown: [title](url)                # link
+markdown: ![alt text](image.jpg)      # image
+markdown: - [x] task                  # task list
+markdown: sentence. [^1]              # footnote in text body
+markdown: [^1]: footnote              # footnote in footer
+markdown: term<\n>: definition        # definition
+pyenv activate [env_name]             # activate environment
+pyenv versions                        # show all python versions on this computer
+pyenv which [command]                 # show location of command in activated environment
+pyenv install [version]               # install version of python
+pyenv install -l                      # list versions available for installation
+pyenv virtualenv [version] [env_name] # create new virtualenv
+pyenv help [command]                  # show help for command
+pyenv uninstall [version]             # uninstall version
+pyenv virtualenv-delete [env_name]    # delete environment
+pyenv install -l | grep '^  3.'       # show available versions of cpython
+git commit --amend --no-edit          # add new changes to previous commit
+path: ~/.local/share/nvim/plugged     # vim plugin storage
+path: ~/.local/share/nvim/swap        # vim swap files
+nvim -startuptime startuptime.log     # create startup time log
+
+
