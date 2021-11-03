@@ -54,9 +54,10 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'mfussenegger/nvim-lint'
 
     " Git Integration
-    " Plug 'tpope/vim-fugitive'
-    " Plug 'junegunn/gv.vim'
-    " Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
+    Plug 'junegunn/gv.vim'
+    Plug 'airblade/vim-gitgutter'
 
     " Plug 'airblade/vim-rooter'
     "
@@ -214,6 +215,9 @@ nnoremap <Leader><Space> :s/\s\+$//e<CR>
 nnoremap <Leader>s :w<CR>:Startify<CR>
 nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
+nnoremap <Leader>g :Git<CR>
+nnoremap gb :GBrowse<CR>
+xnoremap gb :GBrowse<CR>
 
 set path+=**
 set wildmode=longest:full,full
@@ -251,6 +255,11 @@ let g:startify_lists = [
     \ { 'header': ['   Bookmarks'],        'type': 'bookmarks' },
     \ ]
 
+
+" -----------------------------------
+"  git integration
+" -----------------------------------
+let g:gitgutter_preview_win_floating = 0
 
 :color srcery
 
