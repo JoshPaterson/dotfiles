@@ -161,6 +161,7 @@ vim cut paste: p                      # (n) put (paste) unnamed register (") aft
 vim cut paste: gp                     # (n) put (paste) unnamed register (") after cursor and move cursor to end of pasted text
 vim cut paste: P                      # (n) put (paste) unnamed register (") before cursor
 vim cut paste: gP                     # (n) put (paste) unnamed register (") before cursor and move cursor to end of pasted text
+vim cut paste: q{register}q           # (n) clear register
 vim cut paste: dd                     # (n) delete (cut) {count} lines
 vim cut paste: d{motion}              # (n) delete (cut) from cursor to {motion}
 vim cut paste: D or d$                # (n) delete (cut) to the end of the line
@@ -192,20 +193,40 @@ vim window: :ls                       # (c) list all open buffers
 vim window: :sp file                  # (c) open a file in a new buffer and split window
 vim window: :vsp file                 # (c) open a file in a new buffer and vertically split window
 vim window: <Ctrl-wv>                 # (n) split window vertically
-vim window: <Ctrl-ws>                 # (n) split window horizontally
-vim window: <Ctrl-ww>                 # (n) switch windows
-vim window: <Ctrl-wq>                 # (n) quit a window
+vim window: <Ctrl-ws>                 # (n) split window horizontally, new window {count} lines high
+vim window: <Ctrl-w^>                 # (n) split window and edit alternate file
+vim window: <Ctrl-wf>                 # (n) split window and jump to filename under cursor
+vim window: <Ctrl-wF>                 # (n) split window and jump to filename and line number under cursor
+vim window: <Ctrl-wgf>                # (n) open new tab and jump to filename under cursor
+vim window: <Ctrl-wgF>                # (n) open new tab and jump to filename and line number under cursor
+vim window: <Ctrl-ww>                 # (n) move cursor to next window
+vim window: <Ctrl-wp>                 # (n) move cursor to previous window
+vim window: <Ctrl-wP>                 # (n) move cursor to preview window
+vim window: <Ctrl-wR>                 # (n) rotate windows up {count} times
+vim window: <Ctrl-wT>                 # (n) move current window to new tab page
+vim window: <Ctrl-wq>                 # (n) quit current window
 vim window: <Ctrl-wv>                 # (n) split window vertically
-vim window: <Ctrl-wh>                 # (n) move cursor to the left window (vertical split)
-vim window: <Ctrl-wl>                 # (n) move cursor to the right window (vertical split)
-vim window: <Ctrl-wj>                 # (n) move cursor to the window below (horizontal split)
-vim window: <Ctrl-wk>                 # (n) move cursor to the window above (horizontal split)
-vim window: <Ctrl-w=>                 # (n) make all windows equally high and wide
-vim window: <Ctrl-w+>                 # (n) make active window taller
-vim window: <Ctrl-w->                 # (n) make active window shorter
-vim window: <Ctrl-w<>                 # (n) make active window narrower
-vim window: <Ctrl-w>>                 # (n) make active window wider
-vim window: z{count}<CR>              # (n) make active window {count} lines tall
+vim window: <Ctrl-wh>                 # (n) move cursor to the left
+vim window: <Ctrl-wl>                 # (n) move cursor to the right
+vim window: <Ctrl-wj>                 # (n) move cursor down
+vim window: <Ctrl-wk>                 # (n) move cursor up
+vim window: <Ctrl-wb>                 # (n) move cursor to the bottommost window
+vim window: <Ctrl-wt>                 # (n) move cursor to the topmost window
+vim window: <Ctrl-wc>                 # (n) close current window
+vim window: <Ctrl-wo>                 # (n) close all but current window (like :only)
+vim window: <Ctrl-wd>                 # (n) split window and jump to definition under cursor
+vim window: <Ctrl-w=>                 # (n) make all windows have equal size
+vim window: <Ctrl-w_>                 # (n) make current window {count} lines tall
+vim window: <Ctrl-w|>                 # (n) make current window {count} lines wide
+vim window: <Ctrl-wH>                 # (n) move current window to far left
+vim window: <Ctrl-wJ>                 # (n) move current window to far bottom
+vim window: <Ctrl-wK>                 # (n) move current window to far top
+vim window: <Ctrl-wL>                 # (n) move current window to far right
+vim window: <Ctrl-w+>                 # (n) make current window taller
+vim window: <Ctrl-w->                 # (n) make current window shorter
+vim window: <Ctrl-w<>                 # (n) make current window narrower
+vim window: <Ctrl-w>>                 # (n) make current window wider
+vim window: z{count}<CR>              # (n) make current window {count} lines tall
 vim window: <Ctrl-Shift-+>            # (n) make text bigger, zoom in
 vim window: <Ctrl-Shift-->            # (n) make text smaller, zoom out
 vim tabs: {n}gt                       # (n) move to tab n
@@ -246,6 +267,7 @@ vim jump: :{count}                    # (n) jump to line number
 vim jump: {count}G                    # (n) jump to line number
 vim jump: gf                          # (n) jump to filename under cursor
 vim jump: gx                          # (n) opens url under cursor in browser
+vim jump: %                           # (n) jumps to matching (), [], and {}
 vim changes: :changes                 # (c) show change list
 vim changes: g;                       # (n) go to previous location in change list
 vim changes: g,                       # (n) go to next location in change list
@@ -267,7 +289,12 @@ vim: :marks                           # (c) show all marks
 vim: :ju[mps]                         # (c) show jump list
 vim: :color [theme_name]              # (c) change color theme
 vim: :normal [commands]               # (c) perform normal mode commands on range
+vim: :norm [commands]                 # (c) perform normal mode commands on range
+vim: :normal! [commands]              # (c) perform normal mode commands on range without any mappings
+vim: :{range}g/{pattern}/{command}    # (c) perform command on lines that match pattern
+vim: :{range}v/{pattern}/{command}    # (c) perform command on lines that don't match pattern (v for inverse)
 vim: :set filetype?                   # (c) show filetype of current buffer
+vim: :checkhealth                     # (c) check status of vim
 vim: <Ctrl-^>                         # (n) open alternate file
 vim range: {count}:                   # (n) becomes :.,.+{count-1} to apply command to next {count} lines
 vim range: :%                         # (c) applies to entire file
@@ -705,6 +732,8 @@ vim-fugitive navigation: gP              # jump to file in the unpulled section
 vim-fugitive navigation: gr              # jump to file in the rebasing section
 vim-fugitive navigation: gi              # open .git/info/exclude in a split
 vim-fugitive navigation: {count}gi       # open .gitignore in a split
+vim-fugitive navigation: <Ctrl-n>        # move to next filename in status buffer
+vim-fugitive navigation: <Ctrl-p>        # move to previous filename in status buffer
 vim-fugitive commit: cc                  # create commit
 vim-fugitive commit: ca                  # amend last commit and edit message
 vim-fugitive commit: ce                  # amend last commit without editing the message
@@ -1071,4 +1100,4 @@ nvim -startuptime startuptime.log     # create startup time log
 linux: groups {user}                  # list groups that {user} is part of
 linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
 linux: tail -f {file}                 # show live view of the end of a file (e.g. logs)
-
+linux: wget {url} -O {filename}       # download a file and specify new name
