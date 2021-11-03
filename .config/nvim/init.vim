@@ -29,11 +29,11 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'metakirby5/codi.vim'
+    Plug 'Yggdroot/indentLine'
 
     " Snippets
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
-    " Plug 'sudar/vim-arduino-snippets'
 
     " Completion
     Plug 'neovim/nvim-lspconfig'
@@ -65,6 +65,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'alvan/vim-closetag'
     " Plug 'ap/vim-css-color'
     "
+    " Plug 'mfussenegger/nvim-lint'
     " Plug 'kshenoy/vim-signature' " show marks in gutter
     " Plug 'preservim/tagbar'
     " Plug 'wfxr/minimap.vim'
@@ -85,17 +86,15 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'kana/vim-arpeggio'
     " Plug 'dhruvasagar/vim-table-mode'
     " Plug 'Machakann/vim-highlightedyank'
-    " Plug 'Yggdroot/indentLine'
     " Plug 'wincent/scalpel'
     " Plug 'gyim/vim-boxdraw'
-    " Plug 'ervandew/supertab'
     " Plug 'nvim-lualine/lualine.nvim'
     " Plug 'dstein64/vim-startuptime'
-    " Plug 'lukas-reineke/cmp-under-comparator'
     " Plug 'numToStr/Comment.nvim'
     " Plug 'vim-test/vim-test'
     " Plug 'onsails/diaglist.nvim'
     " Plug 'tpope/vim-speeddating'
+    " Plug 'godlygeek/tabular'
     "
     " Toggle booleans
     " Plug 'sagarrakshe/toggle-bool'
