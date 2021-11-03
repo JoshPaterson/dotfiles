@@ -49,11 +49,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'ray-x/cmp-treesitter'
     Plug 'quangnguyen30192/cmp-nvim-tags'
     Plug 'lukas-reineke/cmp-under-comparator'
-    " Plug 'kdheepak/cmp-latex-symbols'
-    " Plug 'hrsh7th/cmp-emoji'
-    " see issue #93
     Plug 'ray-x/lsp_signature.nvim'
-    Plug 'mfussenegger/nvim-lint'
 
     " Git Integration
     Plug 'tpope/vim-fugitive'
@@ -105,17 +101,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'AndrewRadev/switch.vim'
     " vim.org/scripts/script.php?script_id=895
     call plug#end()
-
-
-" nvim-lint
-lua <<EOF
-require('lint').linters_by_ft = {
-  markdown = {'vale'},
-  python = {'flake8','pylint'},
-  lua = {'luacheck'},
-}
-EOF
-au BufWritePost <buffer> lua require('lint').try_lint()
 
 
 " ----------------------------------
