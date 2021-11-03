@@ -223,7 +223,8 @@ nnoremap <Leader><Space> :s/\s\+$//e<CR>
 nnoremap <Leader>s :w<CR>:Startify<CR>
 nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
-nnoremap <Leader>g :Git<CR>
+nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gpo :Git push origin main<CR>
 nnoremap gb :GBrowse<CR>
 xnoremap gb :GBrowse<CR>
 nnoremap <Leader>u :UndotreeToggle<CR>
