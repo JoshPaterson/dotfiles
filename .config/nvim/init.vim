@@ -208,6 +208,7 @@ xnoremap gb :GBrowse<CR>
 
 set path+=**
 set wildmode=longest:full,full
+set updatetime=500
 
 set pyxversion=3
 
