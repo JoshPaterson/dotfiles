@@ -223,6 +223,8 @@ nnoremap <Leader><Space> :s/\s\+$//e<CR>
 nnoremap <Leader>s :w<CR>:Startify<CR>
 nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
+
+" Git mappings
 nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gpo :Git push origin main<CR>
 nnoremap gb :GBrowse<CR>
