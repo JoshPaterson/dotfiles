@@ -10,6 +10,8 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Commands
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
+        " Plug 'preservim/nerdcommenter'
+        " Plug 'numToStr/Comment.nvim'
     Plug 'tpope/vim-unimpaired'
 
     " Text Objects
@@ -17,6 +19,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'kana/vim-textobj-line'
     Plug 'kana/vim-textobj-entire'
     Plug 'michaeljsmith/vim-indent-object'
+    " Plug 'cim-textobj-python'
     " Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     " Plug 'vim-scripts/argtextobj.vim'
     " Plug 'hgiesel/vim-motion-sickness'
@@ -33,7 +36,11 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'metakirby5/codi.vim'
     Plug 'Yggdroot/indentLine'
     Plug 'mbbill/undotree'
+        " Plug 'gundo'
+        " Plug 'mundo'
     Plug '907th/vim-auto-save'
+    " vim-man for opening man pages in split
+    " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -58,16 +65,30 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'airblade/vim-gitgutter'
+    " Plug 'tommcdo/vim-fugitive-blame-ext'
 
     Plug 'vim-airline/vim-airline'
+        " Plug 'nvim-lualine/lualine.nvim'
     " Plug 'airblade/vim-rooter'
     "
     " Web Development
     " Plug 'mattn/emmet-vim'
     " Plug 'alvan/vim-closetag'
     " Plug 'ap/vim-css-color'
+    " Plug 'Glench/Vim-Jinja2-Syntax'
     "
+    " Improve searching
+    " Plug 'haya14busais.vim'
+    " Plug 'haya14busa/vim-asterisk'
+    " Plug 'osyo-manga/vim-anzu'
+    "
+    " Plug 'vim-devicons'
+    " Plug 'coveragepy.vim'
+    " Plug 'vim-unstack' " opens all levels of stack trace into splits
+    " Plug 'vim-accordion' " makes all vertical splits 1 column wide except one
+    " Plug 'narrwrgn' " moves part of file to new buffer for editing, then writes to original
     " Plug 'mfussenegger/nvim-lint'
+    " Plug 'stefandtw/quickfix-reflector.vim'
     " Plug 'kshenoy/vim-signature' " show marks in gutter
     " Plug 'preservim/tagbar'
     " Plug 'wfxr/minimap.vim'
@@ -90,18 +111,16 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'Machakann/vim-highlightedyank'
     " Plug 'wincent/scalpel'
     " Plug 'gyim/vim-boxdraw'
-    " Plug 'nvim-lualine/lualine.nvim'
     " Plug 'dstein64/vim-startuptime'
-    " Plug 'numToStr/Comment.nvim'
     " Plug 'vim-test/vim-test'
     " Plug 'onsails/diaglist.nvim'
     " Plug 'tpope/vim-speeddating'
     " Plug 'godlygeek/tabular'
     "
     " Toggle booleans
+    " Plug 'AndrewRadev/switch.vim' also toggles true/false, others
     " Plug 'sagarrakshe/toggle-bool'
     " Plug 'zef/vim-cycle'
-    " Plug 'AndrewRadev/switch.vim'
     " vim.org/scripts/script.php?script_id=895
     call plug#end()
 
