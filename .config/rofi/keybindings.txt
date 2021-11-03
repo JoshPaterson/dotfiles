@@ -40,9 +40,9 @@ vim move: fx                          # (n) jump to next occurrence of character
 vim move: tx                          # (n) jump to before next occurrence of character x
 vim move: }                           # (n) jump to next paragraph (or function/block, when editing code)
 vim move: {                           # (n) jump to previous paragraph (or function/block, when editing code)
-vim move: zz                          # (n) move cursor to center of screen
-vim move: zt                          # (n) move cursor to top of screen
-vim move: zb                          # (n) move cursor to bottom of screen
+vim move: zz                          # (n) scroll so cursor is in center of screen
+vim move: zt                          # (n) scroll so cursor is at top of screen
+vim move: zb                          # (n) scroll so cursor is at bottom of screen
 vim move: <Ctrl-b>                    # (n) scroll back {count} full screens
 vim move: <Ctrl-f>                    # (n) scroll forward {count} full screens
 vim move: <Ctrl-d>                    # (n) scroll forward {count} half screens
@@ -92,56 +92,50 @@ vim edit: <Ctrl-r>                    # (n) redo
 vim edit: <Ctrl-a>                    # (n) add {count} to the next number in the line
 vim edit: <Ctrl-x>                    # (n) subtract {count} from the next number
 vim edit: g<Ctrl-a>                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
-vim: <Ctrl-c>                         # (n) interrupt current command (same as <Esc>) (reuse?)
+vim edit: gq{motion}                  # (n) format paragraph with par
+vim edit: gqq                         # (n) format line with par
+vim: <Ctrl-c>                         # (n) interrupt current command (same as <Esc>)
 vim: <Ctrl-g>                         # (n) prints file name as typed, cursor position, file status
 vim: 1<Ctrl-g>                        # (n) prints full file path, cursor position, file status
 vim: 2<Ctrl-g>                        # (n) prints buffer number, full file path, cursor position, file status
 vim: g<Ctrl-g>                        # (n) prints cursor position: column, line, word, character, and byte
-vim: <Ctrl-h>                         # (n) move {count} characters left (same as h) (reuse?)
-vim: <Ctrl-j>                         # (n) move cursor down {count} lines (same as plain j) (reuse?)
-vim: <Ctrl-k>                         # (n) nothing (reuse?)
+vim: <Ctrl-h>                         # (n) move {count} characters left (same as h)
+vim: <Ctrl-j>                         # (n) move cursor down {count} lines (same as plain j)
 vim: <Ctrl-l>                         # (n) redraw screen
 vim: <Ctrl-m>                         # (n) move {count} lines down to first non blank character
-vim: <Ctrl-n>                         # (n) move {count} lines down (same as plain j) (reuse?)
-vim: <Ctrl-p>                         # (n) move {count} lines up (same as plain k) (reuse?)
-vim: <Ctrl-q>                         # (n) start visual block mode (same as <C-v>) (reuse?)
-vim: <Ctrl-s>                         # (n) nothing (reuse?)
+vim: <Ctrl-n>                         # (n) move {count} lines down (same as plain j)
+vim: <Ctrl-p>                         # (n) move {count} lines up (same as plain k)
+vim: <Ctrl-q>                         # (n) start visual block mode (same as <C-v>)
 vim: <Ctrl-t>                         # (n) jump to {count} older entry in tag stack
 vim: <Ctrl-z>                         # (n) suspend nvim
 vim insert: :h ins-special-keys       # (c) show help for control keys in insert mode
 vim insert: <Ctrl-a>                  # (i) insert previously inserted text
-vim insert: <Ctrl-b>                  # (i) nothing (reuse?)
 vim insert: <Ctrl-c>                  # (i) quit insert mode
 vim insert: <Ctrl-d>                  # (i) remove tab at beginning of line
 vim insert: 0<Ctrl-d>                 # (i) remove all indent from current line
 vim insert: ^<Ctrl-d>                 # (i) remove all indent from current line, indent restored for next line
 vim insert: <Ctrl-e>                  # (i) insert character from below cursor
-vim insert: <Ctrl-f>                  # (i) nothing (reuse?)
 vim insert: <Ctrl-g>j                 # (i) move cursor down {count} lines, stay in insert mode
 vim insert: <Ctrl-g>k                 # (i) move cursor up {count} lines, stay in insert mode
-vim insert: <Ctrl-h>                  # (i) delete character before the cursor (same as <BS>) (reuse?)
-vim insert: <Ctrl-i>                  # (i) insert a tab (same as <Tab>) (reuse?)
-vim insert: <Ctrl-j>                  # (i) begin new line (same as <CR>) (reuse?)
+vim insert: <Ctrl-h>                  # (i) delete character before the cursor (same as <BS>)
+vim insert: <Ctrl-i>                  # (i) insert a tab (same as <Tab>)
+vim insert: <Ctrl-j>                  # (i) begin new line (same as <CR>)
 vim insert: <Ctrl-k>                  # (i) begin digraph entry
-vim insert: <Ctrl-l>                  # (i) nothing (reuse?)
-vim insert: <Ctrl-m>                  # (i) nothing (reuse?)
 vim insert: <Ctrl-n>                  # (i) find next location from last search
 vim insert: <Ctrl-o>                  # (i) go to insert-normal mode
 vim insert: <Ctrl-p>                  # (i) find previous location from last search
-vim insert: <Ctrl-q>                  # (i) insert next non-digit literally (same as ctrl-v) (reuse?)
+vim insert: <Ctrl-q>                  # (i) insert next non-digit literally (same as ctrl-v)
 vim insert: <Ctrl-r>{register}        # (i) paste from register in insert mode
 vim insert: <Ctrl-r>+                 # (i) paste from X11 system clipboard in insert mode
 vim insert: <C-r><C-r>{register}      # (i) paste contents of register literally
 vim insert: <C-r><C-o>{register}      # (i) paste contents of register literally, don't auto-indent
 vim insert: <C-r><C-p>{register}      # (i) paste contents of register literally and fix indent
-vim insert: <Ctrl-s>                  # (i) nothing (reuse?)
 vim insert: <Ctrl-t>                  # (i) insert tab at beginning of line
 vim insert: <Ctrl-u>                  # (i) delete all newly entered characters before the cursor
 vim insert: <Ctrl-v>                  # (i) insert next non-digit literally
 vim insert: <Ctrl-w>                  # (i) delete word before the cursor
 vim insert: <Ctrl-x>                  # (i) enter Ctrl-x mode (completion)
 vim insert: <Ctrl-y>                  # (i) insert character from above cursor
-vim insert: <Ctrl-z>                  # (i) nothing (reuse?)
 vim insert: <Ctrl-@>                  # (i) insert previously inserted text and leave insert mode
 vim insert: <Ctrl-_>                  # (i) switch languages (e.g. English to Hebrew)
 vim insert: <Ctrl-^>                  # (i) toggle use of typing language characters
@@ -273,6 +267,7 @@ vim: :marks                           # (c) show all marks
 vim: :ju[mps]                         # (c) show jump list
 vim: :color [theme_name]              # (c) change color theme
 vim: :normal [commands]               # (c) perform normal mode commands on range
+vim: :set filetype?                   # (c) show filetype of current buffer
 vim: <Ctrl-^>                         # (n) open alternate file
 vim range: {count}:                   # (n) becomes :.,.+{count-1} to apply command to next {count} lines
 vim range: :%                         # (c) applies to entire file
@@ -351,7 +346,7 @@ vim-unimpaired: [os ]os yos           # (n) on, off, & toggle spell
 vim-unimpaired: [ou ]ou you           # (n) on, off, & toggle cursorcolumn
 vim-unimpaired: [ov ]ov yov           # (n) on, off, & toggle virtualedit
 vim-unimpaired: [ow ]ow yow           # (n) on, off, & toggle wrap
-vim-unimpaired: [ox ]ox yox           # (n) on, off, & toggle cursorline and cursorcolumn
+vim-unimpaired: [ox ]ox yox           # (n) on, off, & toggle cursorline and cursorcolumn (cross)
 vim-unimpaired: [x{motion}            # (n) XML encode
 vim-unimpaired: [xx                   # (n) XML encode current line
 vim-unimpaired: ]x{motion}            # (n) XML decode
@@ -374,11 +369,13 @@ vim-plug: :PlugStatus                 # (c) check status of plugins
 vim-plug: :PlugDiff                   # (c) show changes from last update and pending changes
 vim-plug: :PlugSnapshot [output path] # (c) generate script for restoring current plugins
 vim-cmp: :CmpStatus                   # (c) show status of nvim-cmp
-vim-cmp: <Ctrl-j>                     # (i) move cursor down in menu
-vim-cmp: <Ctrl-k>                     # (i) move cursor up in menu
-vim-cmp: <Ctrl-Space>                 # (n) manual completion
-vim-cmp: <Ctrl-Space>                 # (i) choose menu item
-vim-cmp: <Ctrl-q>                     # (i) close completion menu
+vim-cmp: <Ctrl-h>                     # (i) (custom) move to previous location in snippet
+vim-cmp: <Ctrl-j>                     # (i) (custom) move cursor down in menu
+vim-cmp: <Ctrl-k>                     # (i) (custom) move cursor up in menu
+vim-cmp: <Ctrl-l>                     # (i) (custom) move to next location in snippet
+vim-cmp: <Ctrl-Space>                 # (n) (custom) manual completion
+vim-cmp: <Ctrl-Space>                 # (i) (custom) choose menu item
+vim-cmp: <Ctrl-q>                     # (i) (custom) close completion menu
 vimwiki: <Lead>ww                     # (n) open wiki index
 vimwiki: <Lead>wt                     # (n) open wiki index in new tab
 vimwiki: <Lead>ws                     # (n) list and select available wikis
@@ -667,29 +664,150 @@ vim codi: :Codi!                      # (c) stop codi for current buffer
 vim codi: :Codi!!                     # (c) toggle codi for current buffer
 vim codi custom: <Lead>c              # (n) toggle codi for current buffer
 vim loupe: <Lead>n                    # (n) turn off search highlighting
-vim: <Lead-a>                         # (n) nothing (reuse?)
-vim: <Lead-b>                         # (n) nothing (reuse?)
-vim: <Lead-d>                         # (n) nothing (reuse?)
-vim: <Lead-e>                         # (n) nothing (reuse?)
-vim: <Lead-f>                         # (n) nothing (reuse?)
-vim: <Lead-g>                         # (n) nothing (reuse?)
-vim: <Lead-h>                         # (n) nothing (reuse?)
-vim: <Lead-i>                         # (n) nothing (reuse?)
-vim: <Lead-j>                         # (n) nothing (reuse?)
-vim: <Lead-k>                         # (n) nothing (reuse?)
-vim: <Lead-l>                         # (n) nothing (reuse?)
-vim: <Lead-m>                         # (n) nothing (reuse?)
-vim: <Lead-o>                         # (n) nothing (reuse?)
-vim: <Lead-p>                         # (n) nothing (reuse?)
-vim: <Lead-q>                         # (n) nothing (reuse?)
-vim: <Lead-r>                         # (n) nothing (reuse?)
-vim: <Lead-t>                         # (n) nothing (reuse?)
-vim: <Lead-u>                         # (n) nothing (reuse?)
-vim: <Lead-v>                         # (n) nothing (reuse?)
-vim: <Lead-w>                         # (n) starts most vimwiki commands
-vim: <Lead-x>                         # (n) nothing (reuse?)
-vim: <Lead-y>                         # (n) nothing (reuse?)
-vim: <Lead-z>                         # (n) nothing (reuse?)
+vim-fugitive stage: s                  # stage file or hunk under cursor
+vim-fugitive stage: u                  # unstage the file or hunk under the cursor
+vim-fugitive stage: -                  # stage or unstage the file or hunk under the cursor
+vim-fugitive stage: U                  # unstage everything
+vim-fugitive stage: x                  # discard change under cursor
+vim-fugitive stage: =                  # toggle inline diff of file under cursor
+vim-fugitive stage: >                  # insert inline diff of file under cursor
+vim-fugitive stage: <                  # remove inline diff of file under cursor
+vim-fugitive stage: gI                 # open .git/info/exclude in a split and add file under cursor
+vim-fugitive stage: {count}gI          # open .gitignore
+vim-fugitive stage: I or P             # prompt to stage hunks in file (git add --patch)
+vim-fugitive diff: dd                    # open a diff with split in default direction
+vim-fugitive diff: dv                    # open a diff with vertical split
+vim-fugitive diff: ds or dh              # open a diff with horizontal split
+vim-fugitive diff: dq                    # close all but one diff buffer, and turn off diff mode
+vim-fugitive navigation: <CR>            # open file under cursor
+vim-fugitive navigation: o               # open file under cursor in new split
+vim-fugitive navigation: gO              # open file under cursor in new vertical split
+vim-fugitive navigation: O               # open file under cursor in new tab
+vim-fugitive navigation: p               # open file under cursor in preview window (try 1p in status buffer)
+vim-fugitive navigation: -               # open current file in {count}th first ancestor
+vim-fugitive navigation: P               # open current file in {count}th parent
+vim-fugitive navigation: C               # open the commit containing the current file
+vim-fugitive navigation: ( or )          # jump to previous or next file, hunk, or revision
+vim-fugitive navigation: ]c or [c        # jump to next or previous {count} hunk
+vim-fugitive navigation: [/ or [m        # jump to previous file, collapsing inline diffs automatically
+vim-fugitive navigation: ]/ or ]m        # jump to next file, collapsing inline diffs
+vim-fugitive navigation: i               # jump to next file or hunk expanding inline diffs
+vim-fugitive navigation: ]] or [[        # jump to next or previous {count} section
+vim-fugitive navigation: []              # jump {count} section ends backward
+vim-fugitive navigation: ][              # jump {count} section ends forward
+vim-fugitive navigation: *               # search forward from first column of + or - line for corresponding line
+vim-fugitive navigation: #               # search backward from first column of + or - line for corresponding line
+vim-fugitive navigation: gu              # jump to file in the untracked or unstaged section
+vim-fugitive navigation: gU              # jump to file in the unstaged section
+vim-fugitive navigation: gs              # jump to file in the staged section
+vim-fugitive navigation: gp              # jump to file in the unpushed section
+vim-fugitive navigation: gP              # jump to file in the unpulled section
+vim-fugitive navigation: gr              # jump to file in the rebasing section
+vim-fugitive navigation: gi              # open .git/info/exclude in a split
+vim-fugitive navigation: {count}gi       # open .gitignore in a split
+vim-fugitive commit: cc                  # create commit
+vim-fugitive commit: ca                  # amend last commit and edit message
+vim-fugitive commit: ce                  # amend last commit without editing the message
+vim-fugitive commit: cw                  # reword the last commit message
+vim-fugitive commit: cvc                 # create commit with -v (verbose)
+vim-fugitive commit: cva                 # amend the last commit with -v (verbose)
+vim-fugitive commit: cf                  # create a fixup commit for the commit under the cursor
+vim-fugitive commit: cF                  # create a fixup commit for the commit under the cursor and immediately rebase it
+vim-fugitive commit: cs                  # create a squash commit for the commit under the cursor
+vim-fugitive commit: cS                  # create a squash commit for the commit under the cursor and immediately rebase it
+vim-fugitive commit: cA                  # create a squash commit for the commit under the cursor and edit the message
+vim-fugitive commit: c<Space>            # populate command line with ":Git commit "
+vim-fugitive commit: crc                 # revert commit under cursor (commiting changes)
+vim-fugitive commit: crn                 # revert commit under cursor in index and work tree but don't commit changes
+vim-fugitive commit: cr<Space>           # populate command line with ":Git revert "
+vim-fugitive commit: cm<Space>           # populate command line with ":Git merge "
+vim-fugitive checkout/branch: coo        # checkout commit under cursor
+vim-fugitive checkout/branch: cb<Space>  # populate command line with ":Git branch "
+vim-fugitive checkout/branch: co<Space>  # populate command line with ":Git checkout "
+vim-fugitive checkout/branch: cb? or co? # show checkout/branch help
+vim-fugitive stash: czz                  # push stash
+vim-fugitive stash: 1czz                 # push stash --include-untracked
+vim-fugitive stash: 2czz                 # push stash --all
+vim-fugitive stash: czw                  # push stash of worktree (like czz with --keep-index)
+vim-fugitive stash: czA                  # apply topmost stash or stash@{count}
+vim-fugitive stash: cza                  # apply topmost stash or stash@{count}, preserving the index
+vim-fugitive stash: czP                  # pop typmost stash or stash@{count}
+vim-fugitive stash: czp                  # pop typmost stash or stash@{count}, preserving the index
+vim-fugitive stash: cz<Space>            # populate command line with ":Git stash "
+vim-fugitive rebase: ri or u             # interactive rebase using ancester of commit under cursor as upstream
+vim-fugitive rebase: rf                  # autosquash rebase without editing todo list, use ancestor of commit under cursor as upstream
+vim-fugitive rebase: ru                  # interactive rebase against @{upstream}
+vim-fugitive rebase: rp                  # interactive rebase against @{push}
+vim-fugitive rebase: rr                  # continue the current rebase
+vim-fugitive rebase: rs                  # skip the current commit and continue the current rebase
+vim-fugitive rebase: ra                  # abort the current rebase
+vim-fugitive rebase: re                  # edit the current rebase todo list
+vim-fugitive rebase: rw                  # interactive rebase with the commit under the cursor set to `reword`
+vim-fugitive rebase: rm                  # interactive rebase with the commit under the cursor set to `edit`
+vim-fugitive rebase: rd                  # interactive rebase with the commit under the cursor set to `drop`
+vim-fugitive rebase: r<Space>            # populate command line with ":Git rebase "
+vim-fugitive blame: A                    # resize to end of author column
+vim-fugitive blame: C                    # resize to end of commit column
+vim-fugitive blame: D                    # resize to end of date/time column
+vim-fugitive blame: gq                   # close blame
+vim-fugitive blame: <CR>                 # close blame and jump to patch that added line (or to blob for boundary commit)
+vim-fugitive blame: o                    # jump to patch or blob in horizontal split
+vim-fugitive blame: O                    # jump to patch or blob in new tab
+vim-fugitive blame: p                    # jump to patch or blob in preview window
+vim-fugitive blame: -                    # reblame at commit
+vim-fugitive blame: ~                    # reblame at {count}th first grandparent
+vim-fugitive blame: P                    # reblame at {count}th parent (like HEAD^{count})
+vim-fugitive: :G                         # (c) open status buffer
+vim-fugitive: <Lead>g                    # (custom) open status buffer (:Git or :G)
+vim-fugitive: :GEdit                     # (c) return to work tree version of file
+vim-fugitive: gq                         # close status buffer
+vim-fugitive: .                          # populate command line with the file under the cursor
+vim-fugitive: <Ctrl-r><Ctrl-g>           # (c) recall path to current fugitive object
+vim-fugitive: "{register}y<Ctrl-g>       # yank path to current fugitive object
+vim-fugitive object: @                   # (c) commit referenced by @ aka HEAD
+vim-fugitive object: main                # (c) commit referenced by main
+vim-fugitive object: main^               # (c) parent of commit referenced by main
+vim-fugitive object: main...other        # (c) merge base of main and other
+vim-fugitive object: main:               # (c) tree referenced by main
+vim-fugitive object: ./main              # (c) file named main in working directory
+vim-fugitive object: :(top)main          # (c) file named main in the work tree
+vim-fugitive object: Makefile            # (c) file named Makefile in the work tree
+vim-fugitive object: @^:Makefile         # (c) file named Makefile in the parent of HEAD
+vim-fugitive object: :Makefile           # (c) file named Makefile in the index (writeable)
+vim-fugitive object: @~2:%               # (c) current file in the grandparent of head
+vim-fugitive object: :%                  # (c) current file in the index
+vim-fugitive object: :1:%                # (c) current file's common ancestor during a conflict
+vim-fugitive object: :2:#                # (c) alternate file in the target branch during a conflict
+vim-fugitive object: :3:#5               # (c) file from buffer #5 in the merged branch during a conflict
+vim-fugitive object: !                   # (c) commit owning the current file
+vim-fugitive object: !:Makefile          # (c) file named Makefile in the commit owning the current file
+vim-fugitive object: !3^2                # (c) second parent of the commit owning buffer #3
+vim-fugitive object: .git/config         # (c) repo config file
+vim-fugitive object: :                   # (c) fugitive summary buffer
+vim-fugitive object: -                   # (c) temp file containing the last :Git invocations output
+vim-fugitive object: <cfile>             # (c) file or commit under the cursor
+vim-rhubarb: gb                          # (n) open current file on github
+vim-rhubarb: gb                          # (v) open current file on github with lines selected
+vim-rhubarb: <Ctrl-x><Ctrl-o>            # starts completion of github issue and pull request numbers and usernames
+vim-gitgutter: <Lead>hp               # preview hunk under cursor
+vim-gitgutter: <Lead>hs               # stage hunk under cursor
+vim-gitgutter: <Lead>hu               # undo the hunk under the cursor
+vim-gitgutter: ]c or [c               # jump to the next or previous {count} hunk
+vim-gitgutter: ic                     # (object) current hunk's lines
+vim-gitgutter: ac                     # (object) current hunk's lines and trailing blank lines
+vim gv: :GV                           # (c) open commit browser
+vim gv: v:GV                          # (c) open commit browser with changes affecting selected lines
+vim gv: :GV!                          # (c) open commit browser with commits affecting current file
+vim gv: v:GV!                         # (c) open commit browser with commits affecting selected lines
+vim gv: :GV?                          # (c) fills location list with revisions of current file
+vim gv commit browser: o or <CR>      # display contents of a diff
+vim gv commit browser: vo or v<CR>    # display diff between selected commits
+vim gv commit browser: O              # display contents of a diff in new tab
+vim gv commit browser: vO             # display diff between selected commits in new tab
+vim gv commit browser: gb             # open commit on github
+vim gv commit browser: [[ ]]          # move between commits
+vim gv commit browser: .              # populate command line with ":Git {cursor} {commit SHA}"
+vim gv commit browser: q or gq        # close
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
 ranger bookmarks: ' or `              # go to a bookmark
@@ -950,5 +1068,7 @@ git commit --amend --no-edit          # add new changes to previous commit
 path: ~/.local/share/nvim/plugged     # vim plugin storage
 path: ~/.local/share/nvim/swap        # vim swap files
 nvim -startuptime startuptime.log     # create startup time log
-
+linux: groups {user}                  # list groups that {user} is part of
+linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
+linux: tail -f {file}                 # show live view of the end of a file (e.g. logs)
 
