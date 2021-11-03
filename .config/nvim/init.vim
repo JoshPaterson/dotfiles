@@ -32,6 +32,8 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'junegunn/fzf.vim'
     Plug 'metakirby5/codi.vim'
     Plug 'Yggdroot/indentLine'
+    Plug 'mbbill/undotree'
+    Plug '907th/vim-auto-save'
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -205,6 +207,7 @@ nnoremap Y y$
 nnoremap <Leader>g :Git<CR>
 nnoremap gb :GBrowse<CR>
 xnoremap gb :GBrowse<CR>
+nnoremap <Leader>u :UndotreeToggle<CR>
 
 set path+=**
 set wildmode=longest:full,full
@@ -218,6 +221,7 @@ set nomodeline
 
 set formatprg=par
 
+let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " ----------------------------------
 "  startify
