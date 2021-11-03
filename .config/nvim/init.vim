@@ -269,11 +269,6 @@ let g:startify_lists = [
     \ ]
 
 
-" -----------------------------------
-"  git integration
-" -----------------------------------
-let g:gitgutter_preview_win_floating = 0
-
 :color srcery
 
 
