@@ -216,6 +216,8 @@ set pyxversion=3
 " interpreted as commands
 set nomodeline
 
+set formatprg=par
+
 
 " ----------------------------------
 "  startify
