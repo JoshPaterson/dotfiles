@@ -54,6 +54,11 @@ keys = [
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
     Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
+
+    # wiki.archlinux.org/tile/Qtile
+    Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse sset Master toggle')),
+    Key([], "XF86AudioLowerVolume", lazy.spawn('amixer -D pulse sset Master 5%-')),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn('amixer -D pulse sset Master 5%+')),
 ]
 
 groups = [Group(i) for i in '123456789']
@@ -109,7 +114,15 @@ screens = [
                 ),
                 widget.Systray(),
                 widget.Clock(format='%a %b %-d %H:%M'),
-                widget.Volume(),
+
+                # volume commands: askubuntu.com/questions/454955/using-amixer-to-control-volume
+                # add user to audio group per wiki.archlinux.org/title/Qtile
+                widget.Volume(
+                    get_volume_command='amixer -D pulse sget Master',
+                    volume_up_command='amixer -D pulse sset Master 5%+',
+                    volume_down_command='amixer -D pulse sset Master 5%-',
+                    mute_command='amixer -D pulse sset Master toggle',
+                    ),
                 widget.Wlan(),
             ],
             48,
