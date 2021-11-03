@@ -1,5 +1,7 @@
 call plug#begin("~/.local/share/nvim/plugged")
+    " Colors
     Plug 'srcery-colors/srcery-vim'
+
     " Better Settings
     Plug 'wincent/loupe'
     Plug 'tpope/vim-sensible'
