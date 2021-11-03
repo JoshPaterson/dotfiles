@@ -57,6 +57,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'junegunn/gv.vim'
     Plug 'airblade/vim-gitgutter'
 
+    Plug 'vim-airline/vim-airline'
     " Plug 'airblade/vim-rooter'
     "
     " Web Development
