@@ -26,8 +26,8 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Features
     Plug 'vimwiki/vimwiki'
     Plug 'mhinz/vim-startify'
-    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    " Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'metakirby5/codi.vim'
 
     " Snippets
