@@ -213,6 +213,7 @@ vim window: <Ctrl-wk>                 # (n) move cursor up
 vim window: <Ctrl-wb>                 # (n) move cursor to the bottommost window
 vim window: <Ctrl-wt>                 # (n) move cursor to the topmost window
 vim window: <Ctrl-wc>                 # (n) close current window
+vim window: <Ctrl-wz>                 # (n) close preview window
 vim window: <Ctrl-wo>                 # (n) close all but current window (like :only)
 vim window: <Ctrl-wd>                 # (n) split window and jump to definition under cursor
 vim window: <Ctrl-w=>                 # (n) make all windows have equal size
