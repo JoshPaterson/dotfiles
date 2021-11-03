@@ -34,7 +34,7 @@ keys = [
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, 'shift'], 'Return', lazy.layout.toggle_split(), 
+    Key([mod, 'shift'], 'Return', lazy.layout.toggle_split(),
         desc='Toggle between split and unsplit sides of stack'),
 
     # Toggle between different layouts as defined below
@@ -44,7 +44,7 @@ keys = [
     # Start & Shutdown qtile
     Key([mod, 'control'], 'r', lazy.restart(), desc='Restart Qtile'),
     Key([mod, 'control'], 'q', lazy.shutdown(), desc='Shutdown Qtile'),
-    
+
     # Program launch bindings
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
