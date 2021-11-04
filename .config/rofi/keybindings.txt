@@ -838,6 +838,31 @@ vim gv commit browser: gb             # open commit on github
 vim gv commit browser: [[ ]]          # move between commits
 vim gv commit browser: .              # populate command line with ":Git {cursor} {commit SHA}"
 vim gv commit browser: q or gq        # close
+vim-eunuch: :Delete                   # unload buffer, delete from buffer list, delete from disk (fails if file was changed)
+vim-eunuch: :Delete!                  # unload buffer, delete from buffer list, delete from disk
+vim-eunuch: :Unlink or :Remove        # delete file from disk, reload buffer
+vim-eunuch: :Unlink! or :Remove!      # delete file from disk, reload buffer, discard unsaved changes
+vim-eunuch: :Move {file}              # save as new name and delete old file (fails if file exists)
+vim-eunuch: :Move! {file}             # save as new name and delete old file
+vim-eunuch: :Rename {file}            # save as new name relative to containing directory and delete old file (fails if file exists)
+vim-eunuch: :Rename! {file}           # save as new name relative to containing directory and delete old file
+vim-eunuch: :Chmod {Mode}             # change permissions of current file
+vim-eunuch: :Mkdir                    # create current buffer's directory if it doesn't exist
+vim-eunuch: :Mkdir {dir}              # create directory
+vim-eunuch: :Mkdir!                   # create current buffer's directory (and intermediate dirs) if it doesn't exist
+vim-eunuch: :Mkdir! {dir}             # create directory and intermediate dirs
+vim-eunuch: :Cfind {args}             # run find and load results into quickfix list, jump to first result
+vim-eunuch: :Cfind! {args}            # run find and load results into quickfix list, don't jump to first result
+vim-eunuch: :Lfind {args}             # run find and load results into location list, jump to first result
+vim-eunuch: :Lfind! {args}            # run find and load results into location list, don't jump to first result
+vim-eunuch: :Clocate {args}             # run locate and load results into quickfix list, jump to first result
+vim-eunuch: :Clocate! {args}            # run locate and load results into quickfix list, don't jump to first result
+vim-eunuch: :Llocate {args}             # run locate and load results into location list, jump to first result
+vim-eunuch: :Llocate! {args}            # run locate and load results into location list, don't jump to first result
+vim-eunuch: :SudoEdit                 # edit (open) current file using sudo
+vim-eunuch: :SudoEdit {file}          # edit (open) {file} using sudo
+vim-eunuch: :SudoWrite                # write current file to disk using sudo
+vim-eunuch: :Wall or :W               # write all windows, even unchanged
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
 ranger bookmarks: ' or `              # go to a bookmark

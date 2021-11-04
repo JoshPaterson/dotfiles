@@ -41,6 +41,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug '907th/vim-auto-save'
     " vim-man for opening man pages in split
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
+    Plug 'tpope/vim-eunuch'
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -95,7 +96,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'szw/vim-maximizer'
     " Plug 'puremourning/vimspector'
     " Plug 'junegunn/vim-easy-align'
-    " Plug 'tpope/vim-eunuch'
     " Plug 'junegunn/vim-peekaboo'
     " Plug 'vim-scripts/vim-auto-save'
     " Plug 'vim-scripts/ReplaceWithRegister'
