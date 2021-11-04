@@ -1129,3 +1129,19 @@ linux: groups {user}                  # list groups that {user} is part of
 linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
 linux: tail -f {file}                 # show live view of the end of a file (e.g. logs)
 linux: wget {url} -O {filename}       # download a file and specify new name
+linux: man 0 {command}                # header files
+linux: man 0p {command}               # header files (POSIX)
+linux: man 1 {command}                # executable programs or shell commands
+linux: man 1p {command}               # executable programs or shell commands (POSIX)
+linux: man 2 {command}                # system calls (functions provided by the kernel)
+linux: man 3 {command}                # library calls (functions within program libraries)
+linux: man 3n {command}               # network functions
+linux: man 3p {command}               # perl functions
+linux: man 4 {command}                # special files (usually found in /dev)
+linux: man 5 {command}                # file formats and conventions eg /etc/passwd
+linux: man 6 {command}                # games
+linux: man 7 {command}                # miscellaneous (including macro packages and conventions)
+linux: man 8 {command}                # system administration commands (usually only for root)
+linux: man 9 {command}                # kernel routines
+linux: man l {command}                # local documentation
+linux: man n {command}                # new manpages
