@@ -221,7 +221,7 @@ nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
 
 " Git mappings
-nnoremap <Leader>gs :Git<CR>
+nnoremap <Leader>gs :wall <bar> :Git<CR>
 nnoremap <Leader>gpo :Git push origin main<CR>
 nnoremap <Leader>gb :Git blame<CR>
 xnoremap <Leader>gb :Git blame<CR>
