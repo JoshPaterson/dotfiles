@@ -66,7 +66,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'airblade/vim-gitgutter'
-    " Plug 'tommcdo/vim-fugitive-blame-ext'
 
     Plug 'vim-airline/vim-airline'
         " Plug 'nvim-lualine/lualine.nvim'
