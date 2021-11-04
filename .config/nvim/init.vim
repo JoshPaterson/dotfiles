@@ -98,7 +98,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'puremourning/vimspector'
     " Plug 'junegunn/vim-easy-align'
     " Plug 'junegunn/vim-peekaboo'
-    " Plug 'vim-scripts/vim-auto-save'
     " Plug 'vim-scripts/ReplaceWithRegister'
     " Plug 'christoomey/vim-titlecase'
     " Plug 'christoomey/vim-system-copy'
