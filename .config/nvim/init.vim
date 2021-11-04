@@ -196,12 +196,11 @@ lua <<EOF
 
 EOF
 
+
 let g:UltiSnipsJumpForwardTrigger = '<C-l>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-h>'
 
-" ----------------------------------
-" I think this is necessary for ultisnips
-" ----------------------------------
+
 let g:python3_host_prog="$HOME/.pyenv/versions/nvim/bin/python"
 
 
@@ -252,9 +251,6 @@ set nomodeline
 
 set formatprg=par
 
-" use these instead of autosave
-set nohidden
-set autowriteall
 
 " ----------------------------------
 "  startify
@@ -291,7 +287,13 @@ highlight link sensibleWhitespaceError Error
 autocmd Syntax * syntax match sensibleWhitespaceError excludenl /\s\+\%#\@<!$\| \+\ze\t/ display containedin=ALL
 
 
-" set undo directory for persistent undo history
+" ----------------------------------
+" set autosave and persistent undo
+" some people also set undolevels, undoreload
+" ----------------------------------
+set nohidden
+set autowriteall
+
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
 endif
@@ -301,6 +303,10 @@ endif
 set undodir=~/.vim/undo-dir
 set undofile
 
+
+" ----------------------------------
+" vimwiki
+" ----------------------------------
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_global_ext = 0
 
