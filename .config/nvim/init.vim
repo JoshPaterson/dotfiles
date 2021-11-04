@@ -109,7 +109,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'kana/vim-operator-user'
     " Plug 'kana/vim-arpeggio'
     " Plug 'dhruvasagar/vim-table-mode'
-    " Plug 'Machakann/vim-highlightedyank'
     " Plug 'wincent/scalpel'
     " Plug 'gyim/vim-boxdraw'
     " Plug 'dstein64/vim-startuptime'
@@ -211,6 +210,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-h>'
 " I think this is necessary for ultisnips
 " ----------------------------------
 let g:python3_host_prog="$HOME/.pyenv/versions/nvim/bin/python"
+
+
+" highlight yanked text, see :h lua-highlight
+au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 
 
 " ----------------------------------
