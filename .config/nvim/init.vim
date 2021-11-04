@@ -42,6 +42,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " vim-man for opening man pages in split
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
     Plug 'tpope/vim-eunuch'
+    " Plug 'vim-utils/vim-man'
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -82,6 +83,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'haya14busa/vim-asterisk'
     " Plug 'osyo-manga/vim-anzu'
     "
+    " Plug 'vim-utils/vim-troll-stopper'
     " Plug 'vim-devicons'
     " Plug 'coveragepy.vim'
     " Plug 'vim-unstack' " opens all levels of stack trace into splits
