@@ -241,7 +241,7 @@ let g:switch_custom_definitions =
 
 set path+=**
 set wildmode=longest:full,full
-set updatetime=500
+set updatetime=400
 
 set pyxversion=3
 
