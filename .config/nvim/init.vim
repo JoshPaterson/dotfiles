@@ -38,7 +38,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'mbbill/undotree'
         " Plug 'gundo'
         " Plug 'mundo'
-    Plug '907th/vim-auto-save'
     " vim-man for opening man pages in split
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
     Plug 'tpope/vim-eunuch'
@@ -250,7 +249,9 @@ set nomodeline
 
 set formatprg=par
 
-let g:auto_save = 1  " enable AutoSave on Vim startup
+" use these instead of autosave
+set nohidden
+set autowriteall
 
 " ----------------------------------
 "  startify
