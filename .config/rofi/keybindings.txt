@@ -788,8 +788,6 @@ vim-fugitive blame: -                    # reblame at commit
 vim-fugitive blame: ~                    # reblame at {count}th first grandparent
 vim-fugitive blame: P                    # reblame at {count}th parent (like HEAD^{count})
 vim-fugitive: :G                         # (c) open status buffer
-vim-fugitive: <Lead>g                    # (custom) open status buffer (:Git or :G)
-vim-fugitive: :GEdit                     # (c) return to work tree version of file
 vim-fugitive: gq                         # close status buffer
 vim-fugitive: .                          # populate command line with the file under the cursor
 vim-fugitive: <Ctrl-r><Ctrl-g>           # (c) recall path to current fugitive object
@@ -816,6 +814,10 @@ vim-fugitive object: .git/config         # (c) repo config file
 vim-fugitive object: :                   # (c) fugitive summary buffer
 vim-fugitive object: -                   # (c) temp file containing the last :Git invocations output
 vim-fugitive object: <cfile>             # (c) file or commit under the cursor
+vim-fugitive: <Lead>gs                   # (custom) open status buffer (:Git or :G)
+vim-fugitive: <Lead>gl                   # (n) (custom) open :Git blame for all lines
+vim-fugitive: <Lead>gl                   # (v) (custom) open :Git blame for selected lines
+vim-fugitive: :GEdit                     # (c) return to work tree version of file
 vim-rhubarb: gb                          # (n) open current file on github
 vim-rhubarb: gb                          # (v) open current file on github with lines selected
 vim-rhubarb: <Ctrl-x><Ctrl-o>            # starts completion of github issue and pull request numbers and usernames
@@ -826,14 +828,14 @@ vim-gitgutter: ]c or [c               # jump to the next or previous {count} hun
 vim-gitgutter: ic                     # (object) current hunk's lines
 vim-gitgutter: ac                     # (object) current hunk's lines and trailing blank lines
 vim gv: :GV                           # (c) open commit browser
-vim gv: v:GV                          # (c) open commit browser with changes affecting selected lines
+vim gv: {range}:GV                    # (c) open commit browser with changes affecting selected lines
 vim gv: :GV!                          # (c) open commit browser with commits affecting current file
-vim gv: v:GV!                         # (c) open commit browser with commits affecting selected lines
+vim gv: {range}:GV!                   # (c) open commit browser with commits affecting selected lines
 vim gv: :GV?                          # (c) fills location list with revisions of current file
-vim gv commit browser: o or <CR>      # display contents of a diff
-vim gv commit browser: vo or v<CR>    # display diff between selected commits
-vim gv commit browser: O              # display contents of a diff in new tab
-vim gv commit browser: vO             # display diff between selected commits in new tab
+vim gv commit browser: o or <CR>      # (n) display contents of diff on current line
+vim gv commit browser: o or <CR>      # (v) display diff between selected commits
+vim gv commit browser: O              # (n) display contents of diff on current line in new tab
+vim gv commit browser: O              # (v) display contents of diff between selected commits in new tab
 vim gv commit browser: gb             # open commit on github
 vim gv commit browser: [[ ]]          # move between commits
 vim gv commit browser: .              # populate command line with ":Git {cursor} {commit SHA}"

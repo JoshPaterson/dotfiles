@@ -227,8 +227,12 @@ nnoremap Y y$
 " Git mappings
 nnoremap <Leader>gs :Git<CR>
 nnoremap <Leader>gpo :Git push origin main<CR>
+nnoremap <Leader>gb :Git blame<CR>
+xnoremap <Leader>gb :Git blame<CR>
 nnoremap gb :GBrowse<CR>
 xnoremap gb :GBrowse<CR>
+nnoremap <Leader>gv :GV<CR>
+
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 set path+=**
