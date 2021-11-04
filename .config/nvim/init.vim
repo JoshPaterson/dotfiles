@@ -42,6 +42,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " vim-man for opening man pages in split
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
     Plug 'tpope/vim-eunuch'
+    Plug 'kshenoy/vim-signature'
     " Plug 'vim-utils/vim-man'
 
     " Snippets
@@ -91,7 +92,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'narrwrgn' " moves part of file to new buffer for editing, then writes to original
     " Plug 'mfussenegger/nvim-lint'
     " Plug 'stefandtw/quickfix-reflector.vim'
-    " Plug 'kshenoy/vim-signature' " show marks in gutter
     " Plug 'preservim/tagbar'
     " Plug 'wfxr/minimap.vim'
     " Plug 'szw/vim-maximizer'

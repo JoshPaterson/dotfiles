@@ -257,6 +257,23 @@ vim marks: '<                         # (n) jump to last line of last visually s
 vim marks: '>                         # (n) jump to last line of last visually selected block
 vim marks: `<                         # (n) jump to exact position of end of last visually selected block
 vim marks: `>                         # (n) jump to exact position of end of last visually selected block
+vim-signature marks: m{a-zA-Z}        # toggle mark
+vim-signature marks: dm{a-zA-Z}       # delete mark
+vim-signature marks: m,               # place next available mark
+vim-signature marks: m.               # if no mark on line, place next available mark. Otherwise remove mark
+vim-signature marks: m-               # remove all marks from current line
+vim-signature marks: m<Space>         # remove all marks from current buffer
+vim-signature marks: ]` or [`         # jump to next or previous mark
+vim-signature marks: ]' or ['         # jump to start of line for next or previous mark
+vim-signature marks: `] or `[         # jump by alphabetical order to next or previous mark
+vim-signature marks: '] or '[         # jump by alphabetical order to start of line with next or previous mark
+vim-signature marks: m/               # open location list and display marks from current buffer
+vim-signature marks: m[0-9]           # toggle corresponding marker !@#$%^&*()
+vim-signature marks: m<S-[0-9]>       # remove all markers of same type
+vim-signature marks: ]- or [-         # jump to next or previous line with mark of same type
+vim-signature marks: ]= or [=         # jump to next or previous line with mark of any type
+vim-signature marks: m?               # open location list and display markers from current buffer
+vim-signature marks: m<BS>            # remove all markers
 vim jump: :jumps                      # (c) show jump list
 vim jump: <Ctrl-o>                    # (n) move back on jump list
 vim jump: <Ctrl-i>                    # (n) move forward on jump list
