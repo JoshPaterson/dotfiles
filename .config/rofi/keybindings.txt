@@ -832,8 +832,9 @@ vim-fugitive object: :                   # (c) fugitive summary buffer
 vim-fugitive object: -                   # (c) temp file containing the last :Git invocations output
 vim-fugitive object: <cfile>             # (c) file or commit under the cursor
 vim-fugitive: <Lead>gs                   # (custom) open status buffer (:Git or :G)
-vim-fugitive: <Lead>gl                   # (n) (custom) open :Git blame for all lines
-vim-fugitive: <Lead>gl                   # (v) (custom) open :Git blame for selected lines
+vim-fugitive: <Lead>gb                   # (n) (custom) open :Git blame for all lines
+vim-fugitive: <Lead>gb                   # (v) (custom) open :Git blame for selected lines
+vim-fugitive: <Lead>gpo                  # (n) (custom) run :G push origin main
 vim-fugitive: :GEdit                     # (c) return to work tree version of file
 vim-rhubarb: gb                          # (n) open current file on github
 vim-rhubarb: gb                          # (v) open current file on github with lines selected
@@ -845,6 +846,7 @@ vim-gitgutter: ]c or [c               # jump to the next or previous {count} hun
 vim-gitgutter: ic                     # (object) current hunk's lines
 vim-gitgutter: ac                     # (object) current hunk's lines and trailing blank lines
 vim gv: :GV                           # (c) open commit browser
+vim gv: <Lead>gv                      # (n) open commit browser
 vim gv: {range}:GV                    # (c) open commit browser with changes affecting selected lines
 vim gv: :GV!                          # (c) open commit browser with commits affecting current file
 vim gv: {range}:GV!                   # (c) open commit browser with commits affecting selected lines
@@ -882,6 +884,17 @@ vim-eunuch: :SudoEdit                 # edit (open) current file using sudo
 vim-eunuch: :SudoEdit {file}          # edit (open) {file} using sudo
 vim-eunuch: :SudoWrite                # write current file to disk using sudo
 vim-eunuch: :Wall or :W               # write all windows, even unchanged
+switch.vim: <Lead>t                   # invoke :Switch
+vim undotree: <Lead>u                 # open undotree
+vim undotree: <CR>                    # change buffer to state of highlighted line
+vim undotree: < or >                  # move to previous or next saved state
+vim undotree: J or K                  # move to previous or next undo state
+vim undotree: D                       # toggle diff panel
+vim undotree: T                       # toggle relative timestamp
+vim undotree: C                       # clear undo history (with confirmation)
+vim undotree: <Tab>                   # set focus back to the editor
+vim undotree: q                       # close undotree panel
+vim undotree: ?                       # toggle quick help
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
 ranger bookmarks: ' or `              # go to a bookmark
