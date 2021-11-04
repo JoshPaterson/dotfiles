@@ -42,6 +42,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
     Plug 'tpope/vim-eunuch'
     Plug 'kshenoy/vim-signature'
+    Plug 'AndrewRadev/switch.vim'
     " Plug 'vim-utils/vim-man'
 
     " Snippets
@@ -114,12 +115,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'onsails/diaglist.nvim'
     " Plug 'tpope/vim-speeddating'
     " Plug 'godlygeek/tabular'
-    "
-    " Toggle booleans
-    " Plug 'AndrewRadev/switch.vim' also toggles true/false, others
-    " Plug 'sagarrakshe/toggle-bool'
-    " Plug 'zef/vim-cycle'
-    " vim.org/scripts/script.php?script_id=895
     call plug#end()
 
 
@@ -236,6 +231,14 @@ xnoremap gb :GBrowse<CR>
 nnoremap <Leader>gv :GV<CR>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
+
+" Switch config
+nnoremap <Leader>t :Switch<CR>
+let g:switch_custom_definitions =
+    \ [
+    \   ['next', 'previous']
+    \ ]
+
 
 set path+=**
 set wildmode=longest:full,full
