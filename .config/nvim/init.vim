@@ -7,12 +7,26 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-repeat'
 
-    " Commands
+    " Change vim behavior
+    Plug 'airblade/vim-rooter'
+
+    " Operators
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
         " Plug 'preservim/nerdcommenter'
         " Plug 'numToStr/Comment.nvim'
     Plug 'tpope/vim-unimpaired'
+    Plug 'AndrewRadev/switch.vim'
+    " Plug 'christoomey/vim-titlecase'
+    " Plug 'christoomey/vim-sort-motion'
+    " Plug 'tpope/vim-speeddating'
+    " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
+    " Plug 'kana/vim-operator-user'
+
+    " Commands
+    Plug 'tpope/vim-eunuch'
+    Plug 'dstein64/vim-startuptime'
+    " Plug 'vim-utils/vim-man'
 
     " Text Objects
     Plug 'kana/vim-textobj-user'
@@ -31,22 +45,26 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Features
     Plug 'vimwiki/vimwiki'
     Plug 'mhinz/vim-startify'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
     Plug 'metakirby5/codi.vim'
-    Plug 'Yggdroot/indentLine'
     Plug 'mbbill/undotree'
         " Plug 'gundo'
         " Plug 'mundo'
-    " vim-man for opening man pages in split
-    " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
-    Plug 'tpope/vim-eunuch'
+    " Plug 'preservim/tagbar'
+    " Plug 'stefandtw/quickfix-reflector.vim'
+    " Plug 'wfxr/minimap.vim'
+    " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
+
+    " Highlighting and text display
+    Plug 'Yggdroot/indentLine'
+    " Plug 'vim-utils/vim-troll-stopper'
+
+    " Add visuals for builtin vim behavior
     Plug 'kshenoy/vim-signature'
-    Plug 'AndrewRadev/switch.vim'
     Plug 'junegunn/vim-peekaboo'
-    Plug 'airblade/vim-rooter'
-    Plug 'dstein64/vim-startuptime'
-    " Plug 'vim-utils/vim-man'
+
+    " Fuzzy finding
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -87,34 +105,34 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'haya14busa/vim-asterisk'
     " Plug 'osyo-manga/vim-anzu'
     "
-    " Plug 'vim-utils/vim-troll-stopper'
-    " Plug 'coveragepy.vim'
-    " Plug 'vim-unstack' " opens all levels of stack trace into splits
-    " Plug 'vim-accordion' " makes all vertical splits 1 column wide except one
-    " Plug 'narrwrgn' " moves part of file to new buffer for editing, then writes to original
-    " Plug 'mfussenegger/nvim-lint'
-    " Plug 'stefandtw/quickfix-reflector.vim'
-    " Plug 'preservim/tagbar'
-    " Plug 'wfxr/minimap.vim'
+    " Window Arrangement
     " Plug 'szw/vim-maximizer'
+    " Plug 'vim-accordion' makes all vertical splits 1 column wide except one
+    "
+    " Testing/ Debugging
+    " Plug 'coveragepy.vim'
     " Plug 'puremourning/vimspector'
-    " Plug 'junegunn/vim-easy-align'
-    " Plug 'vim-scripts/ReplaceWithRegister'
-    " Plug 'christoomey/vim-titlecase'
-    " Plug 'christoomey/vim-system-copy'
-    " Plug 'christoomey/vim-sort-motion'
-    " Plug 'svermeulen/vim-easyclip'
-    " Plug 'plasticboy/vim-markdown'
-    " Plug 'kana/vim-fakeclip'
-    " Plug 'kana/vim-operator-user'
-    " Plug 'kana/vim-arpeggio'
-    " Plug 'dhruvasagar/vim-table-mode'
-    " Plug 'wincent/scalpel'
-    " Plug 'gyim/vim-boxdraw'
+    " Plug 'vim-unstack' opens all levels of stack trace into splits
     " Plug 'vim-test/vim-test'
-    " Plug 'onsails/diaglist.nvim'
-    " Plug 'tpope/vim-speeddating'
+    "
+    " Clipboard
+    " Plug 'vim-scripts/ReplaceWithRegister'
+    " Plug 'christoomey/vim-system-copy'
+    " Plug 'svermeulen/vim-easyclip'
+    " Plug 'kana/vim-fakeclip'
+    "
+    " Tables and text alignment
     " Plug 'godlygeek/tabular'
+    " Plug 'junegunn/vim-easy-align'
+    " Plug 'dhruvasagar/vim-table-mode'
+    " Plug 'gyim/vim-boxdraw'
+    "
+    " Linting
+    " Plug 'onsails/diaglist.nvim' puts diagnosis info in quickfix and location lists
+    " Plug 'mfussenegger/nvim-lint'
+    "
+    " Plug 'plasticboy/vim-markdown'
+    " Plug 'wincent/scalpel' helps make substitution for current word
     "
     " Should be last plugin loaded:
     Plug 'ryanoasis/vim-devicons'
