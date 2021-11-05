@@ -314,6 +314,7 @@ vim: :{range}v/{pattern}/{command}    # (c) perform command on lines that don't 
 vim: :set filetype?                   # (c) show filetype of current buffer
 vim: :checkhealth                     # (c) check status of vim
 vim: <Ctrl-^>                         # (n) open alternate file
+vim: :pwd                             # (c) show working directory
 vim range: {count}:                   # (n) becomes :.,.+{count-1} to apply command to next {count} lines
 vim range: :%                         # (c) applies to entire file
 vim range: :. or :                    # (c) applies to current line
