@@ -49,7 +49,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'mbbill/undotree'
         " Plug 'gundo'
         " Plug 'mundo'
-    " Plug 'preservim/tagbar'
+    Plug 'preservim/tagbar'
     " Plug 'stefandtw/quickfix-reflector.vim'
     " Plug 'wfxr/minimap.vim'
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
@@ -238,7 +238,6 @@ command! -bang ProjectFiles call fzf#vim#files('~/projects', fzf#vim#with_previe
 " ----------------------------------
 command Reload :w|:so %|:PlugInstall
 nnoremap <Leader><Space> :s/\s\+$//e<CR>
-nnoremap <Leader>s :w<CR>:Startify<CR>
 nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
 
@@ -253,8 +252,8 @@ nnoremap <Leader>gv :GV<CR>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 
-" Switch config
-nnoremap <Leader>t :Switch<CR>
+" Switch.vim config
+nnoremap <Leader>s :Switch<CR>
 let g:switch_custom_definitions =
     \ [
     \   ['next', 'previous']
@@ -279,9 +278,20 @@ set formatprg=par
 " ----------------------------------
 let g:rooter_patterns = ['.git', '.gitignore', '.python-version', 'requirements.txt']
 
+
+
+" ----------------------------------
+" tagbar
+" ----------------------------------
+nnoremap <Leader>t :TagbarToggle<CR>
+
+
+
+"
 " ----------------------------------
 "  startify
 " ----------------------------------
+nnoremap <Leader>o :w<CR>:Startify<CR>
 let g:startify_session_dir = '~/.config/nvim/session'
 let g:startify_bookmarks = [
     \ { 'v': '$HOME/.config/nvim/init.vim' },

@@ -704,7 +704,7 @@ vim sessions startify: :SLoad         # (c) load session
 vim sessions startify: :SSave[!]      # (c) save session optionally without prompt
 vim sessions startify: :SDelete[!]    # (c) delete session optionally without prompt
 vim sessions startify: :SClose        # (c) close session
-vim startify custom: <Lead>s          # (n) open startify
+vim startify custom: <Lead>o          # (n) open startify (home)
 vim codi: :Codi                       # (c) start codi for current buffer
 vim codi: :Codi!                      # (c) stop codi for current buffer
 vim codi: :Codi!!                     # (c) toggle codi for current buffer
@@ -885,8 +885,8 @@ vim-eunuch: :SudoEdit                 # edit (open) current file using sudo
 vim-eunuch: :SudoEdit {file}          # edit (open) {file} using sudo
 vim-eunuch: :SudoWrite                # write current file to disk using sudo
 vim-eunuch: :Wall or :W               # write all windows, even unchanged
-switch.vim: <Lead>t                   # invoke :Switch
-vim undotree: <Lead>u                 # open undotree
+switch.vim: <Lead>s                   # invoke :Switch
+vim undotree: <Lead>u                 # toggle undotree
 vim undotree: <CR>                    # change buffer to state of highlighted line
 vim undotree: < or >                  # move to previous or next saved state
 vim undotree: J or K                  # move to previous or next undo state
@@ -896,6 +896,7 @@ vim undotree: C                       # clear undo history (with confirmation)
 vim undotree: <Tab>                   # set focus back to the editor
 vim undotree: q                       # close undotree panel
 vim undotree: ?                       # toggle quick help
+vim tagbar: <Lead>t                   # toggle tagbar window
 vim-startuptime: :StartupTime         # (c) run startuptime plugin
 vim-startuptime: K                    # (n) show additional information about line
 vim-startuptime: gf                   # (n) load corresponding file in new split
