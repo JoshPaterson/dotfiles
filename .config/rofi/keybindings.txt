@@ -414,6 +414,7 @@ vim-plug: :PlugUpgrade                # (c) update vim-plug itself
 vim-plug: :PlugStatus                 # (c) check status of plugins
 vim-plug: :PlugDiff                   # (c) show changes from last update and pending changes
 vim-plug: :PlugSnapshot [output path] # (c) generate script for restoring current plugins
+vim custom: :Reload                   # (c) save buffer, source current file, :PlugInstall
 vim-cmp: :CmpStatus                   # (c) show status of nvim-cmp
 vim-cmp: <Ctrl-h>                     # (i) (custom) move to previous location in snippet
 vim-cmp: <Ctrl-j>                     # (i) (custom) move cursor down in menu
