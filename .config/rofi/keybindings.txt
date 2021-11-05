@@ -896,6 +896,9 @@ vim undotree: C                       # clear undo history (with confirmation)
 vim undotree: <Tab>                   # set focus back to the editor
 vim undotree: q                       # close undotree panel
 vim undotree: ?                       # toggle quick help
+vim-startuptime: :StartupTime         # (c) run startuptime plugin
+vim-startuptime: K                    # (n) show additional information about line
+vim-startuptime: gf                   # (n) load corresponding file in new split
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
 ranger bookmarks: ' or `              # go to a bookmark
@@ -1155,7 +1158,6 @@ pyenv install -l | grep '^  3.'       # show available versions of cpython
 git commit --amend --no-edit          # add new changes to previous commit
 path: ~/.local/share/nvim/plugged     # vim plugin storage
 path: ~/.local/share/nvim/swap        # vim swap files
-nvim -startuptime startuptime.log     # create startup time log
 linux: groups {user}                  # list groups that {user} is part of
 linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
 linux: tail -f {file}                 # show live view of the end of a file (e.g. logs)

@@ -45,6 +45,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'AndrewRadev/switch.vim'
     Plug 'junegunn/vim-peekaboo'
     Plug 'airblade/vim-rooter'
+    Plug 'dstein64/vim-startuptime'
     " Plug 'vim-utils/vim-man'
 
     " Snippets
@@ -110,7 +111,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'dhruvasagar/vim-table-mode'
     " Plug 'wincent/scalpel'
     " Plug 'gyim/vim-boxdraw'
-    " Plug 'dstein64/vim-startuptime'
     " Plug 'vim-test/vim-test'
     " Plug 'onsails/diaglist.nvim'
     " Plug 'tpope/vim-speeddating'
@@ -218,6 +218,7 @@ command! -bang ProjectFiles call fzf#vim#files('~/projects', fzf#vim#with_previe
 
 
 " ----------------------------------
+command Reload :w|:so %|:PlugInstall
 nnoremap <Leader><Space> :s/\s\+$//e<CR>
 nnoremap <Leader>s :w<CR>:Startify<CR>
 nnoremap <Leader>c :Codi!!<CR>
@@ -254,6 +255,11 @@ set nomodeline
 
 set formatprg=par
 
+
+" ----------------------------------
+" vim-rooter
+" ----------------------------------
+let g:rooter_patterns = ['.git', '.gitignore', '.python-version', 'requirements.txt']
 
 " ----------------------------------
 "  startify
