@@ -44,6 +44,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'kshenoy/vim-signature'
     Plug 'AndrewRadev/switch.vim'
     Plug 'junegunn/vim-peekaboo'
+    Plug 'airblade/vim-rooter'
     " Plug 'vim-utils/vim-man'
 
     " Snippets
@@ -70,10 +71,10 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'junegunn/gv.vim'
     Plug 'airblade/vim-gitgutter'
 
+    " Statusline
     Plug 'vim-airline/vim-airline'
         " Plug 'nvim-lualine/lualine.nvim'
-    " Plug 'airblade/vim-rooter'
-    "
+
     " Web Development
     " Plug 'mattn/emmet-vim'
     " Plug 'alvan/vim-closetag'
@@ -86,7 +87,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'osyo-manga/vim-anzu'
     "
     " Plug 'vim-utils/vim-troll-stopper'
-    " Plug 'vim-devicons'
     " Plug 'coveragepy.vim'
     " Plug 'vim-unstack' " opens all levels of stack trace into splits
     " Plug 'vim-accordion' " makes all vertical splits 1 column wide except one
@@ -115,6 +115,9 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'onsails/diaglist.nvim'
     " Plug 'tpope/vim-speeddating'
     " Plug 'godlygeek/tabular'
+    "
+    " Should be last plugin loaded:
+    Plug 'ryanoasis/vim-devicons'
     call plug#end()
 
 
