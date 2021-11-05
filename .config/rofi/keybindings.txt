@@ -1155,6 +1155,9 @@ pyenv help [command]                  # show help for command
 pyenv uninstall [version]             # uninstall version
 pyenv virtualenv-delete [env_name]    # delete environment
 pyenv install -l | grep '^  3.'       # show available versions of cpython
+pyenv: $PYENV_VERSION                 # environment variable, looks for this first
+pyenv: .python-version                # file, looks for this second
+pyenv: ~/.pyenv/version               # file, looks for this third, uses system python otherwise
 git commit --amend --no-edit          # add new changes to previous commit
 path: ~/.local/share/nvim/plugged     # vim plugin storage
 path: ~/.local/share/nvim/swap        # vim swap files
