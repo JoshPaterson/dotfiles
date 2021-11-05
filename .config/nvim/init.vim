@@ -27,6 +27,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'tpope/vim-eunuch'
     Plug 'dstein64/vim-startuptime'
     " Plug 'vim-utils/vim-man'
+    " Plug 'wincent/scalpel' helps make substitution for current word
 
     " Text Objects
     Plug 'kana/vim-textobj-user'
@@ -50,6 +51,7 @@ call plug#begin("~/.local/share/nvim/plugged")
         " Plug 'gundo'
         " Plug 'mundo'
     Plug 'preservim/tagbar'
+    " how to install ctags for javascript: https://github.com/preservim/tagbar/wiki#jsctags-depends-on-tern--recommended-
     " Plug 'stefandtw/quickfix-reflector.vim'
     " Plug 'wfxr/minimap.vim'
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
@@ -99,41 +101,41 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'alvan/vim-closetag'
     " Plug 'ap/vim-css-color'
     " Plug 'Glench/Vim-Jinja2-Syntax'
-    "
+
     " Improve searching
     " Plug 'haya14busais.vim'
     " Plug 'haya14busa/vim-asterisk'
     " Plug 'osyo-manga/vim-anzu'
-    "
+
     " Window Arrangement
     " Plug 'szw/vim-maximizer'
     " Plug 'vim-accordion' makes all vertical splits 1 column wide except one
-    "
+
     " Testing/ Debugging
     " Plug 'coveragepy.vim'
     " Plug 'puremourning/vimspector'
     " Plug 'vim-unstack' opens all levels of stack trace into splits
     " Plug 'vim-test/vim-test'
-    "
+
     " Clipboard
     " Plug 'vim-scripts/ReplaceWithRegister'
     " Plug 'christoomey/vim-system-copy'
     " Plug 'svermeulen/vim-easyclip'
     " Plug 'kana/vim-fakeclip'
-    "
+
     " Tables and text alignment
-    " Plug 'godlygeek/tabular'
+    " Plug 'godlygeek/tabular' use this with vim-markdown. shown in vimcasts
     " Plug 'junegunn/vim-easy-align'
     " Plug 'dhruvasagar/vim-table-mode'
     " Plug 'gyim/vim-boxdraw'
-    "
+
     " Linting
     " Plug 'onsails/diaglist.nvim' puts diagnosis info in quickfix and location lists
     " Plug 'mfussenegger/nvim-lint'
-    "
+
+    " Syntax highlighting etc.
     " Plug 'plasticboy/vim-markdown'
-    " Plug 'wincent/scalpel' helps make substitution for current word
-    "
+
     " Should be last plugin loaded:
     Plug 'ryanoasis/vim-devicons'
     call plug#end()
