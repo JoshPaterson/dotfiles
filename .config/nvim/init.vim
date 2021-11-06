@@ -22,6 +22,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'tpope/vim-speeddating'
     " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
     " Plug 'kana/vim-operator-user'
+    " Plug 'AndrewRadev/splitjoin.vim' switch between single and multiple line versions of statements
 
     " Commands
     Plug 'tpope/vim-eunuch'
@@ -55,10 +56,14 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'stefandtw/quickfix-reflector.vim'
     " Plug 'wfxr/minimap.vim'
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
+    " Plug 'tc50cal/vim-terminal'
+    " Plug 'terryma/vim-multiple-cursors'
 
     " Highlighting and text display
     Plug 'Yggdroot/indentLine'
     " Plug 'vim-utils/vim-troll-stopper'
+    " Plug 'tjdevries/overlength.vim' highlights 80th character in overlength lines
+    " Plug 'nvim-colorizer.lua'
 
     " Add visuals for builtin vim behavior
     Plug 'kshenoy/vim-signature'
@@ -67,6 +72,8 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Fuzzy finding
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    " see youtube.com/watch?v=xf0yYLj4AJI for fzf config
+    " Plug 'telescope' see primeagen's video for config
 
     " Snippets
     Plug 'SirVer/ultisnips'
@@ -85,16 +92,22 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'quangnguyen30192/cmp-nvim-tags'
     Plug 'lukas-reineke/cmp-under-comparator'
     Plug 'ray-x/lsp_signature.nvim'
+    " Plug 'tpope/vim-endwise' automatically adds matching end in languages that need it
+    " Plug 'nvim-autopairs'
 
     " Git Integration
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'junegunn/gv.vim'
     Plug 'airblade/vim-gitgutter'
+    " Plug 'jesseduffield/lazygit'
 
     " Statusline
     Plug 'vim-airline/vim-airline'
         " Plug 'nvim-lualine/lualine.nvim'
+
+    " Navigation
+    " Plug 'project.vim'
 
     " Web Development
     " Plug 'mattn/emmet-vim'
@@ -116,6 +129,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'puremourning/vimspector'
     " Plug 'vim-unstack' opens all levels of stack trace into splits
     " Plug 'vim-test/vim-test'
+    " Plug 'tpope/vim-dispatch' for asynchronous test running
 
     " Clipboard
     " Plug 'vim-scripts/ReplaceWithRegister'
@@ -132,6 +146,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Linting
     " Plug 'onsails/diaglist.nvim' puts diagnosis info in quickfix and location lists
     " Plug 'mfussenegger/nvim-lint'
+    " Plug 'syntastic' syntax checking
 
     " Syntax highlighting etc.
     " Plug 'plasticboy/vim-markdown'
