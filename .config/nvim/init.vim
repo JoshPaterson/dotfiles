@@ -277,6 +277,8 @@ let g:switch_custom_definitions =
     \   ['before', 'after'],
     \   ['up', 'down'],
     \   ['left', 'right'],
+    \   ['backward', 'forward'],
+    \   ['backwards', 'forwards'],
     \ ]
 
 
