@@ -258,7 +258,11 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <Leader>s :Switch<CR>
 let g:switch_custom_definitions =
     \ [
-    \   ['next', 'previous']
+    \   ['next', 'previous'],
+    \   ['above', 'below'],
+    \   ['before', 'after'],
+    \   ['up', 'down'],
+    \   ['left', 'right'],
     \ ]
 
 
