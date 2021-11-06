@@ -381,8 +381,8 @@ vim-unimpaired: [T ]T                 # {motion} to first and last tag
 vim-unimpaired: [<C-t> ]<C-t>         # (n) preview previous and next tag
 vim-unimpaired: [f ]f                 # {motion} to previous and next alphabetical file in directory
 vim-unimpaired: [n ]n                 # {motion} to previous and next git conflict or hunk
-vim-unimpaired: [<Space> ]<Space>     # add {count} blank (empty) lines above and below cursor
-vim-unimpaired: [e ]e                 # swap (switch, exchange) current line with line {count} lines above or below
+vim-unimpaired: [<Space> ]<Space>     # (n) add {count} blank (empty) lines above and below cursor
+vim-unimpaired: [e ]e                 # (n) (v) move current line or selected lines up by {count} lines
 vim-unimpaired: [ob ]ob yob           # (n) on, off, & toggle background (dark is off, light is on)
 vim-unimpaired: [oc ]oc yoc           # (n) on, off, & toggle cursorline
 vim-unimpaired: [od ]od yod           # (n) on, off, & toggle diff (:diffthis & :diffoff)
