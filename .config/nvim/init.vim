@@ -363,13 +363,6 @@ set number
   :autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 :augroup END
 
-" Map keys to move lines or groups of lines up and down with <A-j> and <A-k>
-" https://vim.fandom.com/wiki/Moving_lines_up_or_down
-nnoremap - :m .+1<CR>==
-nnoremap _ :m .-2<CR>==
-vnoremap - :m '>+1<CR>gv=gv
-vnoremap _ :m '<-2<CR>gv=gv
-
 
 " make tabs use 4 spaces
 set expandtab
