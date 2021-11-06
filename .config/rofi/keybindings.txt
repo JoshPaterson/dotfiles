@@ -15,6 +15,7 @@ qtile program: <Super-Shift-Enter>    # launch vim
 qtile program: <Super-w>              # kill focused window
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
+kitty: <C-S-h>                        # opens contents of terminal in text editor
 vim move: {hjkl}                      # (n) move cursor
 vim move: gj                          # (n) move cursor down a display line
 vim move: gk                          # (n) move cursor up a display line
@@ -380,6 +381,8 @@ vim-unimpaired: [T ]T                 # {motion} to first and last tag
 vim-unimpaired: [<C-t> ]<C-t>         # (n) preview previous and next tag
 vim-unimpaired: [f ]f                 # {motion} to previous and next alphabetical file in directory
 vim-unimpaired: [n ]n                 # {motion} to previous and next git conflict or hunk
+vim-unimpaired: [<Space> ]<Space>     # add {count} blank (empty) lines above and below cursor
+vim-unimpaired: [e ]e                 # swap (switch, exchange) current line with line {count} lines above or below
 vim-unimpaired: [ob ]ob yob           # (n) on, off, & toggle background (dark is off, light is on)
 vim-unimpaired: [oc ]oc yoc           # (n) on, off, & toggle cursorline
 vim-unimpaired: [od ]od yod           # (n) on, off, & toggle diff (:diffthis & :diffoff)
@@ -897,6 +900,7 @@ vim undotree: C                       # clear undo history (with confirmation)
 vim undotree: <Tab>                   # set focus back to the editor
 vim undotree: q                       # close undotree panel
 vim undotree: ?                       # toggle quick help
+vim-fzf: :Marks                       # fuzzy find in list of marks
 vim tagbar: <Lead>t                   # toggle tagbar window
 vim-startuptime: :StartupTime         # (c) run startuptime plugin
 vim-startuptime: K                    # (n) show additional information about line
