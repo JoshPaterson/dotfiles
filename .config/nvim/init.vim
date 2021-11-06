@@ -54,7 +54,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'preservim/tagbar'
     " how to install ctags for javascript: https://github.com/preservim/tagbar/wiki#jsctags-depends-on-tern--recommended-
     " Plug 'stefandtw/quickfix-reflector.vim'
-    " Plug 'wfxr/minimap.vim'
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
     " Plug 'tc50cal/vim-terminal'
     " Plug 'terryma/vim-multiple-cursors'
