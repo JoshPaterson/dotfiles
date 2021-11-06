@@ -894,10 +894,10 @@ vim-eunuch: :Cfind {args}             # run find and load results into quickfix 
 vim-eunuch: :Cfind! {args}            # run find and load results into quickfix list, don't jump to first result
 vim-eunuch: :Lfind {args}             # run find and load results into location list, jump to first result
 vim-eunuch: :Lfind! {args}            # run find and load results into location list, don't jump to first result
-vim-eunuch: :Clocate {args}             # run locate and load results into quickfix list, jump to first result
-vim-eunuch: :Clocate! {args}            # run locate and load results into quickfix list, don't jump to first result
-vim-eunuch: :Llocate {args}             # run locate and load results into location list, jump to first result
-vim-eunuch: :Llocate! {args}            # run locate and load results into location list, don't jump to first result
+vim-eunuch: :Clocate {args}           # run locate and load results into quickfix list, jump to first result
+vim-eunuch: :Clocate! {args}          # run locate and load results into quickfix list, don't jump to first result
+vim-eunuch: :Llocate {args}           # run locate and load results into location list, jump to first result
+vim-eunuch: :Llocate! {args}          # run locate and load results into location list, don't jump to first result
 vim-eunuch: :SudoEdit                 # edit (open) current file using sudo
 vim-eunuch: :SudoEdit {file}          # edit (open) {file} using sudo
 vim-eunuch: :SudoWrite                # write current file to disk using sudo
