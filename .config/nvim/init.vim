@@ -320,7 +320,7 @@ let g:startify_bookmarks = [
     \ { 'v': '$HOME/.config/nvim/init.vim' },
     \ { 'b': '$HOME/.bashrc' },
     \ { 'bp': '$HOME/.bash_profile' },
-    \ { 'kb': '$HOME/cheatsheet.txt' },
+    \ { 'c': '$HOME/cheatsheet.txt' },
     \ { 'r': '$HOME/.config/rofi/config.rasi' },
     \ { 'wm': '$HOME/.config/qtile/config.py' },
     \ { 'ki': '$HOME/.config/kitty/kitty.conf' },
