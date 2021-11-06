@@ -265,6 +265,7 @@ xnoremap <Leader>gb :Git blame<CR>
 nnoremap gb :GBrowse<CR>
 xnoremap gb :GBrowse<CR>
 nnoremap <Leader>gv :GV<CR>
+xnoremap <Leader>gv :GV<CR>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 
