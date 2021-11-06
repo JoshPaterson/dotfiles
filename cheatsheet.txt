@@ -853,6 +853,7 @@ vim-fugitive: <Lead>gpo                  # (n) (custom) run :G push origin main
 vim-fugitive: :GEdit                     # (c) return to work tree version of file
 vim-fugitive: :GMove                     # (c) move file so git recognizes it
 vim-fugitive: :GRename                   # (c) move file relative to containing directory so git recognizes it
+vim-fugitive: :GDelete                   # (c) delete file so git recognizes it and delete buffer afterwards
 vim-rhubarb: gb                          # (n) open current file on github
 vim-rhubarb: gb                          # (v) open current file on github with lines selected
 vim-rhubarb: <Ctrl-x><Ctrl-o>            # starts completion of github issue and pull request numbers and usernames
