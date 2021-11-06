@@ -86,8 +86,6 @@ vim edit: g>{motion}                  # (n) operator, indent
 vim edit: g<{motion}                  # (n) operator, unindent
 vim edit: g={motion}                  # (n) operator, autoindent
 vim edit: g!{motion}                  # (n) operator, filter lines through external program
-vim edit custom: -                    # (n) move current line or lines down (normal and visual mode)
-vim edit custom: _                    # (n) move current line or lines up (normal and visual mode)
 vim edit: u                           # (n) undo
 vim edit: <Ctrl-r>                    # (n) redo
 vim edit: <Ctrl-a>                    # (n) add {count} to the next number in the line
@@ -287,6 +285,8 @@ vim jump: {count}G                    # (n) jump to line number
 vim jump: gf                          # (n) jump to filename under cursor
 vim jump: gx                          # (n) opens url under cursor in browser
 vim jump: %                           # (n) jumps to matching (), [], and {}
+vim jump: -                           # (n) jumps {count} lines upward to first non-blank character
+vim jump: _                           # (n) jumps {count} lines downward to first non-blank character
 vim changes: :changes                 # (c) show change list
 vim changes: g;                       # (n) go to previous location in change list
 vim changes: g,                       # (n) go to next location in change list
@@ -841,6 +841,8 @@ vim-fugitive: <Lead>gb                   # (n) (custom) open :Git blame for all 
 vim-fugitive: <Lead>gb                   # (v) (custom) open :Git blame for selected lines
 vim-fugitive: <Lead>gpo                  # (n) (custom) run :G push origin main
 vim-fugitive: :GEdit                     # (c) return to work tree version of file
+vim-fugitive: :GMove                     # (c) move file so git recognizes it
+vim-fugitive: :GRename                   # (c) move file relative to containing directory so git recognizes it
 vim-rhubarb: gb                          # (n) open current file on github
 vim-rhubarb: gb                          # (v) open current file on github with lines selected
 vim-rhubarb: <Ctrl-x><Ctrl-o>            # starts completion of github issue and pull request numbers and usernames
