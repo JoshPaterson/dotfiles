@@ -20,7 +20,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'christoomey/vim-titlecase'
     " Plug 'christoomey/vim-sort-motion'
     " Plug 'tpope/vim-speeddating'
-    " Plug 'justinmk/vim-sneak' to jump to 2 character pairs
+    Plug 'justinmk/vim-sneak'
     " Plug 'kana/vim-operator-user'
     " Plug 'AndrewRadev/splitjoin.vim' switch between single and multiple line versions of statements
 

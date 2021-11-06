@@ -70,8 +70,8 @@ vim edit: ce                          # (n) change (replace) to the end of the n
 vim edit: cb                          # (n) change (replace) to the start of the previous word
 vim edit: c0                          # (n) change (replace) to the start of the line
 vim edit: c$                          # (n) change (replace) to the end of the line
-vim edit: s                           # (n) delete character and substitute text
-vim edit: S                           # (n) delete line and substitute text (same as cc)
+vim edit: s or cl                     # (n) delete character and substitute text
+vim edit: S or cc                     # (n) delete line and substitute text (same as cc)
 vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
 vim edit: ddp                         # (n) swap/ transpose two lines (delete and paste)
 vim edit: .                           # (n) repeat last command
@@ -352,6 +352,16 @@ vim surround: ds{                     # (n) delete surrounding braces
 vim surround: ysiw<em> or ysiwtem>    # (n) add em tag around iw text object
 vim surround: ysiwf{name}<CR>         # (n) wrap iw text object in function call
 vim surround: ysiwF{name}<CR>         # (n) wrap iw text object in function call with space inside parentheses
+vim-sneak: s{char}{char}                  # (n) jump to next occurrence of the first {char}
+vim-sneak: {count}s{char}{char}           # (n) jump to next occurrence of the first {char} within {count} lines
+vim-sneak: S{char}{char}                  # (n) jump to previous occurrence of the first {char}
+vim-sneak: {count}S{char}{char}           # (n) jump to previous occurrence of the first {char} within {count} lines
+vim-sneak: s<CR>                          # (n) repeat last sneak search in forward direction
+vim-sneak: S<CR>                          # (n) repeat last sneak search in backward direction
+vim-sneak: {operator}z{char}{char}        # (n) apply operator forward to the next {char}{char}
+vim-sneak: {count}{operator}z{char}{char} # (n) apply operator forward to {count}th {char}{char}
+vim-sneak: {operator}Z{char}{char}        # (n) apply operator backward to the next {char}{char}
+vim-sneak: {count}{operator}Z{char}{char} # (n) apply operator backward to {count}th {char}{char}
 vim commentary: gc{motion}            # (n) toggle comments on lines in motion
 vim commentary: gcc                   # (n) toggle comments on {count} lines
 vim commentary: gc                    # (n) (object) group of commented lines
