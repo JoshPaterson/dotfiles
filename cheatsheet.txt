@@ -334,6 +334,14 @@ vim folding: zR                       # (n) open all
 vim folding: zm                       # (n) fold more (foldlevel += 1)
 vim folding: zr                       # (n) fold less (foldlevel -= 1)
 vim folding: zx                       # (n) update folds
+vim quickfix: :chistory               # (c) display 10 last used quickfix lists
+vim quickfix: :{count}chistory        # (c) display quickfix list #{count}
+vim quickfix: :colder                 # (c) display older quickfix list
+vim quickfix: :cnewer                 # (c) display newer quickfix list
+vim location: :chistory               # (c) display 10 last used location lists
+vim location: :{count}chistory        # (c) display location list #{count}
+vim location: :colder                 # (c) display older location list
+vim location: :cnewer                 # (c) display newer location list
 vim sessions: ":mksession /path"      # (c) save the current vim session.
 vim sessions: ":source /path"         # (c) load the specified vim session.
 vim surround: ), }, ], >              # (object) refers to surrounds but not inside spaces
@@ -352,6 +360,36 @@ vim surround: ds{                     # (n) delete surrounding braces
 vim surround: ysiw<em> or ysiwtem>    # (n) add em tag around iw text object
 vim surround: ysiwf{name}<CR>         # (n) wrap iw text object in function call
 vim surround: ysiwF{name}<CR>         # (n) wrap iw text object in function call with space inside parentheses
+vim-fzf: :Files                       # (c) search in all files
+vim-fzf: :Files {path}                # (c) search in all files in {path}
+vim-fzf: :GFiles                      # (c) search in git repository
+vim-fzf: :GFiles?                     # (c) search all files in git directory
+vim-fzf: :Buffers                     # (c) search open buffers
+vim-fzf: :Colors                      # (c) search color schemes
+vim-fzf: :Ag {pattern}                # (c) search using ag
+vim-fzf: :Rg                          # (c) search using rg
+vim-fzf: :Lines                       # (c) search lines in loaded buffers
+vim-fzf: :BLines {query}              # (c) search lines in current buffer
+vim-fzf: :Tags {query}                # (c) search tags in current project
+vim-fzf: :BTags {query}               # (c) search tags in current buffer
+vim-fzf: :Marks                       # (c) search marks
+vim-fzf: :Windows                     # (c) search windows
+vim-fzf: :Locate {pattern}            # (c) search locate command output
+vim-fzf: :History                     # (c) search previously and currently opened files
+vim-fzf: :History:                    # (c) search command history
+vim-fzf: :History/                    # (c) search search history
+vim-fzf: :Snippets                    # (c) search ultisnips snippets available in current buffer
+vim-fzf: :Commits                     # (c) search git commits
+vim-fzf: :BCommits                    # (c) search git commits for current buffer
+vim-fzf: :{range}BCommits             # (c) search git commits for selected lines
+vim-fzf: :Commands                    # (c) search commands
+vim-fzf: :Maps                        # (c) search normal mode mappings
+vim-fzf: :Helptags                    # (c) search help tags
+vim-fzf: :Filetypes                   # (c) search filetypes
+vim-fzf: {command}!                   # (c) use full screen window for search results
+vim-fzf window: <C-t>                 # (c) open in new tab
+vim-fzf window: <C-x>                 # (c) open in horizontal split
+vim-fzf window: <C-v>                 # (c) open in vertical split
 vim-sneak: s{char}{char}                  # (n) jump to next occurrence of the first {char}
 vim-sneak: {count}s{char}{char}           # (n) jump to next occurrence of the first {char} within {count} lines
 vim-sneak: S{char}{char}                  # (n) jump to previous occurrence of the first {char}
@@ -851,9 +889,10 @@ vim-fugitive: <Lead>gb                   # (n) (custom) open :Git blame for all 
 vim-fugitive: <Lead>gb                   # (v) (custom) open :Git blame for selected lines
 vim-fugitive: <Lead>gpo                  # (n) (custom) run :G push origin main
 vim-fugitive: :GEdit                     # (c) return to work tree version of file
-vim-fugitive: :GMove                     # (c) move file so git recognizes it
-vim-fugitive: :GRename                   # (c) move file relative to containing directory so git recognizes it
-vim-fugitive: :GDelete                   # (c) delete file so git recognizes it and delete buffer afterwards
+vim-fugitive: :GMove                     # (c) move file
+vim-fugitive: :GRename                   # (c) move file relative to containing directory
+vim-fugitive: :GDelete                   # (c) delete file and delete empty buffer
+vim-fugitive: :GRemove                   # (c) delete file and keep empty buffer
 vim-rhubarb: gb                          # (n) open current file on github
 vim-rhubarb: gb                          # (v) open current file on github with lines selected
 vim-rhubarb: <Ctrl-x><Ctrl-o>            # starts completion of github issue and pull request numbers and usernames
