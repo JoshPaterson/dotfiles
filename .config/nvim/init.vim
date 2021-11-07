@@ -349,9 +349,8 @@ autocmd Syntax * syntax match sensibleWhitespaceError excludenl /\s\+\%#\@<!$\| 
 
 " ----------------------------------
 " set autosave and persistent undo
-" some people also set undolevels, undoreload
+" some people also set undolevels, undoreload, nohidden
 " ----------------------------------
-set nohidden
 set autowriteall
 
 if !isdirectory($HOME."/.vim")
