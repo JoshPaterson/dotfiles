@@ -273,13 +273,15 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 nnoremap <Leader>s :Switch<CR>
 let g:switch_custom_definitions =
     \ [
-    \   ['next', 'previous'],
-    \   ['above', 'below'],
-    \   ['before', 'after'],
-    \   ['up', 'down'],
-    \   ['left', 'right'],
-    \   ['backward', 'forward'],
-    \   ['backwards', 'forwards'],
+    \   switch#NormalizedCase(['next', 'previous']),
+    \   switch#NormalizedCase(['above', 'below']),
+    \   switch#NormalizedCase(['before', 'after']),
+    \   switch#NormalizedCase(['up', 'down']),
+    \   switch#NormalizedCase(['left', 'right']),
+    \   switch#NormalizedCase(['backward', 'forward']),
+    \   switch#NormalizedCase(['backwards', 'forwards']),
+    \   switch#NormalizedCase(['horizontal', 'vertical']),
+    \   switch#NormalizedCase(['inside', 'outside']),
     \ ]
 
 
