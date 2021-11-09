@@ -241,6 +241,9 @@ let g:UltiSnipsJumpBackwardTrigger = '<C-h>'
 let g:python3_host_prog="$HOME/.pyenv/versions/nvim/bin/python"
 
 
+set directory^=$HOME/.vim/swap//
+
+
 " highlight yanked text, see :h lua-highlight
 au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 
