@@ -290,6 +290,12 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['backwards', 'forwards']),
     \   switch#NormalizedCase(['horizontal', 'vertical']),
     \   switch#NormalizedCase(['inside', 'outside']),
+    \   switch#NormalizedCase(['start', 'stop', 'end']),
+    \   switch#NormalizedCase(['older', 'newer']),
+    \   switch#NormalizedCase(['old', 'new']),
+    \   switch#NormalizedCase(['late', 'early']),
+    \   switch#NormalizedCase(['later', 'earlier']),
+    \   switch#NormalizedCase(['first', 'last']),
     \ ]
 
 
