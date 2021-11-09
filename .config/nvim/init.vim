@@ -272,6 +272,11 @@ xnoremap <Leader>gv :GV<CR>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+
+
 " Switch.vim config
 nnoremap <Leader>s :Switch<CR>
 let g:switch_custom_definitions =
