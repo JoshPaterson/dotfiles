@@ -47,7 +47,7 @@ vim motion: fx                          # (n) jump to next occurrence of charact
 vim motion: tx                          # (n) jump to before next occurrence of character x
 vim motion: }                           # (n) jump to next paragraph (or function/block, when editing code)
 vim motion: {                           # (n) jump to previous paragraph (or function/block, when editing code)
-    vjflkhlzxvhf
+
 
 vim scroll: zz                          # (n) scroll so cursor is in center of screen
 vim scroll: zt                          # (n) scroll so cursor is at top of screen
@@ -85,7 +85,6 @@ vim edit: c0                          # (n) change (replace) to the start of the
 vim edit: s or cl                     # (n) delete character and substitute text
 vim edit: S or cc                     # (n) delete line and substitute text (same as cc)
 vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
-
 
 
 vim edit: .                           # (n) repeat last command
@@ -133,7 +132,6 @@ vim: <Ctrl-p>                         # (n) move {count} lines up (same as plain
 vim: <Ctrl-q>                         # (n) start visual block mode (same as <C-v>)
 vim: <Ctrl-t>                         # (n) jump to {count} older entry in tag stack
 vim: <Ctrl-z>                         # (n) suspend nvim
-
 
 
 vim insert: :h ins-special-keys       # (c) show help for control keys in insert mode
@@ -288,6 +286,7 @@ vim tabs: {n}gt                       # (n) move to tab n
 vim tabs: <Ctrl-wT>                   # (n) move the current split window into its own tab
 vim tabs: gt or :tabnext or :tabn     # (n) move to the next tab
 vim tabs: gT or :tabprev or :tabp     # (n) move to the previous tab
+vim tabs: :{range}tabnew              # (c) open new empty tab after {range}
 vim tabs: :tabmove {n}                # (c) move current tab to the nth position (indexed from 0)
 vim tabs: :tabclose or :tabc          # (c) close the current tab and all its windows
 vim tabs: :tabonly or :tabo           # (c) close all tabs except for the current one
@@ -460,6 +459,11 @@ vim sessions: ":mksession /path"      # (c) save the current vim session.
 vim sessions: ":source /path"         # (c) load the specified vim session.
 
 
+vim terminal: :term                   # (c) start terminal emulator
+vim terminal: <Ctrl-\><Ctrl-n>        # (i) leave terminal insert mode
+vim terminal: i                       # (n) enter terminal insert mode
+
+
 vim surround: ), }, ], >              # (object) refers to surrounds but not inside spaces
 vim surround: (, {, [                 # (object) refers to surrounds and inside spaces
 vim surround: w                       # (object) operates on a word
@@ -527,6 +531,22 @@ vim commentary: gcc                   # (n) toggle comments on {count} lines
 vim commentary: gc                    # (n) (object) group of commented lines
 vim commentary: gcgc or gcu           # (n) toggle comments for group of commented lines
 vim commentary: :[range]Commentary    # (c) toggle comments for lines in range
+
+
+vim-sort-motion: gs{extra line motion} # (n) sort lines covered by motion
+vim-sort-motion: gs{intra line motion} # (n) sort as comma separated list (e.g. arguments)
+vim-sort-motion: gs                    # (v) sort visually selected text
+
+
+splitjoin.vim: gS                      # (n) split single line into equivalent block version
+splitjoin.vim: gJ                      # (n) join block into equivalent single line version
+
+
+vim scalpel: <Lead>e                   # (n) populate command to substitute for current word
+
+
+vim-titlecase: gz{motion}              # (n) capitalize the first character of each word
+vim-titlecase: gz                      # (v) capitalize the first character of each visually selected word
 
 
 vim-textobj-entire: ae                # (object) all lines in current buffer

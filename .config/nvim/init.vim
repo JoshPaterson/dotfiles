@@ -12,29 +12,29 @@ call plug#begin("~/.local/share/nvim/plugged")
 
     " Operators
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'AndrewRadev/switch.vim'
+    Plug 'christoomey/vim-titlecase'
+    Plug 'christoomey/vim-sort-motion'
+    Plug 'AndrewRadev/splitjoin.vim'
     Plug 'tpope/vim-commentary'
         " Plug 'preservim/nerdcommenter'
         " Plug 'numToStr/Comment.nvim'
-    Plug 'tpope/vim-unimpaired'
-    Plug 'AndrewRadev/switch.vim'
-    " Plug 'christoomey/vim-titlecase'
-    " Plug 'christoomey/vim-sort-motion'
     " Plug 'tpope/vim-speeddating'
-    Plug 'justinmk/vim-sneak'
     " Plug 'kana/vim-operator-user'
-    " Plug 'AndrewRadev/splitjoin.vim' switch between single and multiple line versions of statements
 
     " Commands
     Plug 'tpope/vim-eunuch'
     Plug 'dstein64/vim-startuptime'
     " Plug 'vim-utils/vim-man'
-    " Plug 'wincent/scalpel' helps make substitution for current word
+    Plug 'wincent/scalpel'
 
     " Text Objects
     Plug 'kana/vim-textobj-user'
     Plug 'kana/vim-textobj-line'
     Plug 'kana/vim-textobj-entire'
     Plug 'michaeljsmith/vim-indent-object'
+        " Plug 'kana/vim-textobj-indent'
     " Plug 'cim-textobj-python'
     " Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     " Plug 'vim-scripts/argtextobj.vim'
@@ -106,6 +106,7 @@ call plug#begin("~/.local/share/nvim/plugged")
         " Plug 'nvim-lualine/lualine.nvim'
 
     " Navigation
+    Plug 'justinmk/vim-sneak'
     " Plug 'project.vim'
 
     " Web Development
@@ -252,6 +253,10 @@ au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
 " fzf configuration
 " ----------------------------------
 command! -bang ProjectFiles call fzf#vim#files('~/projects', fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
+nnoremap <Leader>fh :History<CR>
+nnoremap <Leader>fg :GFiles<CR>
+nnoremap <Leader>fp :Files ~/projects<CR>
+nnoremap <Leader>fm :Marks<CR>
 
 
 " ----------------------------------
