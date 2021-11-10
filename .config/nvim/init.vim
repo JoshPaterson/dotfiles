@@ -109,6 +109,10 @@ call plug#begin("~/.local/share/nvim/plugged")
     Plug 'justinmk/vim-sneak'
     " Plug 'project.vim'
 
+    " Sessions
+    " Plug 'thaerkh/vim-workspace'
+    " Plug 'xolox/vim-session'
+
     " Web Development
     " Plug 'mattn/emmet-vim'
     " Plug 'alvan/vim-closetag'
@@ -151,7 +155,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Syntax highlighting etc.
     " Plug 'plasticboy/vim-markdown'
 
-    " Should be last plugin loaded:
+    " Should be last plugin loaded according to docs:
     Plug 'ryanoasis/vim-devicons'
     call plug#end()
 
