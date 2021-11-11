@@ -1211,6 +1211,8 @@ ranger subst: %d                      # substitute current directory
 ranger subst: %s                      # substitute currently selected files
 ranger subst: %t                      # substitute currently tagged files
 ranger subst: :bulkrename %s          # example for substitution
+
+
 firefox current pag: F6               # move to the next frame
 firefox current pag: Shift + F6       # move to the prev frame
 firefox edit: <Ctrl+Backspace>        # delete word to the left
@@ -1303,6 +1305,8 @@ firefox misc: Esc                             # Stop Autoscroll Mode
 firefox misc: Shift + F10                     # Toggle Context Menu
 firefox misc: Ctrl + space                    # Show groups
 firefox misc: ctrl+1-9                        # Change to a group
+
+
 vimium nav: ?                    # This help
 vimium nav: j                    # Scroll down
 vimium nav: k                    # Scroll up
@@ -1363,6 +1367,8 @@ vimium tabs: <a-m>               # Mute or unmute current tab (use all, other)
 vimium tabs: ^                   # Go to previously-visited tab on current window
 vimium tabs: <<                  # Move tab to the left
 vimium tabs: >>                  # Move tab to the right
+
+
 rofi: Ctrl-v                          # Insert: Paste from clipboard
 rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
 rofi: Ctrl-u                          # Clear the line
@@ -1395,6 +1401,8 @@ rofi: Shift-Del                       # Delete entry from history.
 rofi: grave                           # Toggle case sensitivity.
 rofi: Alt-grave                       # Toggle sorting.
 rofi: Alt-Shift-S                     # Take a screenshot and store it in the Pictures directory.
+
+
 markdown: # H1                        # heading 1
 markdown: ## H2                       # heading 2
 markdown: ### H3                      # heading 3
@@ -1414,6 +1422,8 @@ markdown: - [x] task                  # task list
 markdown: sentence. [^1]              # footnote in text body
 markdown: [^1]: footnote              # footnote in footer
 markdown: term<\n>: definition        # definition
+
+
 pyenv activate [env_name]             # activate environment
 pyenv versions                        # show all python versions on this computer
 pyenv which [command]                 # show location of command in activated environment
@@ -1427,9 +1437,12 @@ pyenv install -l | grep '^  3.'       # show available versions of cpython
 pyenv: $PYENV_VERSION                 # environment variable, looks for this first
 pyenv: .python-version                # file, looks for this second
 pyenv: ~/.pyenv/version               # file, looks for this third, uses system python otherwise
-git commit --amend --no-edit          # add new changes to previous commit
+
+
 path: ~/.local/share/nvim/plugged     # vim plugin storage
-path: ~/.local/share/nvim/swap        # vim swap files
+path: ~/.vim/swap                     # vim swap files
+
+
 linux: groups {user}                  # list groups that {user} is part of
 linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
 linux: tail -f {file}                 # show live view of the end of a file (e.g. logs)
@@ -1450,4 +1463,7 @@ linux: man 8 {command}                # system administration commands (usually 
 linux: man 9 {command}                # kernel routines
 linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
+
+
  git branch --set-upstream-to=origin/main main # set default upstream so push and pull don't need to specify a branch
+git commit --amend --no-edit          # add new changes to previous commit (use fugitive instead)
