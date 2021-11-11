@@ -1450,3 +1450,4 @@ linux: man 8 {command}                # system administration commands (usually 
 linux: man 9 {command}                # kernel routines
 linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
+ git branch --set-upstream-to=origin/main main # set default upstream so push and pull don't need to specify a branch
