@@ -306,6 +306,8 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['late', 'early']),
     \   switch#NormalizedCase(['later', 'earlier']),
     \   switch#NormalizedCase(['first', 'last']),
+    \   switch#NormalizedCase(['with', 'without']),
+    \   switch#NormalizedCase(['inner', 'outer']),
     \ ]
 
 
