@@ -56,7 +56,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'stefandtw/quickfix-reflector.vim'
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
     " Plug 'tc50cal/vim-terminal'
-    " Plug 'terryma/vim-multiple-cursors'
+    " Plug 'mg979/vim-visual-multi'
 
     " Highlighting and text display
     Plug 'Yggdroot/indentLine'
@@ -151,6 +151,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'onsails/diaglist.nvim' puts diagnosis info in quickfix and location lists
     " Plug 'mfussenegger/nvim-lint'
     " Plug 'syntastic' syntax checking
+    " Plug 'dense-analysis/ale' syntax checking
 
     " Syntax highlighting etc.
     " Plug 'plasticboy/vim-markdown'
