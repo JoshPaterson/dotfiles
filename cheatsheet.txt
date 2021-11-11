@@ -1,27 +1,11 @@
-qtile window: <Super-{hjkl}>          # move focus
-qtile window: <Super-Shift-{hjkl}>    # move window left
-qtile window: <Super-Ctrl-{hjkl}>     # grow window left
-qtile window: <Super-n>               # reset all window sizes
-qtile window: <Super-Shift-Enter>     # toggle between split and unsplit sides of stack
-qtile window: <Super-Tab>             # toggle between layouts
-qtile window: <Super-{1-9}>           # switch to group #
-qtile window: <Super-Shift-{1-9}>     # move focused window and switch to group #
-qtile program: <Super-Enter>          # launch terminal
-qtile program: <Super-r>              # launch rofi
-qtile program: <Super-b>              # launch firefox
-qtile program: <Super-t>              # launch thunderbird
-qtile program: <Super-f>              # launch ranger
-qtile program: <Super-Shift-Enter>    # launch vim
-qtile program: <Super-w>              # kill focused window
-qtile: <Super-Ctrl-r>                 # restart qtile
-qtile: <Super-Ctrl-q>                 # shutdown qtile
-kitty: <C-S-h>                        # opens contents of terminal in text editor
 vim motion: {hjkl}                      # (n) move cursor
 vim motion: gj                          # (n) move cursor down a display line
 vim motion: gk                          # (n) move cursor up a display line
 vim motion: H                           # (n) jump to top of screen
 vim motion: M                           # (n) jump to middle of screen
 vim motion: L                           # (n) jump to bottom of screen
+vim motion: gM                          # (n) jump to middle of text line
+vim motion: gm                          # (n) jump to middle of display line
 vim motion: w                           # (n) jump forwards to the start of a word
 vim motion: W                           # (n) jump forwards to the start of a WORD
 vim motion: e                           # (n) jump forwards to the end of a word
@@ -43,129 +27,119 @@ vim motion: + or <Ctrl-m>               # (n) jump to the first non-blank charac
 vim motion: gg                          # (n) jump to the first line of the document
 vim motion: G                           # (n) jump to the last line of the document
 vim motion: {count}G                    # (n) jump to line {count}
-vim motion: fx                          # (n) jump to next occurrence of character x
-vim motion: tx                          # (n) jump to before next occurrence of character x
+vim motion: f{char}                     # (n) jump forward to {char}
+vim motion: F{char}                     # (n) jump backward to {char}
+vim motion: t{char}                     # (n) jump forward to just before {char}
+vim motion: T{char}                     # (n) jump backward to just before {char}
 vim motion: }                           # (n) jump to next paragraph (or function/block, when editing code)
 vim motion: {                           # (n) jump to previous paragraph (or function/block, when editing code)
+vim motion: go                          # (n) jump to {count}th byte in buffer
 
 
 vim scroll: zz                          # (n) scroll so cursor is in center of screen
 vim scroll: zt                          # (n) scroll so cursor is at top of screen
 vim scroll: zb                          # (n) scroll so cursor is at bottom of screen
-vim scroll: <Ctrl-b>                    # (n) scroll back {count} full screens
 vim scroll: <Ctrl-f>                    # (n) scroll forward {count} full screens
+vim scroll: <Ctrl-b>                    # (n) scroll back {count} full screens
 vim scroll: <Ctrl-d>                    # (n) scroll forward {count} half screens
 vim scroll: <Ctrl-u>                    # (n) scroll back {count} half screens
 vim scroll: <Ctrl-e>                    # (n) scroll forward {count} lines
 vim scroll: <Ctrl-y>                    # (n) scroll back {count} lines
 
 
-vim edit: i                           # (n) insert before the cursor
-vim edit: g                           # (n) resume insert mode where it was last stopped
-vim edit: I                           # (n) insert at the first non-blank character in line
-vim edit: gI                          # (n) insert at the beginning of the line
-vim edit: a                           # (n) insert (append) after the cursor
-vim edit: A                           # (n) insert (append) at the end of the line
-vim edit: o                           # (n) append (open) a new line below the current line
-vim edit: O                           # (n) append (open) a new line above the current line
-vim edit: ea                          # (n) insert (append) at the end of the current word
-vim edit: <Ctrl-w>                    # (n) delete word in insert mode
-vim edit: <Ctrl-u>                    # (n) delete line in insert mode
-vim edit: <Ctrl-o>                    # (n) switch to insert-normal mode from insert
-vim edit: r{char}                     # (n) replace {count} characters with {char}
-vim edit: gr{char}                    # (n) virtual replace {count} characters with {char}
-vim edit: J                           # (n) join/ combine lines removing indents
-vim edit: gJ                          # (n) join/ combine lines without removing indents
+vim insert: i                           # (n) insert before the cursor
+vim insert: gi                          # (n) resume insert mode where it was last stopped
+vim insert: I                           # (n) insert at the first non-blank character in line
+vim insert: gI                          # (n) insert at the beginning of the line
+vim insert: a                           # (n) insert (append) after the cursor
+vim insert: A                           # (n) insert (append) at the end of the line
+vim insert: o                           # (n) append (open) a new line below the current line
+vim insert: O                           # (n) append (open) a new line above the current line
+
+
+vim edit: c{motion}                   # (n) operator, change
 vim edit: cc                          # (n) change (replace) entire line
 vim edit: C or c$                     # (n) change (replace) from cursor to end of line
 vim edit: cw                          # (n) change (replace) to the start of the next word
 vim edit: ce                          # (n) change (replace) to the end of the next word
 vim edit: cb                          # (n) change (replace) to the start of the previous word
 vim edit: c0                          # (n) change (replace) to the start of the line
+vim insert: r{char}                     # (n) replace {count} characters with {char}
+vim insert: gr{char}                    # (n) virtual replace {count} characters with {char}
 vim edit: s or cl                     # (n) delete character and substitute text
 vim edit: S or cc                     # (n) delete line and substitute text (same as cc)
-vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
-
-
-vim edit: .                           # (n) repeat last command
 vim edit: ~                           # (n) swap case
-vim edit: c{motion}                   # (n) operator, change
-vim edit: d{motion}                   # (n) operator, delete (cut)
-vim edit: y{motion}                   # (n) operator, yank (copy)
 vim edit: g~{motion}                  # (n) operator, swaps case
 vim edit: gu{motion}                  # (n) operator, make lowercase
 vim edit: gU{motion}                  # (n) operator, make uppercase
+vim edit: J                           # (n) join/ combine lines removing indents
+vim edit: gJ                          # (n) join/ combine lines without removing indents
+vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
+vim edit: d{motion}                   # (n) operator, delete (cut)
+vim edit: y{motion}                   # (n) operator, yank (copy)
 vim edit: g>{motion}                  # (n) operator, indent
 vim edit: g<{motion}                  # (n) operator, unindent
 vim edit: g={motion}                  # (n) operator, autoindent
 vim edit: g!{motion}                  # (n) operator, filter lines through external program
-vim edit: u                           # (n) undo
-vim edit: <Ctrl-r>                    # (n) redo
 vim edit: <Ctrl-a>                    # (n) add {count} to the next number in the line
 vim edit: <Ctrl-x>                    # (n) subtract {count} from the next number
 vim edit: g<Ctrl-a>                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
-vim edit: gq{motion}                  # (n) format paragraph with par
+vim edit: gq{motion}                  # (n) operator, format paragraph with par
 vim edit: gqq                         # (n) format line with par
-vim edit: gw{motion}                  # (n) format paragraph with par and keep cursor in place
+vim edit: gw{motion}                  # (n) operator, format paragraph with par and keep cursor in place
 vim edit: gww                         # (n) format line with par and keep cursor in place
-vim edit: g?{motion}                  # (n) rot13 from cursor to {motion}
-vim edit: g??                         # (n) rot13 current line
+vim edit: g?{motion}                  # (n) operator, encode with rot13
+vim edit: g??                         # (n) encode current line with rot13
 
 
-vim move inside line: gm              # (n) move cursor to middle of display line
-vim move inside line: gM              # (n) move cursor to middle of text line
+vim edit: .                           # (n) repeat last command
+vim edit: u                           # (n) undo
+vim edit: <Ctrl-r>                    # (n) redo
 
 
-vim move outside line: go              # (n) move cursor to {count}th byte in buffer
+vim info: ga                          # (n) prints ascii value of character under cursor
+vim info: <Ctrl-g>                    # (n) prints file name as typed, cursor position, file status
+vim info: 1<Ctrl-g>                   # (n) prints full file path, cursor position, file status
+vim info: 2<Ctrl-g>                   # (n) prints buffer number, full file path, cursor position, file status
+vim info: g<Ctrl-g>                   # (n) prints cursor position: column, line, word, character, and byte
 
 
-vim: <Ctrl-g>                         # (n) prints file name as typed, cursor position, file status
-vim: 1<Ctrl-g>                        # (n) prints full file path, cursor position, file status
-vim: 2<Ctrl-g>                        # (n) prints buffer number, full file path, cursor position, file status
-vim: g<Ctrl-g>                        # (n) prints cursor position: column, line, word, character, and byte
+vim control: <Ctrl-l>                         # (n) redraw screen
+vim control: <Ctrl-z>                         # (n) suspend nvim
 
 
-vim: <Ctrl-l>                         # (n) redraw screen
-vim: <Ctrl-m>                         # (n) move {count} lines down to first non blank character
-vim: <Ctrl-n>                         # (n) move {count} lines down (same as plain j)
-vim: <Ctrl-p>                         # (n) move {count} lines up (same as plain k)
-vim: <Ctrl-q>                         # (n) start visual block mode (same as <C-v>)
-vim: <Ctrl-t>                         # (n) jump to {count} older entry in tag stack
-vim: <Ctrl-z>                         # (n) suspend nvim
-
-
-vim insert: :h ins-special-keys       # (c) show help for control keys in insert mode
-vim insert: <Ctrl-a>                  # (i) insert previously inserted text
-vim insert: <Ctrl-c>                  # (i) quit insert mode
-vim insert: <Ctrl-d>                  # (i) remove tab at beginning of line
-vim insert: 0<Ctrl-d>                 # (i) remove all indent from current line
-vim insert: ^<Ctrl-d>                 # (i) remove all indent from current line, indent restored for next line
-vim insert: <Ctrl-e>                  # (i) insert character from below cursor
-vim insert: <Ctrl-g>j                 # (i) move cursor down {count} lines, stay in insert mode
-vim insert: <Ctrl-g>k                 # (i) move cursor up {count} lines, stay in insert mode
-vim insert: <Ctrl-h>                  # (i) delete character before the cursor (same as <BS>)
-vim insert: <Ctrl-i>                  # (i) insert a tab (same as <Tab>)
-vim insert: <Ctrl-j>                  # (i) begin new line (same as <CR>)
-vim insert: <Ctrl-k>                  # (i) begin digraph entry
-vim insert: <Ctrl-n>                  # (i) find next location from last search
-vim insert: <Ctrl-o>                  # (i) go to insert-normal mode
-vim insert: <Ctrl-p>                  # (i) find previous location from last search
-vim insert: <Ctrl-q>                  # (i) insert next non-digit literally (same as ctrl-v)
-vim insert: <Ctrl-r>{register}        # (i) paste from register in insert mode
-vim insert: <Ctrl-r>+                 # (i) paste from X11 system clipboard in insert mode
-vim insert: <C-r><C-r>{register}      # (i) paste contents of register literally
-vim insert: <C-r><C-o>{register}      # (i) paste contents of register literally, don't auto-indent
-vim insert: <C-r><C-p>{register}      # (i) paste contents of register literally and fix indent
-vim insert: <Ctrl-t>                  # (i) insert tab at beginning of line
-vim insert: <Ctrl-u>                  # (i) delete all newly entered characters before the cursor
-vim insert: <Ctrl-v>                  # (i) insert next non-digit literally
-vim insert: <Ctrl-w>                  # (i) delete word before the cursor
-vim insert: <Ctrl-x>                  # (i) enter Ctrl-x mode (completion)
-vim insert: <Ctrl-y>                  # (i) insert character from above cursor
-vim insert: <Ctrl-@>                  # (i) insert previously inserted text and leave insert mode
-vim insert: <Ctrl-_>                  # (i) switch languages (e.g. English to Hebrew)
-vim insert: <Ctrl-^>                  # (i) toggle use of typing language characters
-vim insert: <Ctrl-]>                  # (i) trigger abbreviation without inserting a character
+vim insert mode: :h ins-special-keys       # (c) show help for control keys in insert mode
+vim insert mode: <Ctrl-a>                  # (i) insert previously inserted text
+vim insert mode: <Ctrl-c>                  # (i) quit insert mode
+vim insert mode: <Ctrl-d>                  # (i) remove tab at beginning of line
+vim insert mode: 0<Ctrl-d>                 # (i) remove all indent from current line
+vim insert mode: ^<Ctrl-d>                 # (i) remove all indent from current line, indent restored for next line
+vim insert mode: <Ctrl-e>                  # (i) insert character from below cursor
+vim insert mode: <Ctrl-g>j                 # (i) move cursor down {count} lines, stay in insert mode
+vim insert mode: <Ctrl-g>k                 # (i) move cursor up {count} lines, stay in insert mode
+vim insert mode: <Ctrl-h>                  # (i) delete character before the cursor (same as <BS>)
+vim insert mode: <Ctrl-i>                  # (i) insert a tab (same as <Tab>)
+vim insert mode: <Ctrl-j>                  # (i) begin new line (same as <CR>)
+vim insert mode: <Ctrl-k>                  # (i) begin digraph entry
+vim insert mode: <Ctrl-n>                  # (i) find next location from last search
+vim insert mode: <Ctrl-o>                  # (i) go to insert-normal mode
+vim insert mode: <Ctrl-p>                  # (i) find previous location from last search
+vim insert mode: <Ctrl-q>                  # (i) insert next non-digit literally (same as ctrl-v)
+vim insert mode: <Ctrl-r>{register}        # (i) paste from register in insert mode
+vim insert mode: <Ctrl-r>+                 # (i) paste from X11 system clipboard in insert mode
+vim insert mode: <C-r><C-r>{register}      # (i) paste contents of register literally
+vim insert mode: <C-r><C-o>{register}      # (i) paste contents of register literally, don't auto-indent
+vim insert mode: <C-r><C-p>{register}      # (i) paste contents of register literally and fix indent
+vim insert mode: <Ctrl-t>                  # (i) insert tab at beginning of line
+vim insert mode: <Ctrl-u>                  # (i) delete all newly entered characters before the cursor
+vim insert mode: <Ctrl-v>                  # (i) insert next non-digit literally
+vim insert mode: <Ctrl-w>                  # (i) delete word before the cursor
+vim insert mode: <Ctrl-x>                  # (i) enter Ctrl-x mode (completion)
+vim insert mode: <Ctrl-y>                  # (i) insert character from above cursor
+vim insert mode: <Ctrl-@>                  # (i) insert previously inserted text and leave insert mode
+vim insert mode: <Ctrl-_>                  # (i) switch languages (e.g. English to Hebrew)
+vim insert mode: <Ctrl-^>                  # (i) toggle use of typing language characters
+vim insert mode: <Ctrl-]>                  # (i) trigger abbreviation without inserting a character
 
 
 vim edit: :r [filename]               # (c) read/ add contents of file below cursor
@@ -181,11 +155,30 @@ vim visual: O                         # (vb) move to other corner of block
 vim visual: gv                        # (v) reselect previous visual area
 
 
-vim object: aw                        # around word
-vim object: ab                        # around () block
-vim object: ib                        # inside ()
-vim object: aB                        # around {} block
-vim object: iB                        # inside {}
+vim object: a"                        # double quoted string with quotes
+vim object: i"                        # double quoted string without quotes
+vim object: a'                        # single quoted string with quotes
+vim object: i'                        # single quoted string without quotes
+vim object: ab or a( or a)            # a block, from "[(" to "])", with brackets
+vim object: ib or i( or i)            # inner block, from "[(" to "])", without brackets
+vim object: a< or a>                  # a <>, from "<" to ">", with angles
+vim object: i< or i>                  # inner <>, from "<" to ">", without angles
+vim object: aB or a{ or a}            # a block, from "[{" to "]}", with brackets
+vim object: iB or i{ or i}            # inner block, from "[{" to "]}", without brackets
+vim object: aw                        # word with a space
+vim object: iw                        # word without space
+vim object: aW                        # WORD with a space
+vim object: iW                        # WORD without a space
+vim object: a[ or a]                  # a [], from "[" to the matching "]", with brackets
+vim object: i[ or i]                  # a [], from "[" to the matching "]", without brackets
+vim object: a`                        # string in backticks
+vim object: i`                        # string in backticks, without backticks
+vim object: ap                        # a paragraph, with whitespace
+vim object: ip                        # a paragraph, without whitespace
+vim object: as                        # a sentence, with whitespace
+vim object: is                        # a sentence, without whitespace
+vim object: at                        # a tag block, with whitespace
+vim object: it                        # a tag block, without whitespace
 
 
 vim cut paste: yy                     # (n) yank (copy) {count} lines
@@ -223,7 +216,7 @@ vim search: n                         # (n) repeat search in same direction
 vim search: gn                        # (n) repeat search in same direction, visually select search term
 vim search: N                         # (n) repeat search in opposite direction
 vim search: gN                        # (n) repeat search in opposite direction, visually select search term
-vim search replace: :noh              # (c) remove highlighting of search matches
+vim search: :noh              # (c) remove highlighting of search matches
 
 
 vim exit: :w or :w /path              # (c) write (save) the file, but don't exit
@@ -453,6 +446,7 @@ vim tags: :tselect {name} or :ts      # list tags that match {name}
 vim tags: g]                          # list tags that match word under cursor (:tjump)
 vim tags: :tjump {name} or :tj        # list tags that match {name}, jump to match if there is only 1
 vim tags: g<Ctrl-]>                   # list tags that match word under cursor (:tjump), jump to match if there is only 1
+vim tags: <Ctrl-t>                    # (n) jump to {count} older entry in tag stack
 
 
 vim sessions: ":mksession /path"      # (c) save the current vim session.
@@ -464,22 +458,28 @@ vim terminal: <Ctrl-\><Ctrl-n>        # (i) leave terminal insert mode
 vim terminal: i                       # (n) enter terminal insert mode
 
 
-vim surround: ), }, ], >              # (object) refers to surrounds but not inside spaces
-vim surround: (, {, [                 # (object) refers to surrounds and inside spaces
-vim surround: w                       # (object) operates on a word
-vim surround: W                       # (object) operates on a WORD
-vim surround: s                       # (object) operates on a sentence
-vim surround: p                       # (object) operates on a paragraph
-vim surround: cs"'                    # (n) change surrounding " to '
-vim surround: cs'<p>                  # (n) change surrounding ' to <p></p>
-vim surround: cst"                    # (n) change surrounding tag to "
-vim surround: ds"                     # (n) delete surrounding "
-vim surround: ysiw]                   # (n) add surrounding square brackets to iw text object
-vim surround: yssb or yss)            # (n) add surrounding parentheses to entire line
-vim surround: ds{                     # (n) delete surrounding braces
-vim surround: ysiw<em> or ysiwtem>    # (n) add em tag around iw text object
-vim surround: ysiwf{name}<CR>         # (n) wrap iw text object in function call
-vim surround: ysiwF{name}<CR>         # (n) wrap iw text object in function call with space inside parentheses
+vim surround: ), }, ], >                                # (surround) not including spaces
+vim surround: b, B, r, a                                # (surround) aliases for ), }, ], and > respectively
+vim surround: (, {, [                                   # (surround) including spaces
+vim surround: ", ', `                                   # (surround)
+vim surround: f                                         # (surround) surrounding function call
+vim surround: F                                         # (surround) surrounding function call with spaces inside
+vim surround: ys{surround, object or motion}{surround}  # (n) (operator) add surrounds
+vim surround: yss{surround}                             # (n) (operator) add surrounds to line, ignoring leading whitespace
+vim surround: yS{surround, object or motion}{surround}  # (n) (operator) add surrounds on separate lines and indent
+vim surround: ySS{surround, object or motion}{surround} # (n) (operator) add surrounds above and below current line and indent
+vim surround: cs{surround, object or motion}{surround}  # (n) (operator) change surrounds
+vim surround: css{surround}                             # (n) (operator) change surrounds for line
+vim surround: ds{surround, object or motion}            # (n) (operator) delete surrounds
+vim surround: dss{surround}                             # (n) (operator) delete surrounds from line
+vim surround: S{surround}                               # (vl) (operator) adds surrounds on lines above and below
+vim surround: S{surround}                               # (vb) (operator) adds surrounds to selected text on each line individually
+vim surround: cs'<p>                                    # (n) change surrounding ' to <p></p>
+vim surround: cst"                                      # (n) change surrounding tag to "
+vim surround: ds"                                       # (n) delete surrounding "
+vim surround: ysiw<em> or ysiwtem>                      # (n) add em tag around iw text object
+vim surround: ysiwf{name}<cr>                           # (n) wrap iw text object in function call
+vim surround: ysiwF{name}<cr>                           # (n) wrap iw text object in function call with space inside parentheses
 
 
 vim-fzf: :Files                       # (c) search in all files
@@ -1166,6 +1166,28 @@ vim tagbar: <Lead>t                   # toggle tagbar window
 vim-startuptime: :StartupTime         # (c) run startuptime plugin
 vim-startuptime: K                    # (n) show additional information about line
 vim-startuptime: gf                   # (n) load corresponding file in new split
+
+
+qtile window: <Super-{hjkl}>          # move focus
+qtile window: <Super-Shift-{hjkl}>    # move window left
+qtile window: <Super-Ctrl-{hjkl}>     # grow window left
+qtile window: <Super-n>               # reset all window sizes
+qtile window: <Super-Shift-Enter>     # toggle between split and unsplit sides of stack
+qtile window: <Super-Tab>             # toggle between layouts
+qtile window: <Super-{1-9}>           # switch to group #
+qtile window: <Super-Shift-{1-9}>     # move focused window and switch to group #
+qtile program: <Super-Enter>          # launch terminal
+qtile program: <Super-r>              # launch rofi
+qtile program: <Super-b>              # launch firefox
+qtile program: <Super-t>              # launch thunderbird
+qtile program: <Super-f>              # launch ranger
+qtile program: <Super-Shift-Enter>    # launch vim
+qtile program: <Super-w>              # kill focused window
+qtile: <Super-Ctrl-r>                 # restart qtile
+qtile: <Super-Ctrl-q>                 # shutdown qtile
+
+
+kitty: <C-S-h>                        # opens contents of terminal in text editor
 
 
 ranger bookmarks: m - letter          # create bookmark
