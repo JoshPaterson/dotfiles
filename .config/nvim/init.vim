@@ -57,6 +57,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'narrwrgn' moves part of file to new buffer for editing, then writes to original
     " Plug 'tc50cal/vim-terminal'
     " Plug 'mg979/vim-visual-multi'
+    Plug 'tpope/vim-vinegar'
 
     " Highlighting and text display
     Plug 'Yggdroot/indentLine'
@@ -240,6 +241,28 @@ lua <<EOF
 EOF
 
 
+" ----------------------------------
+" netrw
+" ----------------------------------
+"  more mapping ideas:
+"  https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
+filetype plugin on
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_localcopydircmd = 'cp -r'
+nnoremap <leader>dd :Lexplore %:p:h<CR>
+nnoremap <leader>dp :Lexplore ~/projects<CR>
+nnoremap <Leader>dh :Lexplore<CR>
+
+" function! NetrwMapping()
+"   nmap <buffer> . gh " remaps . to toggle hidden files
+" endfunction
+"
+" augroup netrw_mapping
+"   autocmd!
+"   autocmd filetype netrw call NetrwMapping()
+" augroup END
+
+
 let g:UltiSnipsJumpForwardTrigger = '<C-l>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-h>'
 
@@ -294,13 +317,16 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['next', 'previous']),
     \   switch#NormalizedCase(['above', 'below']),
     \   switch#NormalizedCase(['before', 'after']),
+    \   switch#NormalizedCase(['upper', 'lower']),
     \   switch#NormalizedCase(['up', 'down']),
     \   switch#NormalizedCase(['left', 'right']),
+    \   switch#NormalizedCase(['top', 'bottom']),
     \   switch#NormalizedCase(['backward', 'forward']),
     \   switch#NormalizedCase(['backwards', 'forwards']),
     \   switch#NormalizedCase(['horizontal', 'vertical']),
     \   switch#NormalizedCase(['inside', 'outside']),
-    \   switch#NormalizedCase(['start', 'stop', 'end']),
+    \   switch#NormalizedCase(['start', 'stop']),
+    \   switch#NormalizedCase(['beginning', 'end']),
     \   switch#NormalizedCase(['older', 'newer']),
     \   switch#NormalizedCase(['old', 'new']),
     \   switch#NormalizedCase(['late', 'early']),
@@ -308,6 +334,11 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['first', 'last']),
     \   switch#NormalizedCase(['with', 'without']),
     \   switch#NormalizedCase(['inner', 'outer']),
+    \   switch#NormalizedCase(['open', 'close']),
+    \   switch#NormalizedCase(['increment', 'decrement']),
+    \   switch#NormalizedCase(['in', 'out']),
+    \   switch#NormalizedCase(['permanently', 'temporarily']),
+    \   switch#NormalizedCase(['permanent', 'temporary']),
     \ ]
 
 

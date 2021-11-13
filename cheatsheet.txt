@@ -35,7 +35,6 @@ vim motion: }                           # (n) jump to next paragraph (or functio
 vim motion: {                           # (n) jump to previous paragraph (or function/block, when editing code)
 vim motion: go                          # (n) jump to {count}th byte in buffer
 
-
 vim scroll: zz                          # (n) scroll so cursor is in center of screen
 vim scroll: zt                          # (n) scroll so cursor is at top of screen
 vim scroll: zb                          # (n) scroll so cursor is at bottom of screen
@@ -45,7 +44,17 @@ vim scroll: <Ctrl-d>                    # (n) scroll forward {count} half screen
 vim scroll: <Ctrl-u>                    # (n) scroll back {count} half screens
 vim scroll: <Ctrl-e>                    # (n) scroll forward {count} lines
 vim scroll: <Ctrl-y>                    # (n) scroll back {count} lines
-
+vim scroll: ze                             # scroll horizontally so cursor is at right side of screen
+vim scroll: zh                             # scroll screen {count} characters to the right
+vim scroll: zl                             # scroll {count} characters to the left
+vim scroll: zs                             # scroll vertically so cursor is at right side of screen
+vim z: z<CR>                          # move cursor to first non-blank, scroll cursor to top of window
+vim z: z{height}<CR>                  # redraw, make window {height} lines high
+vim z: z+                             # move cursor to line {count}, scroll cursor to top of window
+vim z: z-                             # move cursor to line {count}, scroll cursor to bottom of window
+vim z: z.                             # move cursor to line {count}, scroll cursor to center of window
+vim z: z^                             # move cursor to line just above window, scroll line to bottom of window
+vim z: {count}z^                      # scroll so line {count} is at bottom of window before doing z^
 
 vim insert: i                           # (n) insert before the cursor
 vim insert: gi                          # (n) resume insert mode where it was last stopped
@@ -55,7 +64,6 @@ vim insert: a                           # (n) insert (append) after the cursor
 vim insert: A                           # (n) insert (append) at the end of the line
 vim insert: o                           # (n) append (open) a new line below the current line
 vim insert: O                           # (n) append (open) a new line above the current line
-
 
 vim edit: c{motion}                   # (n) operator, change
 vim edit: cc                          # (n) change (replace) entire line
@@ -91,11 +99,9 @@ vim edit: gww                         # (n) format line with par and keep cursor
 vim edit: g?{motion}                  # (n) operator, encode with rot13
 vim edit: g??                         # (n) encode current line with rot13
 
-
 vim edit: .                           # (n) repeat last command
 vim edit: u                           # (n) undo
 vim edit: <Ctrl-r>                    # (n) redo
-
 
 vim info: ga                          # (n) prints ascii value of character under cursor
 vim info: <Ctrl-g>                    # (n) prints file name as typed, cursor position, file status
@@ -103,10 +109,8 @@ vim info: 1<Ctrl-g>                   # (n) prints full file path, cursor positi
 vim info: 2<Ctrl-g>                   # (n) prints buffer number, full file path, cursor position, file status
 vim info: g<Ctrl-g>                   # (n) prints cursor position: column, line, word, character, and byte
 
-
 vim control: <Ctrl-l>                         # (n) redraw screen
 vim control: <Ctrl-z>                         # (n) suspend nvim
-
 
 vim insert mode: :h ins-special-keys       # (c) show help for control keys in insert mode
 vim insert mode: <Ctrl-a>                  # (i) insert previously inserted text
@@ -141,11 +145,9 @@ vim insert mode: <Ctrl-_>                  # (i) switch languages (e.g. English 
 vim insert mode: <Ctrl-^>                  # (i) toggle use of typing language characters
 vim insert mode: <Ctrl-]>                  # (i) trigger abbreviation without inserting a character
 
-
 vim edit: :r [filename]               # (c) read/ add contents of file below cursor
 vim edit: :0r [filename]              # (c) read/ add contents of file at beginning of file
 vim edit: :$r [filename]              # (c) read/ add contents of file at last line
-
 
 vim visual: v                         # (n) start visual mode
 vim visual: V                         # (n) start linewise visual mode
@@ -153,7 +155,6 @@ vim visual: <Ctrl-v>                  # (n) start visual block mode
 vim visual: o                         # (v) move cursor to other end of marked area
 vim visual: O                         # (vb) move to other corner of block
 vim visual: gv                        # (v) reselect previous visual area
-
 
 vim object: a"                        # double quoted string with quotes
 vim object: i"                        # double quoted string without quotes
@@ -180,7 +181,6 @@ vim object: is                        # a sentence, without whitespace
 vim object: at                        # a tag block, with whitespace
 vim object: it                        # a tag block, without whitespace
 
-
 vim cut paste: yy                     # (n) yank (copy) {count} lines
 vim cut paste: y{motion}              # (n) yank (copy) from cursor to {motion}
 vim cut paste custom: Y               # (n) yank (copy) from cursor to end of line
@@ -193,11 +193,11 @@ vim cut paste: dd                     # (n) delete (cut) {count} lines
 vim cut paste: d{motion}              # (n) delete (cut) from cursor to {motion}
 vim cut paste: D or d$                # (n) delete (cut) to the end of the line
 vim cut paste: x                      # (n) delete (cut) {count} characters
+vim cut paste: zp                     # (n) put (paste) in block mode without trailing spaces
+vim cut paste: zP                     # (n) put (paste) in block mode without trailing spaces
+vim cut paste: zy                     # (n) yank (copy) without trailing spaces
 
-
-TODO: add section for how patterns work
 vim patterns: \v                      # (p) make following pattern very magic
-
 
 vim search: :/{pattern}               # (c) search forward for pattern
 vim search: :/ $                      # (c) find trailing whitespace
@@ -218,7 +218,6 @@ vim search: N                         # (n) repeat search in opposite direction
 vim search: gN                        # (n) repeat search in opposite direction, visually select search term
 vim search: :noh              # (c) remove highlighting of search matches
 
-
 vim exit: :w or :w /path              # (c) write (save) the file, but don't exit
 vim exit: :W                          # (c) write (save) the file as sudo, but don't exit
 vim exit: :w !sudo tee %              # (c) write out the current file using sudo
@@ -226,7 +225,6 @@ vim exit: :wq or :x or ZZ             # (c) write (save) and quit
 vim exit: :q                          # (c) quit (fails if there are unsaved changes)
 vim exit: :q! or ZQ                   # (c) quit and throw away unsaved changes
 vim exit: :bd or bd!                  # (c) Close the file (buffer)
-
 
 vim window: :e file                   # (c) edit a file in a new buffer
 vim window: :bnext or :bn             # (c) go to the next buffer
@@ -274,7 +272,6 @@ vim window: z{count}<CR>              # (n) make current window {count} lines ta
 vim window: <Ctrl-Shift-+>            # (n) make text bigger, zoom in
 vim window: <Ctrl-Shift-->            # (n) make text smaller, zoom out
 
-
 vim tabs: {n}gt                       # (n) move to tab n
 vim tabs: <Ctrl-wT>                   # (n) move the current split window into its own tab
 vim tabs: gt or :tabnext or :tabn     # (n) move to the next tab
@@ -284,7 +281,6 @@ vim tabs: :tabmove {n}                # (c) move current tab to the nth position
 vim tabs: :tabclose or :tabc          # (c) close the current tab and all its windows
 vim tabs: :tabonly or :tabo           # (c) close all tabs except for the current one
 vim tabs: :tabdo command              # (c) run the command on all tabs (e.g. :tabdo q - closes all opened tabs)
-
 
 vim registers: :reg                   # (c) show contents of all registers
 vim registers: "_                     # black hole register
@@ -299,7 +295,6 @@ vim registers: "#                     # filename of alternate file (read only re
 vim registers: ".                     # last inserted text (read only register)
 vim registers: ":                     # last ex command (read only register)
 vim registers: "/                     # last search pattern (read only register)
-
 
 vim marks: :marks              # (c) show all marks
 vim marks: m{a-zA-Z}           # (n) set mark
@@ -321,7 +316,6 @@ vim marks: ['                  # jump to {count}th lowercase mark above cursor (
 vim marks: ]`                  # jump to {count}th lowercase mark below cursor
 vim marks: [`                  # jump to {count}th lowercase mark above cursor
 
-
 vim-signature marks: m{a-zA-Z}        # toggle mark
 vim-signature marks: dm{a-zA-Z}       # delete mark
 vim-signature marks: m,               # place next available mark
@@ -340,7 +334,6 @@ vim-signature marks: ]= or [=         # jump to next or previous line with mark 
 vim-signature marks: m?               # open location list and display markers from current buffer
 vim-signature marks: m<BS>            # remove all markers
 
-
 vim jump: :jumps                      # (c) show jump list
 vim jump: <Ctrl-o>                    # (n) move back on jump list
 vim jump: <Ctrl-i>                    # (n) move forward on jump list
@@ -357,12 +350,10 @@ vim jump: %                           # (n) jumps to matching (), [], and {}
 vim jump: -                           # (n) jumps {count} lines upward to first non-blank character
 vim jump: _                           # (n) jumps {count} lines downward to first non-blank character
 
-
 vim changes: :changes                 # (c) show change list
 vim changes: g;                       # (n) go to previous location in change list
 vim changes: g,                       # (n) go to next location in change list
 vim changes: gi                       # (n) go to last insertion and return to insert mode
-
 
 vim mappings: :map                             # (c) shows all key mappings
 vim mappings: :map {key-combo}                 # (c) shows what commands are mapped to {key-combo}
@@ -372,12 +363,10 @@ vim mappings: :omap                            # (c) shows all key mappings for 
 vim mappings: :vmap                            # (c) shows all key mappings for visual mode only
 vim mappings: :verbose map                     # (c) shows all key mappings and where they were defined
 
-
 vim modes: Q or gQ                         # (n) start ex mode
 vim modes: R                               # (n) start replace mode
 vim modes: gR                              # (n) start virtual replace mode
 vim: <Ctrl-c>                         # (c) interrupt current command (same as <Esc>)
-
 
 vim: :so %                            # (c) reload current file
 vim: :so $MYVIMRC                     # (c) reload vim settings while other file is current
@@ -387,7 +376,6 @@ vim: :ju[mps]                         # (c) show jump list
 vim: :color [theme_name]              # (c) change color theme
 vim: gs                               # (n) go to sleep for {count} seconds (default 1)
 
-
 vim bulk edit: :normal [commands]               # (c) perform normal mode commands on range
 vim bulk edit: :norm [commands]                 # (c) perform normal mode commands on range
 vim bulk edit: :normal! [commands]              # (c) perform normal mode commands on range without any mappings
@@ -395,7 +383,6 @@ vim bulk edit: :{range}g/{pattern}/{command}    # (c) perform command on lines t
 vim bulk edit: :{range}v/{pattern}/{command}    # (c) perform command on lines that don't match pattern (v for inVerse)
 vim bulk edit: :%s/old/new/g                    # (c) substitute all old with new throughout file
 vim bulk edit: :%s/old/new/gc                   # (c) substitute all old with new throughout file with confirmation
-
 
 vim: :set filetype?                   # (c) show filetype of current buffer
 vim: :checkhealth                     # (c) check status of vim
@@ -415,17 +402,29 @@ vim range: :'<,'>                     # (c) applies to lines in last visually se
 vim range: :'a,'b                     # (c) applies to lines from mark a to mark b
 vim range: :.,$                       # (c) applies to current line through end of file
 
-
-vim folding: zo / zO                  # (n) open
-vim folding: zc / zC                  # (n) close
-vim folding: za / zA                  # (n) toggle
-vim folding: zv                       # (n) open folds for this line
-vim folding: zM                       # (n) close all
-vim folding: zR                       # (n) open all
-vim folding: zm                       # (n) fold more (foldlevel += 1)
-vim folding: zr                       # (n) fold less (foldlevel -= 1)
-vim folding: zx                       # (n) update folds
-
+vim folding: zo                             # (n) open fold
+vim folding: zO                             # (n) open folds recursively
+vim folding: zv                             # (n) open enough folds to view cursor line
+vim folding: za                             # (n) toggle fold
+vim folding: zA                             # (n) toggle folds recursively
+vim folding: zc                             # (n) close a fold
+vim folding: zC                             # (n) close folds recursively
+vim folding: zd                             # (n) delete a fold
+vim folding: zD                             # (n) open folds recursively
+vim folding: zE                             # (n) eliminate all folds
+vim folding: zf{motion}                     # (n) create fold for text within {motion}
+vim folding: zF                             # (n) create fold for N lines
+vim folding: zj                             # (n) move to the start of the next fold
+vim folding: zk                             # (n) move to the end of the previous fold
+vim folding: zn                             # (n) reset 'foldenable'
+vim folding: zN                             # (n) set 'foldenable'
+vim folding: zi                             # (n) toggle 'foldenable'
+vim folding: zM                             # (n) set 'foldlevel' to 0
+vim folding: zm                             # (n) subtract one from 'foldlevel'
+vim folding: zr                             # (n) add one to 'foldlevel'
+vim folding: zR                             # (n) set 'foldlevel' to the deepest fold
+vim folding: zx                             # (n) re-apply 'foldlevel' and open enough folds to view cursor line
+vim folding: zX                             # (n) re-apply 'foldlevel'
 
 vim quickfix: :chistory               # (c) display 10 last used quickfix lists
 vim quickfix: :{count}chistory        # (c) display quickfix list #{count}
@@ -435,12 +434,10 @@ vim quickfix: :cn                     # (c) jump to the next match
 vim quickfix: :cp                     # (c) jump to the previous match
 vim quickfix: :copen                  # (c) open a window containing the list of matches
 
-
 vim location: :chistory               # (c) display 10 last used location lists
 vim location: :{count}chistory        # (c) display location list #{count}
 vim location: :colder                 # (c) display older location list
 vim location: :cnewer                 # (c) display newer location list
-
 
 vim tags: :tselect {name} or :ts      # list tags that match {name}
 vim tags: g]                          # list tags that match word under cursor (:tjump)
@@ -448,15 +445,47 @@ vim tags: :tjump {name} or :tj        # list tags that match {name}, jump to mat
 vim tags: g<Ctrl-]>                   # list tags that match word under cursor (:tjump), jump to match if there is only 1
 vim tags: <Ctrl-t>                    # (n) jump to {count} older entry in tag stack
 
+vim tagbar: <CR>                      # (n) jump to tag definition
+vim tagbar: p                         # (n) jump to tag definition, but stay in tagbar window
+vim tagbar: P                         # (n) show tag in preview window
+vim tagbar: <Ctrl-n>                  # (n) go to next top level tag
+vim tagbar: <Ctrl-p>                  # (n) go to previous top level tag
+vim tagbar: <Space>                   # (n) display tag prototype
+vim tagbar: v                         # (n) hide non-public tags
+vim tagbar: + or <kPlus> or zo        # (n) open fold
+vim tagbar: - or <kMinus> or zc       # (n) close fold
+vim tagbar: o or za                   # (n) toggle fold
+vim tagbar: * or <kMultiply> or zR    # (n) open all folds
+vim tagbar: = or zM                   # (n) close all folds
+vim tagbar: zr                        # (n) increment fold level by 1
+vim tagbar: zm                        # (n) decrement fold level by 1
+vim tagbar: zj                        # (n) go to next fold
+vim tagbar: zk                        # (n) go to previous fold
+vim tagbar: s                         # (n) toggle sort
+vim tagbar: i                         # (n) toggle case insensitive sort option
+vim tagbar: c                         # (n) toggle autoclose option
+vim tagbar: t                         # (n) toggle pause
+vim tagbar: x                         # (n) zoom window in/ out
+vim tagbar: q                         # (n) close window
+vim tagbar: ?                         # (n) toggle help
+vim tagbar: <Lead>t                   # toggle tagbar window
+
+vim spell check: z=                   # (n) give spelling suggestions
+vim spell check: zg                   # (n) permanently mark word as correctly spelled
+vim spell check: zug                  # (n) undo permanently mark word as correctly spelled
+vim spell check: zG                   # (n) temporarily mark word as correctly spelled
+vim spell check: zuG                  # (n) undo temporarily mark word as correctly spelled
+vim spell check: zw                   # (n) permanently mark word as incorrectly spelled
+vim spell check: zuw                  # (n) undo permanently mark word as incorrectly spelled
+vim spell check: zW                   # (n) temporarily mark word as incorrectly spelled
+vim spell check: zuW                  # (n) undo temporarily mark word as incorrectly spelled
 
 vim sessions: ":mksession /path"      # (c) save the current vim session.
 vim sessions: ":source /path"         # (c) load the specified vim session.
 
-
 vim terminal: :term                   # (c) start terminal emulator
 vim terminal: <Ctrl-\><Ctrl-n>        # (i) leave terminal insert mode
 vim terminal: i                       # (n) enter terminal insert mode
-
 
 vim surround: ), }, ], >                                # (surround) not including spaces
 vim surround: b, B, r, a                                # (surround) aliases for ), }, ], and > respectively
@@ -480,7 +509,6 @@ vim surround: ds"                                       # (n) delete surrounding
 vim surround: ysiw<em> or ysiwtem>                      # (n) add em tag around iw text object
 vim surround: ysiwf{name}<cr>                           # (n) wrap iw text object in function call
 vim surround: ysiwF{name}<cr>                           # (n) wrap iw text object in function call with space inside parentheses
-
 
 vim-fzf: :Files                       # (c) search in all files
 vim-fzf: :Files {path}                # (c) search in all files in {path}
@@ -513,7 +541,6 @@ vim-fzf window: <C-t>                 # (c) open in new tab
 vim-fzf window: <C-x>                 # (c) open in horizontal split
 vim-fzf window: <C-v>                 # (c) open in vertical split
 
-
 vim-sneak: s{char}{char}                  # (n) jump to next occurrence of the first {char}
 vim-sneak: {count}s{char}{char}           # (n) jump to next occurrence of the first {char} within {count} lines
 vim-sneak: S{char}{char}                  # (n) jump to previous occurrence of the first {char}
@@ -525,41 +552,33 @@ vim-sneak: {count}{operator}z{char}{char} # (n) apply operator forward to {count
 vim-sneak: {operator}Z{char}{char}        # (n) apply operator backward to the next {char}{char}
 vim-sneak: {count}{operator}Z{char}{char} # (n) apply operator backward to {count}th {char}{char}
 
-
 vim commentary: gc{motion}            # (n) toggle comments on lines in motion
 vim commentary: gcc                   # (n) toggle comments on {count} lines
 vim commentary: gc                    # (n) (object) group of commented lines
 vim commentary: gcgc or gcu           # (n) toggle comments for group of commented lines
 vim commentary: :[range]Commentary    # (c) toggle comments for lines in range
 
-
 vim-sort-motion: gs{extra line motion} # (n) sort lines covered by motion
 vim-sort-motion: gs{intra line motion} # (n) sort as comma separated list (e.g. arguments)
 vim-sort-motion: gs                    # (v) sort visually selected text
 
-
 splitjoin.vim: gS                      # (n) split single line into equivalent block version
 splitjoin.vim: gJ                      # (n) join block into equivalent single line version
 
-
 vim scalpel: <Lead>e                   # (n) populate command to substitute for current word
-
 
 vim-titlecase: gz{motion}              # (n) capitalize the first character of each word
 vim-titlecase: gz                      # (v) capitalize the first character of each visually selected word
-
 
 vim-textobj-entire: ae                # (object) all lines in current buffer
 vim-textobj-entire: ie                # (object) all lines in current buffer except outer whitespace lines
 vim-textobj-line: al                  # (object) current line
 vim-textobj-line: il                  # (object) current line except outer whitespace
 
-
 vim-indent-object: ai                 # (object) indent block and line above
 vim-indent-object: {count}ai          # (object) indent block n levels up
 vim-indent-object: ii or iI           # (object) indent block only
 vim-indent-object: iI                 # (object) indent block and lines above and below
-
 
 vim-unimpaired: [a ]a                 # {motion} to previous and next file
 vim-unimpaired: [A ]A                 # {motion} to first and last file
@@ -605,7 +624,6 @@ vim-unimpaired: [yy                   # (n) C string encode current line
 vim-unimpaired: ]y{motion}            # (n) C string decode
 vim-unimpaired: ]yy                   # (n) C string decode current line
 
-
 vim-plug: :PlugInstall                # (c) install plugins
 vim-plug: :PlugClean                  # (c) remove unlisted plugins
 vim-plug: :PlugClean!                 # (c) remove unlisted plugins without prompt
@@ -616,9 +634,7 @@ vim-plug: :PlugStatus                 # (c) check status of plugins
 vim-plug: :PlugDiff                   # (c) show changes from last update and pending changes
 vim-plug: :PlugSnapshot [output path] # (c) generate script for restoring current plugins
 
-
 vim custom: :Reload                   # (c) save buffer, source current file, :PlugInstall
-
 
 vim-cmp: :CmpStatus                   # (c) show status of nvim-cmp
 vim-cmp: <Ctrl-h>                     # (i) (custom) move to previous location in snippet
@@ -628,7 +644,6 @@ vim-cmp: <Ctrl-l>                     # (i) (custom) move to next location in sn
 vim-cmp: <Ctrl-Space>                 # (n) (custom) manual completion
 vim-cmp: <Ctrl-Space>                 # (i) (custom) choose menu item
 vim-cmp: <Ctrl-q>                     # (i) (custom) close completion menu
-
 
 vimwiki: <Lead>ww                     # (n) open wiki index
 vimwiki: <Lead>wt                     # (n) open wiki index in new tab
@@ -704,7 +719,6 @@ vimwiki: ic                           # (object) inner table column
 vimwiki: al                           # (object) list item with its children
 vimwiki: il                           # (object) single list item
 
-
 vimwiki diary: {number}<Lead>wi       # (n) open diary index file for wiki
 vimwiki diary: <Lead>w<Lead>i         # (n) update current diary index
 vimwiki diary: {number}<Lead>w<Lead>w # (n) open today's diary file for wiki
@@ -712,7 +726,6 @@ vimwiki diary: {number}<Lead>w<Lead>t # (n) open today's diary file for wiki in 
 vimwiki diary: <Ctrl-Up>              # (n) open previous day's diary
 vimwiki diary: <Ctrl-Down>            # (n) open next day's diary
 vimwiki diary: <Lead>W<Lead>i         # (n) update diary section (delete old, insert new)
-
 
 vim-snippets python: #!               # (i) python3 shebang
 vim-snippets python: imp              # (i) import statement
@@ -772,7 +785,6 @@ vim-snippets python: cmp              # (i) methods implementing rich comparison
 vim-snippets python: repr             # (i) methods implenting string representation
 vim-snippets python: numeric          # (i) methods for emulating a numeric type
 
-
 vim-snippets django template: %                 # (i) tag
 vim-snippets django template: %%                # (i) start and end tags
 vim-snippets django template: {                 # (i) double braces tag
@@ -825,7 +837,6 @@ vim-snippets django template: truncatewords     # (i) filter
 vim-snippets django template: truncatewordshtml # (i) filter
 vim-snippets django template: urlizetrunc       # (i) filter
 
-
 vim-snippets django template: wordwrap          # (i) filter
 vim-snippets django: auto                 # (i) model field
 vim-snippets django: bigint               # (i) model field
@@ -862,11 +873,9 @@ vim-snippets django: tabularinline        # (i) admin.TabularInline
 vim-snippets django: stackedinline        # (i) admin.StackedInline
 vim-snippets django: r2r                  # (i) render to response
 
-
 vim-snippets snippet: snip                # (i) snippet
 vim-snippets snippet: v                   # (i) {VISUAL}
 vim-snippets snippet: $                   # (i) ${ : }
-
 
 vim-snippets jinja: %                     # (i) tag
 vim-snippets jinja: %%                    # (i) start and end tags
@@ -921,24 +930,19 @@ vim-snippets jinja: truncatewordshtml     # (i) filter
 vim-snippets jinja: urlizetrunc           # (i) filter
 vim-snippets jinja: wordwrap              # (i) filter
 
-
 vim sessions startify: :SLoad         # (c) load session
 vim sessions startify: :SSave[!]      # (c) save session optionally without prompt
 vim sessions startify: :SDelete[!]    # (c) delete session optionally without prompt
 vim sessions startify: :SClose        # (c) close session
 
-
 vim startify custom: <Lead>o          # (n) open startify (home)
-
 
 vim codi: :Codi                       # (c) start codi for current buffer
 vim codi: :Codi!                      # (c) stop codi for current buffer
 vim codi: :Codi!!                     # (c) toggle codi for current buffer
 vim codi custom: <Lead>c              # (n) toggle codi for current buffer
 
-
 vim loupe: <Lead>n                    # (n) turn off search highlighting
-
 
 vim-fugitive stage: s                  # stage file or hunk under cursor
 vim-fugitive stage: u                  # unstage the file or hunk under the cursor
@@ -955,7 +959,6 @@ vim-fugitive diff: dd                    # open a diff with split in default dir
 vim-fugitive diff: dv                    # open a diff with vertical split
 vim-fugitive diff: ds or dh              # open a diff with horizontal split
 vim-fugitive diff: dq                    # close all but one diff buffer, and turn off diff mode
-
 
 vim-fugitive navigation: <CR>            # open file under cursor
 vim-fugitive navigation: o               # open file under cursor in new split
@@ -986,7 +989,6 @@ vim-fugitive navigation: {count}gi       # open .gitignore in a split
 vim-fugitive navigation: <Ctrl-n>        # move to next filename in status buffer
 vim-fugitive navigation: <Ctrl-p>        # move to previous filename in status buffer
 
-
 vim-fugitive commit: cc                  # create commit
 vim-fugitive commit: ca                  # amend last commit and edit message
 vim-fugitive commit: ce                  # amend last commit without editing the message
@@ -1004,12 +1006,10 @@ vim-fugitive commit: crn                 # revert commit under cursor in index a
 vim-fugitive commit: cr<Space>           # populate command line with ":Git revert "
 vim-fugitive commit: cm<Space>           # populate command line with ":Git merge "
 
-
 vim-fugitive checkout/branch: coo        # checkout commit under cursor
 vim-fugitive checkout/branch: cb<Space>  # populate command line with ":Git branch "
 vim-fugitive checkout/branch: co<Space>  # populate command line with ":Git checkout "
 vim-fugitive checkout/branch: cb? or co? # show checkout/branch help
-
 
 vim-fugitive stash: czz                  # push stash
 vim-fugitive stash: 1czz                 # push stash --include-untracked
@@ -1020,7 +1020,6 @@ vim-fugitive stash: cza                  # apply topmost stash or stash@{count},
 vim-fugitive stash: czP                  # pop typmost stash or stash@{count}
 vim-fugitive stash: czp                  # pop typmost stash or stash@{count}, preserving the index
 vim-fugitive stash: cz<Space>            # populate command line with ":Git stash "
-
 
 vim-fugitive rebase: ri or u             # interactive rebase using ancester of commit under cursor as upstream
 vim-fugitive rebase: rf                  # autosquash rebase without editing todo list, use ancestor of commit under cursor as upstream
@@ -1035,7 +1034,6 @@ vim-fugitive rebase: rm                  # interactive rebase with the commit un
 vim-fugitive rebase: rd                  # interactive rebase with the commit under the cursor set to `drop`
 vim-fugitive rebase: r<Space>            # populate command line with ":Git rebase "
 
-
 vim-fugitive blame: A                    # resize to end of author column
 vim-fugitive blame: C                    # resize to end of commit column
 vim-fugitive blame: D                    # resize to end of date/time column
@@ -1048,13 +1046,11 @@ vim-fugitive blame: -                    # reblame at commit
 vim-fugitive blame: ~                    # reblame at {count}th first grandparent
 vim-fugitive blame: P                    # reblame at {count}th parent (like HEAD^{count})
 
-
 vim-fugitive: :G                         # (c) open status buffer
 vim-fugitive: gq                         # close status buffer
 vim-fugitive: .                          # populate command line with the file under the cursor
 vim-fugitive: <Ctrl-r><Ctrl-g>           # (c) recall path to current fugitive object
 vim-fugitive: "{register}y<Ctrl-g>       # yank path to current fugitive object
-
 
 vim-fugitive object: @                   # (c) commit referenced by @ aka HEAD
 vim-fugitive object: main                # (c) commit referenced by main
@@ -1079,7 +1075,6 @@ vim-fugitive object: :                   # (c) fugitive summary buffer
 vim-fugitive object: -                   # (c) temp file containing the last :Git invocations output
 vim-fugitive object: <cfile>             # (c) file or commit under the cursor
 
-
 vim-fugitive: <Lead>gs                   # (custom) open status buffer (:Git or :G)
 vim-fugitive: <Lead>gb                   # (n) (custom) open :Git blame for all lines
 vim-fugitive: <Lead>gb                   # (v) (custom) open :Git blame for selected lines
@@ -1093,14 +1088,12 @@ vim-fugitive: gb                         # (n) open current file on github
 vim-fugitive: gb                         # (v) open current file on github with lines selected
 vim-fugitive: <Ctrl-x><Ctrl-o>           # starts completion of github issue and pull request numbers and usernames
 
-
 vim-gitgutter: <Lead>hp               # preview hunk under cursor
 vim-gitgutter: <Lead>hs               # stage hunk under cursor
 vim-gitgutter: <Lead>hu               # undo the hunk under the cursor
 vim-gitgutter: ]c or [c               # jump to the next or previous {count} hunk
 vim-gitgutter: ic                     # (object) current hunk's lines
 vim-gitgutter: ac                     # (object) current hunk's lines and trailing blank lines
-
 
 vim gv: :GV                           # (c) open commit browser
 vim gv: <Lead>gv                      # (n) open commit browser
@@ -1116,7 +1109,6 @@ vim gv commit browser: gb             # open commit on github
 vim gv commit browser: [[ ]]          # move between commits
 vim gv commit browser: .              # populate command line with ":Git {cursor} {commit SHA}"
 vim gv commit browser: q or gq        # close
-
 
 vim-eunuch: :Delete                   # unload buffer, delete from buffer list, delete from disk (fails if file was changed)
 vim-eunuch: :Delete!                  # unload buffer, delete from buffer list, delete from disk
@@ -1144,9 +1136,7 @@ vim-eunuch: :SudoEdit {file}          # edit (open) {file} using sudo
 vim-eunuch: :SudoWrite                # write current file to disk using sudo
 vim-eunuch: :Wall or :W               # write all windows, even unchanged
 
-
 switch.vim: <Lead>s                   # invoke :Switch
-
 
 vim undotree: <Lead>u                 # toggle undotree
 vim undotree: <CR>                    # change buffer to state of highlighted line
@@ -1159,14 +1149,47 @@ vim undotree: <Tab>                   # set focus back to the editor
 vim undotree: q                       # close undotree panel
 vim undotree: ?                       # toggle quick help
 
-
-vim tagbar: <Lead>t                   # toggle tagbar window
-
-
 vim-startuptime: :StartupTime         # (c) run startuptime plugin
 vim-startuptime: K                    # (n) show additional information about line
 vim-startuptime: gf                   # (n) load corresponding file in new split
 
+vim netrw: :Explore                   # (c) open netrw in current window
+vim netrw: :Explore!                  # (c) open netrw, vertical split if current file has changed
+vim netrw: :Hexplore                  # (c) open netrw, horizontal split, directory in lower window
+vim netrw: :Hexplore!                 # (c) open netrw, horizontal split, directory in upper window
+vim netrw: :Vexplore                  # (c) open netrw, vertical split, directory in left window
+vim netrw: :Vexplore!                 # (c) open netrw, vertical split, directory in right window
+vim netrw: :Sexplore                  # (c) open netrw, horizontal split, directory in upper window
+vim netrw: :Sexplore!                 # (c) open netrw, horizontal split, directory in lower window
+vim netrw: :Texplore                  # (c) open netrw, new tab
+vim netrw: :Lexplore                  # (c) open netrw, vertical split, open file in window command was called from
+vim netrw: <CR>                       # (n) open directory or file
+vim netrw: -                          # (n) go to parent directory
+vim netrw: u                          # (n) go back to previous directory
+vim netrw: %                          # (n) create empty buffer in directory
+vim netrw: R                          # (n) rename file
+vim netrw: mt                         # (n) assign target directory used by move and copy
+vim netrw: mf                         # (n) marks a file or directory
+vim netrw: mc                         # (n) copy marked files to target directory
+vim netrw: mm                         # (n) move marked files to target directory
+vim netrw: mx                         # (n) runs external command on marked files
+vim netrw: D                          # (n) delete file or empty directory
+vim netrw: mx rm -r                   # (n) delete directory recursively
+vim netrw: d                          # (n) create a directory
+vim netrw: gh                         # (n) toggle hidden files
+vim netrw: mb                         # (n) make a bookmark
+vim netrw: gb                         # (n) go to most recent bookmark
+vim netrw: p                          # (n) open preview window
+vim netrw custom: <Lead>dd            # (n) open current file's directory with netrw
+vim netrw custom: <Lead>dh            # (n) open home directory with netrw
+vim netrw custom: <Lead>dp            # (n) open projects directory with netrw
+vim netrw: <Ctrl-wz>                  # (n) close preview window
+vim netrw vinegar: I                  # (n) toggle information at top of screen
+vim netrw vinegar: -                  # (n) open buffer location in netrw
+vim netrw vinegar: .                  # (n) populate command with filename under cursor
+vim netrw vinegar: y.                 # (n) yank {count} absolute filenames under cursor and below
+vim netrw vinegar: ~                  # (n) go to the home directory
+vim netrw vinegar: <Ctrl-^>           # (n) return to previous location (previous buffer)
 
 qtile window: <Super-{hjkl}>          # move focus
 qtile window: <Super-Shift-{hjkl}>    # move window left
@@ -1186,9 +1209,7 @@ qtile program: <Super-w>              # kill focused window
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
 
-
 kitty: <C-S-h>                        # opens contents of terminal in text editor
-
 
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
@@ -1233,7 +1254,6 @@ ranger subst: %d                      # substitute current directory
 ranger subst: %s                      # substitute currently selected files
 ranger subst: %t                      # substitute currently tagged files
 ranger subst: :bulkrename %s          # example for substitution
-
 
 firefox current pag: F6               # move to the next frame
 firefox current pag: Shift + F6       # move to the prev frame
@@ -1328,7 +1348,6 @@ firefox misc: Shift + F10                     # Toggle Context Menu
 firefox misc: Ctrl + space                    # Show groups
 firefox misc: ctrl+1-9                        # Change to a group
 
-
 vimium nav: ?                    # This help
 vimium nav: j                    # Scroll down
 vimium nav: k                    # Scroll up
@@ -1390,7 +1409,6 @@ vimium tabs: ^                   # Go to previously-visited tab on current windo
 vimium tabs: <<                  # Move tab to the left
 vimium tabs: >>                  # Move tab to the right
 
-
 rofi: Ctrl-v                          # Insert: Paste from clipboard
 rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
 rofi: Ctrl-u                          # Clear the line
@@ -1424,7 +1442,6 @@ rofi: grave                           # Toggle case sensitivity.
 rofi: Alt-grave                       # Toggle sorting.
 rofi: Alt-Shift-S                     # Take a screenshot and store it in the Pictures directory.
 
-
 markdown: # H1                        # heading 1
 markdown: ## H2                       # heading 2
 markdown: ### H3                      # heading 3
@@ -1445,7 +1462,6 @@ markdown: sentence. [^1]              # footnote in text body
 markdown: [^1]: footnote              # footnote in footer
 markdown: term<\n>: definition        # definition
 
-
 pyenv activate [env_name]             # activate environment
 pyenv versions                        # show all python versions on this computer
 pyenv which [command]                 # show location of command in activated environment
@@ -1460,10 +1476,8 @@ pyenv: $PYENV_VERSION                 # environment variable, looks for this fir
 pyenv: .python-version                # file, looks for this second
 pyenv: ~/.pyenv/version               # file, looks for this third, uses system python otherwise
 
-
 path: ~/.local/share/nvim/plugged     # vim plugin storage
 path: ~/.vim/swap                     # vim swap files
-
 
 linux: groups {user}                  # list groups that {user} is part of
 linux: usermod -aG {groups} {user}    # add user to group (groups can be comma separated list)
@@ -1485,7 +1499,7 @@ linux: man 8 {command}                # system administration commands (usually 
 linux: man 9 {command}                # kernel routines
 linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
+linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
 
-
- git branch --set-upstream-to=origin/main main # set default upstream so push and pull don't need to specify a branch
+git branch --set-upstream-to=origin/main main # set default upstream so push and pull don't need to specify a branch
 git commit --amend --no-edit          # add new changes to previous commit (use fugitive instead)
