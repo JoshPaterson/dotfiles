@@ -1029,8 +1029,6 @@ vim-fugitive navigation: gP              # jump to file in the unpulled section
 vim-fugitive navigation: gr              # jump to file in the rebasing section
 vim-fugitive navigation: gi              # open .git/info/exclude in a split
 vim-fugitive navigation: {count}gi       # open .gitignore in a split
-vim-fugitive navigation: <Ctrl-n>        # move to next filename in status buffer
-vim-fugitive navigation: <Ctrl-p>        # move to previous filename in status buffer
 
 vim-fugitive commit: cc                  # create commit
 vim-fugitive commit: ca                  # amend last commit and edit message
