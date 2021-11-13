@@ -244,41 +244,43 @@ vim window: :bd                       # (c) delete a buffer (close a file)
 vim window: :ls                       # (c) list all open buffers
 vim window: :sp file                  # (c) open a file in a new buffer and split window
 vim window: :vsp file                 # (c) open a file in a new buffer and vertically split window
-vim window: <Ctrl-wv>                 # (n) split window vertically
-vim window: <Ctrl-ws>                 # (n) split window horizontally, new window {count} lines high
-vim window: <Ctrl-w^>                 # (n) split window and edit alternate file
-vim window: <Ctrl-wf>                 # (n) split window and jump to filename under cursor
-vim window: <Ctrl-wF>                 # (n) split window and jump to filename and line number under cursor
-vim window: <Ctrl-wgf>                # (n) open new tab and jump to filename under cursor
-vim window: <Ctrl-wgF>                # (n) open new tab and jump to filename and line number under cursor
-vim window: <Ctrl-ww>                 # (n) move cursor to next window
-vim window: <Ctrl-wp>                 # (n) move cursor to previous window
-vim window: <Ctrl-wP>                 # (n) move cursor to preview window
-vim window: <Ctrl-wR>                 # (n) rotate windows up {count} times
-vim window: <Ctrl-wT>                 # (n) move current window to new tab page
-vim window: <Ctrl-wq>                 # (n) quit current window
-vim window: <Ctrl-wv>                 # (n) split window vertically
-vim window: <Ctrl-wh>                 # (n) move cursor to the left
-vim window: <Ctrl-wl>                 # (n) move cursor to the right
-vim window: <Ctrl-wj>                 # (n) move cursor down
-vim window: <Ctrl-wk>                 # (n) move cursor up
-vim window: <Ctrl-wb>                 # (n) move cursor to the bottommost window
-vim window: <Ctrl-wt>                 # (n) move cursor to the topmost window
-vim window: <Ctrl-wc>                 # (n) close current window
-vim window: <Ctrl-wz>                 # (n) close preview window
-vim window: <Ctrl-wo>                 # (n) close all but current window (like :only)
-vim window: <Ctrl-wd>                 # (n) split window and jump to definition under cursor
-vim window: <Ctrl-w=>                 # (n) make all windows have equal size
-vim window: <Ctrl-w_>                 # (n) make current window {count} lines tall
-vim window: <Ctrl-w|>                 # (n) make current window {count} lines wide
-vim window: <Ctrl-wH>                 # (n) move current window to far left
-vim window: <Ctrl-wJ>                 # (n) move current window to far bottom
-vim window: <Ctrl-wK>                 # (n) move current window to far top
-vim window: <Ctrl-wL>                 # (n) move current window to far right
-vim window: <Ctrl-w+>                 # (n) make current window taller
-vim window: <Ctrl-w->                 # (n) make current window shorter
-vim window: <Ctrl-w<>                 # (n) make current window narrower
-vim window: <Ctrl-w>>                 # (n) make current window wider
+
+
+vim window mode: v                    # (w) split window vertically
+vim window mode: s                    # (w) split window horizontally, new window {count} lines high
+vim window mode: ^                    # (w) split window and edit alternate file
+vim window mode: f                    # (w) split window and jump to filename under cursor
+vim window mode: F                    # (w) split window and jump to filename and line number under cursor
+vim window mode: gf                   # (w) open new tab and jump to filename under cursor
+vim window mode: gF                   # (w) open new tab and jump to filename and line number under cursor
+vim window mode: w                    # (w) move cursor to next window
+vim window mode: p                    # (w) move cursor to previous window
+vim window mode: P                    # (w) move cursor to preview window
+vim window mode: R                    # (w) rotate windows up {count} times
+vim window mode: T                    # (w) move current window to new tab page
+vim window mode: q                    # (w) quit current window
+vim window mode: v                    # (w) split window vertically
+vim window mode: h                    # (w) move cursor to the left
+vim window mode: l                    # (w) move cursor to the right
+vim window mode: j                    # (w) move cursor down
+vim window mode: k                    # (w) move cursor up
+vim window mode: b                    # (w) move cursor to the bottommost window
+vim window mode: t                    # (w) move cursor to the topmost window
+vim window mode: c                    # (w) close current window
+vim window mode: z                    # (w) close preview window
+vim window mode: o                    # (w) close all but current window (like :only)
+vim window mode: d                    # (w) split window and jump to definition under cursor
+vim window mode: =                    # (w) make all windows have equal size
+vim window mode: _                    # (w) make current window {count} lines tall
+vim window mode: |                    # (w) make current window {count} lines wide
+vim window mode: H                    # (w) move current window to far left
+vim window mode: J                    # (w) move current window to far bottom
+vim window mode: K                    # (w) move current window to far top
+vim window mode: L                    # (w) move current window to far right
+vim window mode: +                    # (w) make current window taller
+vim window mode: -                    # (w) make current window shorter
+vim window mode: <                    # (w) make current window narrower
+vim window mode: >                    # (w) make current window wider
 vim window: z{count}<CR>              # (n) make current window {count} lines tall
 vim window: <Ctrl-Shift-+>            # (n) make text bigger, zoom in
 vim window: <Ctrl-Shift-->            # (n) make text smaller, zoom out
@@ -380,8 +382,31 @@ vim mappings: :verbose map                     # (c) shows all key mappings and 
 vim modes: Q or gQ                         # (n) start ex mode
 vim modes: R                               # (n) start replace mode
 vim modes: gR                              # (n) start virtual replace mode
-vim: <Ctrl-c>                              # (c) interrupt current command (same as <Esc>)
-vim: :{command1}|:{command2}               # (c) run multiple commands
+vim modes: <Ctrl-c>                        # (c) interrupt current command (same as <Esc>)
+vim modes: {operator}v{motion}             # (n) make operator work character wise
+vim modes: {operator}V{motion}             # (n) make operator work line wise
+vim modes: {operator}<Ctrl-v>{motion}      # (n) make operator work block wise
+vim modes: {object}                        # (v) extend visually selected region to include {object}
+
+vim command mode: :{command}|:{command}  # (c) run multiple commands
+vim command mode: <Ctrl-a>               # do completion on pattern in front of cursor and insert all matches
+vim command mode: <Ctrl-b>               # cursor to beginning of command line
+vim command mode: <Ctrl-d>               # list completions that match pattern in front of cursor
+vim command mode: <Ctrl-e>               # cursor to end of command line
+vim command mode: <Ctrl-f>               # show command-line window, show command history
+vim command mode: <Ctrl-g>               # go to next match while typing search command
+vim command mode: <Ctrl-t>               # go to previous match while typing search command
+vim command mode: <Ctrl-k>               # enter digraph
+vim command mode: <Ctrl-l>               # do completion, insert longest common part
+vim command mode: <Ctrl-n>               # go to next match in wild match list
+vim command mode: <Ctrl-p>               # go to previous match in wild match list
+vim command mode: <Ctrl-u>               # clear command line
+vim command mode: <Ctrl-v>               # insert next non-digit literally, insert 3 digit number as 1 byte
+vim command mode: <Ctrl-w>               # delete word left of cursor
+vim command mode: <Ctrl-]>               # trigger abbreviation
+vim command mode: <Ctrl-^>               # toggle use of lmap mappings
+vim command mode: <Ctrl-\> e {expr}      # replace command line with result of {expr}
+vim command mode: <Tab>                  # do completion (if 'wildchar' is <Tab>)
 
 vim: :so %                            # (c) reload current file
 vim: :so $MYVIMRC                     # (c) reload vim settings while other file is current
