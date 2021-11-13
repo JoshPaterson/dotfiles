@@ -305,6 +305,7 @@ xnoremap <Leader>gv :GV<CR>
 
 nnoremap <Leader>u :UndotreeToggle<CR>
 
+nnoremap <leader>zfap :set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1<CR>
 
 inoremap jk <Esc>
 inoremap kj <Esc>
@@ -339,6 +340,8 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['in', 'out']),
     \   switch#NormalizedCase(['permanently', 'temporarily']),
     \   switch#NormalizedCase(['permanent', 'temporary']),
+    \   switch#NormalizedCase(['global', 'local']),
+    \   switch#NormalizedCase(['show', 'hide']),
     \ ]
 
 

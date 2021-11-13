@@ -197,8 +197,6 @@ vim cut paste: zp                     # (n) put (paste) in block mode without tr
 vim cut paste: zP                     # (n) put (paste) in block mode without trailing spaces
 vim cut paste: zy                     # (n) yank (copy) without trailing spaces
 
-vim patterns: \v                      # (p) make following pattern very magic
-
 vim search: :/{pattern}               # (c) search forward for pattern
 vim search: :/ $                      # (c) find trailing whitespace
 vim search: :/{pattern}/{offset}      # (c) search forward for pattern and move cursor {offset} lines
@@ -216,7 +214,20 @@ vim search: n                         # (n) repeat search in same direction
 vim search: gn                        # (n) repeat search in same direction, visually select search term
 vim search: N                         # (n) repeat search in opposite direction
 vim search: gN                        # (n) repeat search in opposite direction, visually select search term
-vim search: :noh              # (c) remove highlighting of search matches
+vim search: :noh                      # (c) remove highlighting of search matches
+vim search: :let @/ = ""              # (c) clear last used search pattern
+
+vim search patterns: \v               # (c) make following pattern very magic
+
+vim search offset: {num}              # {num} lines down, in column 1
+vim search offset: +{num}             # {num} lines down, in column 1
+vim search offset: -{num}             # {num} lines up, in column 1
+vim search offset: e+{num}            # {num} characters to the right of the end of the match
+vim search offset: e-{num}            # {num} characters to the left of the end of the match
+vim search offset: s+{num} or b+{num} # {num} characters to the right of the start of the match
+vim search offset: s-{num} or b-{num} # {num} characters to the left of the start of the match
+vim search offset: ;{pattern}         # find the first occurrence of pattern2 after pattern1
+vim search offset: {offset};{pattern} # find the first occurrence of pattern2 after offset after pattern2
 
 vim exit: :w or :w /path              # (c) write (save) the file, but don't exit
 vim exit: :W                          # (c) write (save) the file as sudo, but don't exit
@@ -344,7 +355,10 @@ vim jump: }                           # (n) jump to next paragraph
 vim jump: :{count}                    # (n) jump to line number
 vim jump: {count}G                    # (n) jump to line number
 vim jump: gf                          # (n) jump to filename under cursor
-vim jump: gD                          # (n) jump to definition of word under cursor in current file
+vim jump: gd                          # (n) jump to local definition of word
+vim jump: 1gd                         # (n) jump to local definition of word, ignore matches inside {} ending before cursor
+vim jump: gD                          # (n) jump to global definition of word, ignore matches inside {} ending before cursor
+vim jump: 1gD                         # (n) jump to global definition of word
 vim jump: gx                          # (n) execute application for filename under cursor (opens url under cursor in browser)
 vim jump: %                           # (n) jumps to matching (), [], and {}
 vim jump: -                           # (n) jumps {count} lines upward to first non-blank character
@@ -366,7 +380,8 @@ vim mappings: :verbose map                     # (c) shows all key mappings and 
 vim modes: Q or gQ                         # (n) start ex mode
 vim modes: R                               # (n) start replace mode
 vim modes: gR                              # (n) start virtual replace mode
-vim: <Ctrl-c>                         # (c) interrupt current command (same as <Esc>)
+vim: <Ctrl-c>                              # (c) interrupt current command (same as <Esc>)
+vim: :{command1}|:{command2}               # (c) run multiple commands
 
 vim: :so %                            # (c) reload current file
 vim: :so $MYVIMRC                     # (c) reload vim settings while other file is current
@@ -402,29 +417,32 @@ vim range: :'<,'>                     # (c) applies to lines in last visually se
 vim range: :'a,'b                     # (c) applies to lines from mark a to mark b
 vim range: :.,$                       # (c) applies to current line through end of file
 
-vim folding: zo                             # (n) open fold
-vim folding: zO                             # (n) open folds recursively
-vim folding: zv                             # (n) open enough folds to view cursor line
-vim folding: za                             # (n) toggle fold
-vim folding: zA                             # (n) toggle folds recursively
-vim folding: zc                             # (n) close a fold
-vim folding: zC                             # (n) close folds recursively
-vim folding: zd                             # (n) delete a fold
-vim folding: zD                             # (n) open folds recursively
-vim folding: zE                             # (n) eliminate all folds
-vim folding: zf{motion}                     # (n) create fold for text within {motion}
-vim folding: zF                             # (n) create fold for N lines
-vim folding: zj                             # (n) move to the start of the next fold
-vim folding: zk                             # (n) move to the end of the previous fold
-vim folding: zn                             # (n) reset 'foldenable'
-vim folding: zN                             # (n) set 'foldenable'
-vim folding: zi                             # (n) toggle 'foldenable'
-vim folding: zM                             # (n) set 'foldlevel' to 0
-vim folding: zm                             # (n) subtract one from 'foldlevel'
-vim folding: zr                             # (n) add one to 'foldlevel'
-vim folding: zR                             # (n) set 'foldlevel' to the deepest fold
-vim folding: zx                             # (n) re-apply 'foldlevel' and open enough folds to view cursor line
-vim folding: zX                             # (n) re-apply 'foldlevel'
+vim folds: zo                             # (n) open fold
+vim folds: zO                             # (n) open folds recursively
+vim folds: zv                             # (n) open enough folds to view cursor line
+vim folds: za                             # (n) toggle fold
+vim folds: zA                             # (n) toggle folds recursively
+vim folds: zc                             # (n) close a fold
+vim folds: zC                             # (n) close folds recursively
+vim folds: zd                             # (n) delete a fold
+vim folds: zD                             # (n) open folds recursively
+vim folds: zE                             # (n) eliminate all folds
+vim folds: zf{motion}                     # (n) create fold for text within {motion}
+vim folds: zF                             # (n) create fold for N lines
+vim folds: zj                             # (n) move to the start of the next fold
+vim folds: zk                             # (n) move to the end of the previous fold
+vim folds: zn                             # (n) reset fold on/off (to value of 'foldenable')
+vim folds: zN                             # (n) turn folds on
+vim folds: zi                             # (n) toggle folds on/off
+vim folds: zM                             # (n) close all folds (set 'foldlevel' to 0)
+vim folds: zm                             # (n) close one level of folds (subtract one from 'foldlevel')
+vim folds: zr                             # (n) open one level of folds (add one to 'foldlevel')
+vim folds: zR                             # (n) open all folds (set 'foldlevel' to the deepest fold)
+vim folds: zx                             # (n) re-apply 'foldlevel' and open enough folds to view cursor line
+vim folds: zX                             # (n) re-apply 'foldlevel'
+vim folds: :set foldcolumn=1              # (c) show folds in gutter
+vim folds: :set foldcolumn=0              # (c) hide folds in gutter
+vim folds: <Lead>zfap                     # (n) fold all paragraphs separated by empty lines
 
 vim quickfix: :chistory               # (c) display 10 last used quickfix lists
 vim quickfix: :{count}chistory        # (c) display quickfix list #{count}
@@ -935,12 +953,12 @@ vim sessions startify: :SSave[!]      # (c) save session optionally without prom
 vim sessions startify: :SDelete[!]    # (c) delete session optionally without prompt
 vim sessions startify: :SClose        # (c) close session
 
-vim startify custom: <Lead>o          # (n) open startify (home)
+vim startify: <Lead>o                 # (n) open startify (home)
 
 vim codi: :Codi                       # (c) start codi for current buffer
 vim codi: :Codi!                      # (c) stop codi for current buffer
 vim codi: :Codi!!                     # (c) toggle codi for current buffer
-vim codi custom: <Lead>c              # (n) toggle codi for current buffer
+vim codi: <Lead>c                     # (n) toggle codi for current buffer
 
 vim loupe: <Lead>n                    # (n) turn off search highlighting
 
@@ -1075,10 +1093,10 @@ vim-fugitive object: :                   # (c) fugitive summary buffer
 vim-fugitive object: -                   # (c) temp file containing the last :Git invocations output
 vim-fugitive object: <cfile>             # (c) file or commit under the cursor
 
-vim-fugitive: <Lead>gs                   # (custom) open status buffer (:Git or :G)
-vim-fugitive: <Lead>gb                   # (n) (custom) open :Git blame for all lines
-vim-fugitive: <Lead>gb                   # (v) (custom) open :Git blame for selected lines
-vim-fugitive: <Lead>gpo                  # (n) (custom) run :G push origin main
+vim-fugitive: <Lead>gs                   # open status buffer (:Git or :G)
+vim-fugitive: <Lead>gb                   # (n) open :Git blame for all lines
+vim-fugitive: <Lead>gb                   # (v) open :Git blame for selected lines
+vim-fugitive: <Lead>gpo                  # (n) run :G push origin main
 vim-fugitive: :GEdit                     # (c) return to work tree version of file
 vim-fugitive: :GMove                     # (c) move file
 vim-fugitive: :GRename                   # (c) move file relative to containing directory
@@ -1180,9 +1198,9 @@ vim netrw: gh                         # (n) toggle hidden files
 vim netrw: mb                         # (n) make a bookmark
 vim netrw: gb                         # (n) go to most recent bookmark
 vim netrw: p                          # (n) open preview window
-vim netrw custom: <Lead>dd            # (n) open current file's directory with netrw
-vim netrw custom: <Lead>dh            # (n) open home directory with netrw
-vim netrw custom: <Lead>dp            # (n) open projects directory with netrw
+vim netrw: <Lead>dd                   # (n) open current file's directory with netrw
+vim netrw: <Lead>dh                   # (n) open home directory with netrw
+vim netrw: <Lead>dp                   # (n) open projects directory with netrw
 vim netrw: <Ctrl-wz>                  # (n) close preview window
 vim netrw vinegar: I                  # (n) toggle information at top of screen
 vim netrw vinegar: -                  # (n) open buffer location in netrw
