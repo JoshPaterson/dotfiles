@@ -58,6 +58,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'tc50cal/vim-terminal'
     " Plug 'mg979/vim-visual-multi'
     Plug 'tpope/vim-vinegar'
+    Plug 'kana/vim-submode'
 
     " Highlighting and text display
     Plug 'Yggdroot/indentLine'
@@ -275,6 +276,35 @@ set directory^=$HOME/.vim/swap//
 
 " highlight yanked text, see :h lua-highlight
 au TextYankPost * silent! lua vim.highlight.on_yank {on_visual=false}
+
+
+" ----------------------------------
+" window mode configuration
+" https://ddrscott.github.io/blog/2016/making-a-window-submode/
+" ----------------------------------
+let g:submode_always_show_submode = 1
+let g:submode_timeout = 0
+
+call submode#enter_with('window', 'n', '', '<C-w>')
+
+" Note: <C-c> will also get you out to the mode without this mapping.
+" Note: <C-[> also behaves as <ESC>
+call submode#leave_with('window', 'n', '', '<ESC>')
+
+for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+         \  'n','o','p','q','r','s','t','u','v','w','x','y','z']
+    call submode#map('window', 'n', '', key, '<C-w>' . key)
+    call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
+    call submode#map('window', 'n', '', '<C-' . key . '>', '<C-w>' . '<C-'.key . '>')
+endfor
+" Go through symbols. Sadly, '|', not supported in submode plugin.
+for key in ['=','_','+','-','<','>']
+    call submode#map('window', 'n', '', key, '<C-w>' . key)
+endfor
+
+call submode#map('window', 'n', '', 'ts', ':split term<CR>')
+call submode#map('window', 'n', '', 'tv', ':vsplit term<CR>')
+nnoremap <Leader>w <C-w>
 
 
 " ----------------------------------
