@@ -1,4 +1,0 @@
-[git_status]
-modified = "📝×${count}"
-staged = "🗃️×${count}"
-format = "$all_status"

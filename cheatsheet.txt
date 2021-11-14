@@ -246,6 +246,7 @@ vim window: :sp file                  # (c) open a file in a new buffer and spli
 vim window: :vsp file                 # (c) open a file in a new buffer and vertically split window
 
 
+vim window mode: <Ctrl-w>             # (n) enter window mode
 vim window mode: v                    # (w) split window vertically
 vim window mode: s                    # (w) split window horizontally, new window {count} lines high
 vim window mode: ^                    # (w) split window and edit alternate file
@@ -463,8 +464,8 @@ vim folds: zM                             # (n) close all folds (set 'foldlevel'
 vim folds: zm                             # (n) close one level of folds (subtract one from 'foldlevel')
 vim folds: zr                             # (n) open one level of folds (add one to 'foldlevel')
 vim folds: zR                             # (n) open all folds (set 'foldlevel' to the deepest fold)
-vim folds: zx                             # (n) re-apply 'foldlevel' and open enough folds to view cursor line
-vim folds: zX                             # (n) re-apply 'foldlevel'
+vim folds: zx                             # (n) update folds: re-apply 'foldlevel' and do 'zv'
+vim folds: zX                             # (n) undo manually opened and closed folds, do 'zx'
 vim folds: :set foldcolumn=1              # (c) show folds in gutter
 vim folds: :set foldcolumn=0              # (c) hide folds in gutter
 vim folds: <Lead>zfap                     # (n) fold all paragraphs separated by empty lines
