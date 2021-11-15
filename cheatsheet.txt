@@ -515,6 +515,7 @@ vim tagbar: ?                         # (n) toggle help
 vim tagbar: <Lead>t                   # toggle tagbar window
 
 vim spell check: z=                   # (n) give spelling suggestions
+vim spell check: {count}z=            # (n) insert {count}th spelling suggestion
 vim spell check: zg                   # (n) permanently mark word as correctly spelled
 vim spell check: zug                  # (n) undo permanently mark word as correctly spelled
 vim spell check: zG                   # (n) temporarily mark word as correctly spelled
@@ -523,9 +524,8 @@ vim spell check: zw                   # (n) permanently mark word as incorrectly
 vim spell check: zuw                  # (n) undo permanently mark word as incorrectly spelled
 vim spell check: zW                   # (n) temporarily mark word as incorrectly spelled
 vim spell check: zuW                  # (n) undo temporarily mark word as incorrectly spelled
-
-vim sessions: ":mksession /path"      # (c) save the current vim session.
-vim sessions: ":source /path"         # (c) load the specified vim session.
+vim spell check: [s ]s                # (n) go to previous and next spelling error
+vim spell check: [S ]S                # (n) go to previous and next spelling error
 
 vim terminal: :term                   # (c) start terminal emulator
 vim terminal: <Ctrl-\><Ctrl-n>        # (i) leave terminal insert mode
@@ -581,9 +581,16 @@ vim-fzf: :Maps                        # (c) search normal mode mappings
 vim-fzf: :Helptags                    # (c) search help tags
 vim-fzf: :Filetypes                   # (c) search filetypes
 vim-fzf: {command}!                   # (c) use full screen window for search results
-vim-fzf window: <C-t>                 # (c) open in new tab
-vim-fzf window: <C-x>                 # (c) open in horizontal split
-vim-fzf window: <C-v>                 # (c) open in vertical split
+vim-fzf: <Leader>fh                   # (n) search recently used files
+vim-fzf: <Leader>fg                   # (n) search filenames tracked by active git repository
+vim-fzf: <Leader>fp                   # (n) search filenames in ~/projects
+vim-fzf: <Leader>fn                   # (n) search notes directory with Ag
+vim-fzf: <Leader>fm                   # (n) :Marks
+vim-fzf: <Leader>fs                   # (n) :Sessions
+vim-fzf: <Leader>fc                   # (n) search filenames in ~/.config
+vim-fzf window: <C-t>                 # (n) open in new tab
+vim-fzf window: <C-x>                 # (n) open in horizontal split
+vim-fzf window: <C-v>                 # (n) open in vertical split
 
 vim-sneak: s{char}{char}                  # (n) jump to next occurrence of the first {char}
 vim-sneak: {count}s{char}{char}           # (n) jump to next occurrence of the first {char} within {count} lines
@@ -650,11 +657,12 @@ vim-unimpaired: [oi ]oi yoi           # (n) on, off, & toggle ignorecase
 vim-unimpaired: [ol ]ol yol           # (n) on, off, & toggle list
 vim-unimpaired: [on ]on yon           # (n) on, off, & toggle number
 vim-unimpaired: [or ]or yor           # (n) on, off, & toggle relative number
-vim-unimpaired: [os ]os yos           # (n) on, off, & toggle spell
+vim-unimpaired: [os ]os yos           # (n) on, off, & toggle spellcheck
 vim-unimpaired: [ou ]ou you           # (n) on, off, & toggle cursorcolumn
 vim-unimpaired: [ov ]ov yov           # (n) on, off, & toggle virtualedit
 vim-unimpaired: [ow ]ow yow           # (n) on, off, & toggle wrap
 vim-unimpaired: [ox ]ox yox           # (n) on, off, & toggle cursorline and cursorcolumn (cross)
+vim-unimpaired custom: [of ]of yof    # (n) on, off, & toggle fold column in gutter
 vim-unimpaired: [x{motion}            # (n) XML encode
 vim-unimpaired: [xx                   # (n) XML encode current line
 vim-unimpaired: ]x{motion}            # (n) XML decode
@@ -688,88 +696,6 @@ vim-cmp: <Ctrl-l>                     # (i) (custom) move to next location in sn
 vim-cmp: <Ctrl-Space>                 # (n) (custom) manual completion
 vim-cmp: <Ctrl-Space>                 # (i) (custom) choose menu item
 vim-cmp: <Ctrl-q>                     # (i) (custom) close completion menu
-
-vimwiki: <Lead>ww                     # (n) open wiki index
-vimwiki: <Lead>wt                     # (n) open wiki index in new tab
-vimwiki: <Lead>ws                     # (n) list and select available wikis
-vimwiki: <Lead>wd                     # (n) delete wiki page
-vimwiki: <Lead>wr                     # (n) rename wiki page
-vimwiki: <Lead>wh                     # (n) convert current wiki page to HTML
-vimwiki: <Lead>whh                    # (n) convert current wiki page to HTML and open in browser
-vimwiki navigation: <CR>              # (n) follow or create wiki link
-vimwiki navigation: <Shift-CR>        # (n) follow or create wiki link in new horizontal split
-vimwiki navigation: <Ctrl-CR>         # (n) follow or create wiki link in new vertical split
-vimwiki navigation: <Ctrl-Shift-CR>   # (n) follow or create wiki link in new tab
-vimwiki navigation: <Backspace>       # (n) go back to previous wiki page
-vimwiki navigation: <Tab>             # (n) go to next link on wiki page
-vimwiki navigation: <Shift-Tab>       # (n) go to previous link on wiki page
-vimwiki navigation: [[                # (n) go to previous header
-vimwiki navigation: ]]                # (n) go to next header
-vimwiki navigation: [=                # (n) go to previous header with the same level
-vimwiki navigation: ]=                # (n) go to next header with the same level
-vimwiki navigation: ]u or [u          # (n) go to the header that is one level up
-vimwiki navigation: gnt               # (n) find next unfinished task on page
-vimwiki list edit: gl<Space>          # (n) remove checkbox from list item
-vimwiki list edit: gL<Space>          # (n) remove checkbox from all sibling items
-vimwiki list edit: gln                # (n) increase done status of checkbox
-vimwiki list edit: glp                # (n) decrease done status of checkbox
-vimwiki list edit: gll                # (n) increase level of list item
-vimwiki list edit: gLl                # (n) increase level of list item and all child items
-vimwiki list edit: glh                # (n) decrease level of list item
-vimwiki list edit: gLh                # (n) decrease level of list item and all child items
-vimwiki list edit: glr                # (n) renumber list items when on numbered list item
-vimwiki list edit: gLr                # (n) renumber list items in entire file when on numbered list item
-vimwiki list edit: gl* gl8            # (n) make list item out of current line, change item symbol to *
-vimwiki list edit: gL* gl8            # (n) change symbol of current list to *
-vimwiki list edit: gl # gl3           # (n) make list item out of current line, change item symbol to #
-vimwiki list edit: gL # gl3           # (n) change symbol of current list to #
-vimwiki list edit: gl-                # (n) make list item out of current line, change item symbol to -
-vimwiki list edit: gL-                # (n) change symbol of current list to -
-vimwiki list edit: gl1                # (n) make list item out of current line, change item to numbered
-vimwiki list edit: gL1                # (n) change current list to numbered
-vimwiki list edit: gla                # (n) make list item out of current line, change symbol to a)
-vimwiki list edit: gLa                # (n) change current list symbol to a) b) c)
-vimwiki list edit: glA                # (n) make list item out of current line, change symbol to A)
-vimwiki list edit: gLA                # (n) change current list symbol to A) B) C)
-vimwiki list edit: gli                # (n) make list item out of current line, change symbol to i)
-vimwiki list edit: gLi                # (n) change current list symbol to i) ii) iii)
-vimwiki list edit: glI                # (n) make list item out of current line, change symbol to I)
-vimwiki list edit: gLI                # (n) change current list symbol to I) II) III)
-vimwiki list edit: glx                # (n) toggle checkbox of a list item disabled/off (-)
-vimwiki list edit: glm                # (n) increase indent of list item
-vimwiki list edit: gll                # (n) decrease indent of list item
-vimwiki list edit: <Ctrl-T>           # (n) increase indent of list item in insert mode
-vimwiki list edit: <Ctrl-D>           # (n) decrease indent of list item in insert mode
-vimwiki list edit: <Ctrl-Space>       # (n) add or checkbox or toggle between done and not done
-vimwiki table edit: gqq or gww        # (n) format table (check entire table)
-vimwiki table edit: gq1 or gw1        # (n) fast format table (check previous few lines)
-vimwiki table edit: <A-Left>          # (n) move current table column to the left
-vimwiki table edit: <A-Right>         # (n) move current table column to the right
-vimwiki table: <Alt-Left>             # (n) move column left
-vimwiki table: <Alt-Right>            # (n) move column right
-vimwiki table: <CR>                   # (n) (insert mode) go down/ create cell
-vimwiki table: <Tab>                  # (n) (insert mode) go next/ create cell
-vimwiki header edit: =                # (n) add header level
-vimwiki header edit: -                # (n) remove header level
-vimwiki edit: +                       # (n) create or decorate links
-vimwiki: ah                           # (object) section including header & empty trailing lines
-vimwiki: ih                           # (object) section excluding header & empty trailing lines
-vimwiki: aH                           # (object) section & subsections including header & empty trailing lines
-vimwiki: iH                           # (object) section & subsections excluding header & empty trailing lines
-vimwiki: a\                           # (object) table cell
-vimwiki: i\                           # (object) inner table cell
-vimwiki: ac                           # (object) table column
-vimwiki: ic                           # (object) inner table column
-vimwiki: al                           # (object) list item with its children
-vimwiki: il                           # (object) single list item
-
-vimwiki diary: {number}<Lead>wi       # (n) open diary index file for wiki
-vimwiki diary: <Lead>w<Lead>i         # (n) update current diary index
-vimwiki diary: {number}<Lead>w<Lead>w # (n) open today's diary file for wiki
-vimwiki diary: {number}<Lead>w<Lead>t # (n) open today's diary file for wiki in new tab
-vimwiki diary: <Ctrl-Up>              # (n) open previous day's diary
-vimwiki diary: <Ctrl-Down>            # (n) open next day's diary
-vimwiki diary: <Lead>W<Lead>i         # (n) update diary section (delete old, insert new)
 
 vim-snippets python: #!               # (i) python3 shebang
 vim-snippets python: imp              # (i) import statement
@@ -974,12 +900,13 @@ vim-snippets jinja: truncatewordshtml     # (i) filter
 vim-snippets jinja: urlizetrunc           # (i) filter
 vim-snippets jinja: wordwrap              # (i) filter
 
-vim sessions startify: :SLoad         # (c) load session
-vim sessions startify: :SSave[!]      # (c) save session optionally without prompt
-vim sessions startify: :SDelete[!]    # (c) delete session optionally without prompt
-vim sessions startify: :SClose        # (c) close session
+fzf-session.vim: :Session {name}                   # (c) create session
+fzf-session.vim: :SLoad {name}                     # (c) load session
+fzf-session.vim: :SDelete {name}                   # (c) delete session
+fzf-session.vim: :SQuit                            # (c) stop tracking current active session and close buffers
+fzf-session.vim: :SList                            # (c) list all available sessions
+fzf-session.vim: :Sessions                         # (c) search available sessions
 
-vim startify: <Lead>o                 # (n) open startify (home)
 
 vim codi: :Codi                       # (c) start codi for current buffer
 vim codi: :Codi!                      # (c) stop codi for current buffer
@@ -1197,13 +1124,13 @@ vim-startuptime: gf                   # (n) load corresponding file in new split
 
 vim netrw: :Explore                   # (c) open netrw in current window
 vim netrw: :Explore!                  # (c) open netrw, vertical split if current file has changed
-vim netrw: :Hexplore                  # (c) open netrw, horizontal split, directory in lower window
-vim netrw: :Hexplore!                 # (c) open netrw, horizontal split, directory in upper window
-vim netrw: :Vexplore                  # (c) open netrw, vertical split, directory in left window
-vim netrw: :Vexplore!                 # (c) open netrw, vertical split, directory in right window
+vim netrw: :Hexplore                  # (c) open netrw in bottom half
+vim netrw: :Hexplore!                 # (c) open netrw in top half
+vim netrw: :Vexplore                  # (c) open netrw in left half
+vim netrw: :Vexplore!                 # (c) open netrw in right half
 vim netrw: :Sexplore                  # (c) open netrw, horizontal split, directory in upper window
 vim netrw: :Sexplore!                 # (c) open netrw, horizontal split, directory in lower window
-vim netrw: :Texplore                  # (c) open netrw, new tab
+vim netrw: :Texplore                  # (c) open netrw in new tab
 vim netrw: :Lexplore                  # (c) open netrw, vertical split, open file in window command was called from
 vim netrw: <CR>                       # (n) open directory or file
 vim netrw: -                          # (n) go to parent directory

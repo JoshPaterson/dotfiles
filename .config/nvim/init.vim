@@ -45,8 +45,6 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Plug 'AndrewRadev/dsf.vim'
 
     " Features
-    Plug 'vimwiki/vimwiki'
-    Plug 'mhinz/vim-startify'
     Plug 'metakirby5/codi.vim'
     Plug 'mbbill/undotree'
         " Plug 'gundo'
@@ -73,6 +71,7 @@ call plug#begin("~/.local/share/nvim/plugged")
     " Fuzzy finding
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'dominickng/fzf-session.vim'
     " see youtube.com/watch?v=xf0yYLj4AJI for fzf config
     " Plug 'telescope' see primeagen's video for config
 
@@ -250,9 +249,22 @@ EOF
 filetype plugin on
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_localcopydircmd = 'cp -r'
-nnoremap <leader>dd :Lexplore %:p:h<CR>
-nnoremap <leader>dp :Lexplore ~/projects<CR>
-nnoremap <Leader>dh :Lexplore<CR>
+
+nnoremap <Leader>dd> :Vexplore! %:p:h<CR>
+nnoremap <Leader>dd< :Vexplore %:p:h<CR>
+nnoremap <Leader>dd+ :Hexplore! %:p:h<CR>
+nnoremap <Leader>dd- :Hexplore %:p:h<CR>
+
+nnoremap <Leader>dp> :Vexplore! ~/projects<CR>
+nnoremap <Leader>dp< :Vexplore ~/projects<CR>
+nnoremap <Leader>dp+ :Hexplore! ~/projects<CR>
+nnoremap <Leader>dp- :Hexplore ~/projects<CR>
+
+nnoremap <Leader>dh> :Vexplore! ~<CR>
+nnoremap <Leader>dh< :Vexplore ~<CR>
+nnoremap <Leader>dh+ :Hexplore! ~<CR>
+nnoremap <Leader>dh- :Hexplore ~<CR>
+
 
 " function! NetrwMapping()
 "   nmap <buffer> . gh " remaps . to toggle hidden files
@@ -310,20 +322,27 @@ nnoremap <Leader>w <C-w>
 " ----------------------------------
 " fzf configuration
 " ----------------------------------
+let g:fzf_session_path = $HOME . '/.vim/session'
 command! -bang ProjectFiles call fzf#vim#files('~/projects', fzf#vim#with_preview({'options': ['--info=inline']}), <bang>0)
 nnoremap <Leader>fh :History<CR>
 nnoremap <Leader>fg :GFiles<CR>
 nnoremap <Leader>fp :Files ~/projects<CR>
+nnoremap <Leader>fn :Files ~/notes<CR>
 nnoremap <Leader>fm :Marks<CR>
+nnoremap <Leader>fs :Sessions<CR>
+nnoremap <Leader>fc :Files ~/.config<CR>
 
 
 " ----------------------------------
-command Reload :w|:so %|:PlugInstall
-nnoremap <Leader><Space> :s/\s\+$//e<CR>
+command Reload :w|:so %
+" nnoremap <Leader><Space> :s/\s\+$//e<CR>
 nnoremap <Leader>c :Codi!!<CR>
 nnoremap Y y$
 
+
+" ----------------------------------
 " Git mappings
+" ----------------------------------
 nnoremap <Leader>gs :wall <bar> :Git<CR>
 nnoremap <Leader>gp :Git push<CR>
 nnoremap <Leader>gb :Git blame<CR>
@@ -333,10 +352,42 @@ xnoremap gb :GBrowse<CR>
 nnoremap <Leader>gv :GV<CR>
 xnoremap <Leader>gv :GV<CR>
 
+
+" ----------------------------------
+" Undotree
+" ----------------------------------
 nnoremap <Leader>u :UndotreeToggle<CR>
 
-nnoremap <leader>zfap :set foldmethod=expr<bar>:set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1<CR>
 
+"-----------------------------------
+" add option for toggling fold column in gutter, matching unimpaired commands
+"-----------------------------------
+nnoremap [of :set foldcolumn=1<CR>
+nnoremap ]of :set foldcolumn=0<CR>
+nnoremap yof :call Toggle_Fold_Column()<CR>
+
+" github.com/muellan/vim-toggle-ui-elements
+function Toggle_Fold_Column()
+  if &foldcolumn ># 0
+    let s:toggle_fold_column_last = &foldcolumn
+    let &foldcolumn = 0
+  else
+    if !exists('s:toggle_fold_column_last')
+      let s:toggle_fold_column_last = 2
+    endif
+    let &foldcolumn = s:toggle_fold_column_last
+  endif
+endfunction
+
+
+"-----------------------------------
+" set folding in cheatsheet.txt to be by paragraph
+"-----------------------------------
+autocmd BufRead cheatsheet.txt setlocal foldmethod=expr | setlocal foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
+
+
+" do this to disable <Esc> and force learning jk
+" :inoremap <esc> <nop>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
@@ -381,12 +432,10 @@ set updatetime=400
 
 set pyxversion=3
 
-" this stops lines in keybindings.txt that start with "vim: " from being
-" interpreted as commands
+" stops lines that start with "vim: " from being executed
 set nomodeline
 
 set formatprg=par
-
 
 " ----------------------------------
 " vim-rooter
@@ -399,36 +448,6 @@ let g:rooter_patterns = ['.git', '.gitignore', '.python-version', 'requirements.
 " tagbar
 " ----------------------------------
 nnoremap <Leader>t :TagbarToggle<CR>
-
-
-
-"
-" ----------------------------------
-"  startify
-" ----------------------------------
-nnoremap <Leader>o :w<CR>:Startify<CR>
-let g:startify_session_dir = '~/.config/nvim/session'
-let g:startify_bookmarks = [
-    \ { 'v': '$HOME/.config/nvim/init.vim' },
-    \ { 'b': '$HOME/.bashrc' },
-    \ { 'bp': '$HOME/.bash_profile' },
-    \ { 'c': '$HOME/cheatsheet.txt' },
-    \ { 'r': '$HOME/.config/rofi/config.rasi' },
-    \ { 'wm': '$HOME/.config/qtile/config.py' },
-    \ { 'ki': '$HOME/.config/kitty/kitty.conf' },
-    \ { 's': '$HOME/.config/starship.toml' },
-    \ { 'ra': '$HOME/.config/ranger/rc.conf' },
-    \ { 'ri': '$HOME/.config/ranger/rifle.conf' },
-    \ { 'z': '$HOME/.config/zathura/zathurarc' },
-    \ ]
-let g:startify_change_to_vcs_root = 1
-let g:startify_custom_header = []
-let g:startify_lists = [
-    \ { 'header': ['   Recent Files'],            'type': 'files' },
-    \ { 'header': ['   Current Directory '. getcwd()], 'type': 'dir' },
-    \ { 'header': ['   Sessions'],       'type': 'sessions' },
-    \ { 'header': ['   Bookmarks'],        'type': 'bookmarks' },
-    \ ]
 
 
 :color srcery
@@ -462,6 +481,9 @@ let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}
 let g:vimwiki_global_ext = 0
 
 
+" ----------------------------------
+" line numbers
+" ----------------------------------
 " make line numbers automatically toggle between relative and absolute
 " https://jeffkreeftmeijer.com/vim-number/
 set number
@@ -472,7 +494,9 @@ set number
 :augroup END
 
 
-" make tabs use 4 spaces
+" ----------------------------------
+" change tabs to be 4 spaces
+" ----------------------------------
 set expandtab
 set tabstop=4
 set shiftwidth=0
@@ -482,7 +506,7 @@ set expandtab
 
 
 " -------------------------------
-"  peekaboo
+"  peekaboo for registers
 " -------------------------------
 function! CreateCenteredFloatingWindow()
     let width = float2nr(&columns * 0.6)
