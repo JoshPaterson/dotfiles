@@ -4,8 +4,6 @@ alias l='ls -CF'
 
 alias e=$EDITOR
 
-alias veracrypt='veracrypt -t'
-
 alias ,todo='e ~/todo.txt'
 
 alias cp='cp -i'
