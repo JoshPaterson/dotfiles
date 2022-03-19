@@ -61,7 +61,7 @@ keys = [
     Key([], "XF86AudioRaiseVolume", lazy.spawn('amixer -D pulse sset Master 5%+')),
 ]
 
-groups = [Group(i) for i in '123456789']
+groups = [Group(i) for i in 'yuiop']
 
 for i in groups:
     keys.extend([
