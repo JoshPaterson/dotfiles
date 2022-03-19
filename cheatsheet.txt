@@ -65,43 +65,49 @@ vim insert: A                           # (n) insert (append) at the end of the 
 vim insert: o                           # (n) append (open) a new line below the current line
 vim insert: O                           # (n) append (open) a new line above the current line
 
-vim edit: c{motion}                   # (n) operator, change
-vim edit: cc                          # (n) change (replace) entire line
-vim edit: C or c$                     # (n) change (replace) from cursor to end of line
-vim edit: cw                          # (n) change (replace) to the start of the next word
-vim edit: ce                          # (n) change (replace) to the end of the next word
-vim edit: cb                          # (n) change (replace) to the start of the previous word
-vim edit: c0                          # (n) change (replace) to the start of the line
-vim insert: r{char}                     # (n) replace {count} characters with {char}
-vim insert: gr{char}                    # (n) virtual replace {count} characters with {char}
-vim edit: s or cl                     # (n) delete character and substitute text
-vim edit: S or cc                     # (n) delete line and substitute text (same as cc)
-vim edit: ~                           # (n) swap case
-vim edit: g~{motion}                  # (n) operator, swaps case
-vim edit: gu{motion}                  # (n) operator, make lowercase
-vim edit: gU{motion}                  # (n) operator, make uppercase
-vim edit: J                           # (n) join/ combine lines removing indents
-vim edit: gJ                          # (n) join/ combine lines without removing indents
-vim edit: xp                          # (n) swap/ transpose two letters (delete and paste)
-vim edit: d{motion}                   # (n) operator, delete (cut)
-vim edit: y{motion}                   # (n) operator, yank (copy)
-vim edit: g>{motion}                  # (n) operator, indent
-vim edit: g<{motion}                  # (n) operator, unindent
-vim edit: g={motion}                  # (n) operator, autoindent
-vim edit: g!{motion}                  # (n) operator, filter lines through external program
-vim edit: <Ctrl-a>                    # (n) add {count} to the next number in the line
-vim edit: <Ctrl-x>                    # (n) subtract {count} from the next number
-vim edit: g<Ctrl-a>                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
-vim edit: gq{motion}                  # (n) operator, format paragraph with par
-vim edit: gqq                         # (n) format line with par
-vim edit: gw{motion}                  # (n) operator, format paragraph with par and keep cursor in place
-vim edit: gww                         # (n) format line with par and keep cursor in place
-vim edit: g?{motion}                  # (n) operator, encode with rot13
-vim edit: g??                         # (n) encode current line with rot13
+vim edit: c{motion}                                   # (n) operator, change
+vim edit: cc                                          # (n) change (replace) entire line
+vim edit: C or c$                                     # (n) change (replace) from cursor to end of line
+vim edit: cw                                          # (n) change (replace) to the start of the next word
+vim edit: ce                                          # (n) change (replace) to the end of the next word
+vim edit: cb                                          # (n) change (replace) to the start of the previous word
+vim edit: c0                                          # (n) change (replace) to the start of the line
+vim insert: r{char}                                   # (n) replace {count} characters with {char}
+vim insert: gr{char}                                  # (n) virtual replace {count} characters with {char}
+vim edit: s or cl                                     # (n) delete character and substitute text
+vim edit: S or cc                                     # (n) delete line and substitute text (same as cc)
+vim edit: ~                                           # (n) swap case
+vim edit: g~{motion}                                  # (n) operator, swaps case
+vim edit: gu{motion}                                  # (n) operator, make lowercase
+vim edit: gU{motion}                                  # (n) operator, make uppercase
+vim edit: J                                           # (n) join/ combine lines removing indents
+vim edit: gJ                                          # (n) join/ combine lines without removing indents
+vim edit: xp                                          # (n) swap/ transpose two letters (delete and paste)
+vim edit: d{motion}                                   # (n) operator, delete (cut)
+vim edit: y{motion}                                   # (n) operator, yank (copy)
+vim edit: g>{motion}                                  # (n) operator, indent
+vim edit: g<{motion}                                  # (n) operator, unindent
+vim edit: g={motion}                                  # (n) operator, autoindent
+vim edit: g!{motion}                                  # (n) operator, filter lines through external program
+vim edit: <Ctrl-a>                                    # (n) add {count} to the next number in the line
+vim edit: <Ctrl-x>                                    # (n) subtract {count} from the next number
+vim edit: g<Ctrl-a>                                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
+vim edit: gq{motion}                                  # (n) operator, format paragraph with par
+vim edit: gqq                                         # (n) format line with par
+vim edit: gw{motion}                                  # (n) operator, format paragraph with par and keep cursor in place
+vim edit: gww                                         # (n) format line with par and keep cursor in place
+vim edit: g?{motion}                                  # (n) operator, encode with rot13
+vim edit: g??                                         # (n) encode current line with rot13
+vim edit: .                                           # (n) repeat last command
+vim edit: u                                           # (n) undo
+vim edit: <Ctrl-r>                                    # (n) redo
 
-vim edit: .                           # (n) repeat last command
-vim edit: u                           # (n) undo
-vim edit: <Ctrl-r>                    # (n) redo
+vim global edit: :g/{pattern}/{command}               # (c) execute {command} on all lines matching {pattern}
+vim global edit: :g//{command}                        # (c) execute {command} on all lines matching previous search pattern
+vim global edit: :v/{pattern}/{command}               # (c) execute {command} on all lines not matching pattern (vglobal)
+vim global edit: :v//{command}                        # (c) execute {command} on all lines not matching pattern (vglobal)
+vim global edit: :v/{pattern}/d                       # (c) keep only lines matching {pattern} (delete others)
+vim global edit: :v/http/d                            # (c) keep only lines with links
 
 vim info: ga                          # (n) prints ascii value of character under cursor
 vim info: <Ctrl-g>                    # (n) prints file name as typed, cursor position, file status
@@ -913,7 +919,7 @@ vim codi: :Codi!                      # (c) stop codi for current buffer
 vim codi: :Codi!!                     # (c) toggle codi for current buffer
 vim codi: <Lead>c                     # (n) toggle codi for current buffer
 
-vim loupe: <Lead>n                    # (n) turn off search highlighting
+vim loupe: <Lead>h                    # (n) turn off search highlighting
 
 vim-fugitive stage: s                  # stage file or hunk under cursor
 vim-fugitive stage: u                  # unstage the file or hunk under the cursor
@@ -1134,7 +1140,8 @@ vim netrw: :Texplore                  # (c) open netrw in new tab
 vim netrw: :Lexplore                  # (c) open netrw, vertical split, open file in window command was called from
 vim netrw: <CR>                       # (n) open directory or file
 vim netrw: -                          # (n) go to parent directory
-vim netrw: u                          # (n) go back to previous directory
+vim netrw: u or <Ctrl-o>              # (n) go to previous directory
+vim netrw: <Ctrl-i>                   # (n) go to next directory
 vim netrw: %                          # (n) create empty buffer in directory
 vim netrw: R                          # (n) rename file
 vim netrw: mt                         # (n) assign target directory used by move and copy
@@ -1159,6 +1166,54 @@ vim netrw vinegar: .                  # (n) populate command with filename under
 vim netrw vinegar: y.                 # (n) yank {count} absolute filenames under cursor and below
 vim netrw vinegar: ~                  # (n) go to the home directory
 vim netrw vinegar: <Ctrl-^>           # (n) return to previous location (previous buffer)
+
+vim nerdtree: o                       # (n) open files, directories, and bookmarks
+vim nerdtree: go                      # (n) open file and leave cursor in nerdtree. find bookmark in nerdtree
+vim nerdtree: t                       # (n) open node/ bookmark in new tab
+vim nerdtree: T                       # (n) open node/ bookmark in new tab, keep focus in current tab
+vim nerdtree: i                       # (n) open file in split window
+vim nerdtree: gi                      # (n) open file in split window, leave cursor in nerdtree
+vim nerdtree: s                       # (n) open file in vertical split
+vim nerdtree: gs                      # (n) open file in vertical split, leave cursor in nerdtree
+vim nerdtree: <CR>                    # (n) user definable custom open action
+vim nerdtree: O                       # (n) recursively open the selected directory
+vim nerdtree: x                       # (n) close the current node's parent
+vim nerdtree: X                       # (n) recursively close all children of the current node
+vim nerdtree: e                       # (n) edit the current directory
+vim nerdtree: D                       # (n) delete the current bookmark
+vim nerdtree: p                       # (n) jump to the current node's parent
+vim nerdtree: P                       # (n) jump to the root node
+vim nerdtree: J                       # (n) jump down inside directories at the current tree depth
+vim nerdtree: K                       # (n) jump up inside directories at the current tree depth
+vim nerdtree: <Ctrl-j>                # (n) jump down to next sibling of the current directory
+vim nerdtree: <Ctrl-k>                # (n) jump up to next sibling of the current directory
+vim nerdtree: C                       # (n) change the tree root to the selected directory
+vim nerdtree: u                       # (n) move the tree root up one directory
+vim nerdtree: U                       # (n) move the tree root up one directory, leave old root open
+vim nerdtree: r                       # (n) recursively refresh current directory
+vim nerdtree: R                       # (n) recursively refresh current root
+vim nerdtree: m                       # (n) display nerdtree menu
+vim nerdtree: cd                      # (n) change cwd to directory of selected node
+vim nerdtree: CD                      # (n) change tree root to the cwd
+vim nerdtree: I                       # (n) toggle hidden files
+vim nerdtree: f                       # (n) toggle file filters
+vim nerdtree: F                       # (n) toggle files
+vim nerdtree: B                       # (n) toggle bookmark table
+vim nerdtree: q                       # (n) close nerdtree window
+vim nerdtree: A                       # (n) maximize the nerdtree window
+vim nerdtree: ?                       # (n) toggle quick help
+vim nerdtree: <Lead>nf                # (n) move focus to nerdtree
+vim nerdtree: <Lead>ng                # (n) open nerd tree to directory containing .git
+vim nerdtree: <Lead>nn                # (n) open nerdtree
+vim nerdtree: <Lead>nt                # (n) toggle nerdtree
+vim nerdtree: <Lead>ns                # (n) show current buffer in nerdtree (:NERDTreeFind)
+vim nerdtree-visual-selection: o      # (v) open selected files
+vim nerdtree-visual-selection: i      # (v) open selected files in horizontal splits
+vim nerdtree-visual-selection: s      # (v) open selected files in vertical splits
+vim nerdtree-visual-selection: t      # (v) open selected files in tabs
+vim nerdtree-visual-selection: dd     # (v) delete selected files from disk (remain open in vim)
+vim nerdtree-visual-selection: m      # (v) move selected files to another directory
+vim nerdtree-visual-selection: c      # (v) copy selected files to another directory
 
 qtile window: <Super-{hjkl}>          # move focus
 qtile window: <Super-Shift-{hjkl}>    # move window left
@@ -1440,10 +1495,14 @@ pyenv virtualenv [version] [env_name] # create new virtualenv
 pyenv help [command]                  # show help for command
 pyenv uninstall [version]             # uninstall version
 pyenv virtualenv-delete [env_name]    # delete environment
+pyenv version-origin                  # show how the current environment is being selected
 pyenv install -l | grep '^  3.'       # show available versions of cpython
+pyenv update                          # update pyenv and list of available python versions
+pyenv local [version]                 # set environment name in .python-version file
 pyenv: $PYENV_VERSION                 # environment variable, looks for this first
 pyenv: .python-version                # file, looks for this second
 pyenv: ~/.pyenv/version               # file, looks for this third, uses system python otherwise
+pyenv: {"venvPath":"/home/josh/.pyenv/versions/","venv":"[venv-name]"} # pyrightconfig.json makes pyright lsp work with virtualenv
 
 path: ~/.local/share/nvim/plugged     # vim plugin storage
 path: ~/.vim/swap                     # vim swap files
@@ -1470,5 +1529,105 @@ linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
 linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
 
-git branch --set-upstream-to=origin/main main # set default upstream so push and pull don't need to specify a branch
-git commit --amend --no-edit          # add new changes to previous commit (use fugitive instead)
+git branch --set-upstream-to=origin/main main                     # set default remote for push and pull
+git branch -m master main                                         # change master to main
+git push --set-upstream {remote} {branch}                         # set default upstream for push only
+git pull --set-upstream {remote} {branch}                         # set default upstream for pull only
+git remote remove {branch}                                        # remove branch
+git remote add {remote} git@github.com:{username}/{repo}.git      # add branch
+git remote -v                                                     # show info about remotes
+git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info about remotes
+
+pip install -e {path to dir with setup.py}          # install package in editable mode
+pip install -r requirements.txt                     # install from requirements.txt
+pip freeze > requirements.txt                       # create requirements.txt
+
+youtube-dl -c                                         # resume partially downloaded videos
+youtube-dl -i                                         # ignore errors
+youtube-dl -o "%(title)s-%(id)s.%(ext)s"              # use video title as file name, download to current directory (-t is deprecated)
+youtube-dl -o "~/downloads/%(title)s-%(id)s.%(ext)s"  # use video title as file name, download to downloads directory (-t is deprecated)
+youtube-dl -s                                         # simulate downloading, don't download data or write to disk
+youtube-dl --batch-file={./path_to_file}              # use video title as file name
+youtube-dl -x {url}                                   # download audio only of video at {url}
+youtube-dl -x --audio-format mp3 {url}                # download mp3 of video at {url}
+youtube-dl -f mp4                                     # specify format as mp4
+
+printer: lpstat                                       # show available printers
+printer: lpq                                          # show print queue
+printer: cancel                                       # cancel the current print job
+printer: cancel -a                                    # cancel all print jobs
+
+veracrypt                                             # open gui
+veracrypt -t                                          # enter terminal command
+
+bash jobs: {Ctrl-z}                                   # suspend foreground job
+bash jobs: bg                                         # restart background job
+bash jobs: jobs                                       # list all jobs
+bash jobs: fg [%2]                                    # bring job to foreground (defaults to most recent)
+bash jobs: <command> &                                # runs a command in the background
+bash jobs: kill %2                                    # kill job
+bash jobs: killall [command]                          # kill all processes that were started with [command]
+
+bash: env                                             # show all environment variables
+bash: set {name}={value}                              # set environment variable
+bash: unset {name}                                    # delete environment variable
+
+lsusb                                                 # list all devices connected to usb ports
+
+python list: list.append({object})                    # adds object to the end of the list
+python list: list.extend({iterable})                  # adds each item in iterable to the end of list (combine)
+
+tailwind: slate, gray, zinc, neutral, stone                   # gray colors
+tailwind: red, orange, amber, yellow                          # warm colors
+tailwind: lime, green, emerald, teal, cyan, sky, blue, indigo # cool colors
+tailwind: violet, purple, fuschia, pink, rose                 # pink & purple colors
+tailwind: 1rem = 16px (by default) (stands for 'root em')
+tailwind: 1em = the size of the parent element's font size
+tailwind: 50, 100, 200, 400, 500, 600, 700, 800, 900          # color intensities
+tailwind: bg-[color]-[intensity]                              # background color
+tailwind: bg-white or bg-black                                # background color
+tailwind: 0, px, .5-4.5, 5-12, 16-64 by 4, 72, 80, 96         # sizes (1=4px)
+tailwind: {empty}, t, r, b, l, x, y                           # sides
+tailwind: {empty}, t, r, b, l, tl, tr, br, bl                 # corners
+tailwind: sm, md, lg, xl, 2xl                                 # breakpoints  (px = 640, 768, 1024, 1280, 1536)
+tailwind: [#]/[2|3|4|5|6|12], auto, full                      # fractions
+tailwind height width: [h|w]-[fraction]     # fraction of parent element
+tailwind height width: [h|w]-[size]         #
+tailwind height width: [h|w]-full           # matches parent element
+tailwind height width: [h|w]-screen         # full screen
+tailwind height width: [h|w]-auto           # remove width setting (use with modifiers)
+tailwind height width: [h|w]-min            # CSS value: min-content
+tailwind height width: [h|w]-max            # CSS value: max-content
+tailwind height width: [h|w]-fit            # CSS value: fit-content
+tailwind padding margin: [p|m][side]-[size] #
+tailwind: mx-auto                           # center container
+tailwind font: font-[sans|serif|mono]       # font family
+tailwind font: text-[xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl] # font size
+tailwind font: text-[left|center|right|justify]                        # paragraph alignment
+tailwind font: text-[color]-[intensity]                                # font color
+tailwind font: text-[white|black]                                      # black or white font color
+tailwind font: italic|not-italic                                       # italic
+tailwind font: font-[hairline|thin|light|normal|medium|semibold|bold|extrabold|black] # letter weight
+tailwind font: tracking-[tighter|tight|normal|wide|wider|widest]                      # letter spacing
+tailwind font: leading-[empty|tight|snug|normal|relaxed|loose]                        # line spacing
+tailwind font: underline|no-underline                                                 # underline
+tailwind font: line-through                                                           # line-through
+tailwind font: uppercase|lowercase|capitalize|normal-case                             # capitalization
+tailwind border: border-[side]-[empty|2|4|8]                                          # border
+tailwind border: border-[color]-[intensity]                                           # border color
+tailwind border: border-[solid|dashed|dotted|double]                                  # border style
+tailwind border: rounded-[corner]-[sm|empty|md|lg|xl|2xl|full|none]                   # rounding
+tailwind display: inline, inline-block, block
+tailwind display: grid, inline-grid                                      # grid container
+tailwind modifiers: hover, focus, focus-within, active, visited
+tailwind modifiers: first, last, odd, even
+tailwind flex: flex, inline-flex                                         # flex container
+tailwind flex: basis-[fraction]                                          # relative sizes of each child
+tailwind flex: flex-row, flex-row-reversed, flex-col, flex-col-reversed  # flex direction
+tailwind flex: flex-nowrap, flex-wrap, flex-wrap-reverse,
+tailwind flex grid: justify-[start|center|end|between|around]            # alignment in inline axis
+tailwind flex grid: items-[stretch|start|center|end|baseline]            # alignment in cross axis
+tailwind: drop-shadow-[sm|empty|md|lg|xl|2xl|none]
+tailwind: box-shadow-[sm|empty|md|lg|xl|2xl|none]
+tailwind: shadow-inner
+tailwind: opacity-[percent]                     # (0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100)
