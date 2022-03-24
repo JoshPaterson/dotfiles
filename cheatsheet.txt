@@ -1541,6 +1541,7 @@ git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info ab
 pip install -e {path to dir with setup.py}          # install package in editable mode
 pip install -r requirements.txt                     # install from requirements.txt
 pip freeze > requirements.txt                       # create requirements.txt
+pip install [package_name] -U                       # upgrade package (update)
 
 youtube-dl -c                                         # resume partially downloaded videos
 youtube-dl -i                                         # ignore errors
@@ -1589,7 +1590,7 @@ tailwind: bg-white or bg-black                                # background color
 tailwind: 0, px, .5-4.5, 5-12, 16-64 by 4, 72, 80, 96         # sizes (1=4px)
 tailwind: {empty}, t, r, b, l, x, y                           # sides
 tailwind: {empty}, t, r, b, l, tl, tr, br, bl                 # corners
-tailwind: sm, md, lg, xl, 2xl                                 # breakpoints  (px = 640, 768, 1024, 1280, 1536)
+tailwind: sm: 640, md: 768, lg: 1024, xl: 1280, 2xl: 1536     # breakpoints
 tailwind: [#]/[2|3|4|5|6|12], auto, full                      # fractions
 tailwind height width: [h|w]-[fraction]     # fraction of parent element
 tailwind height width: [h|w]-[size]         #
