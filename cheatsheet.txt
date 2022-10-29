@@ -1197,7 +1197,8 @@ qtile program: <Super-w>              # kill focused window
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
 
-kitty: <C-S-h>                        # opens contents of terminal in text editor
+kitty: <Ctrl-Shift-h>                        # opens contents of terminal in text editor
+kitty: <Ctrl-Shift-Esc>                      # opens shell mode
 
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
@@ -1434,8 +1435,8 @@ qutebrowser: n                   # (n) jump to next search result
 qutebrowser: {count}n            # (n) jump to next {count} search result
 qutebrowser: N                   # (n) jump to previous search result
 qutebrowser: {count}N            # (n) jump to previous {count} search result
-qutebrowser: b                   # (n) open quickmark
-qutebrowser: B                   # (n) open bookmark
+qutebrowser: b                   # (n) open quickmark in current tab
+qutebrowser: B                   # (n) open quickmark in new tab
 qutebrowser: yy                  # (n) copy/ yank url to clipboard
 qutebrowser: yY                  # (n) copy/ yank url to selection
 qutebrowser: yt                  # (n) copy/ yank title to clipboard
