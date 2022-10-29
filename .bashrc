@@ -109,8 +109,6 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# enable vim editing mode on the command line
-set -o vi
 
 eval "$(starship init bash)"
 
