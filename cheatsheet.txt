@@ -1767,3 +1767,12 @@ windows: picom-trans -o {percent}      # change opacity (transparency) to {perce
 windows: picom-trans -r                # reset all windows to original opacity (transparency)
 windows: xwininfo                      # print info for next clicked window
 windows: xprop                         # print info for next clicked window
+
+system monitors: ncdu                          # show which directories are using the most disk space
+system monitors: vnstat                        # show stats about network traffic volume
+system monitors: top                           # show info about processes
+system monitors: htop                          # show info about processes
+system monitors: btop                          # show info about processes
+system monitors: ifconfig -a                   # list available network interfaces (e.g. for iftop)
+system monitors: sudo iftop -i wlx9cefd5faa194 # show network traffic over interface
+system monitors: sudo nethogs                  # show network traffic by process
