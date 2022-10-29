@@ -1762,3 +1762,8 @@ sqlite: ;                                       # terminate current statement
 sqlite: .quit                                   # exit console
 sqlite: pragma table_info({table_name})         # list columns in {table_name}
 sqlite: SELECT name FROM sqlite_master WHERE type IN ('table','view') AND name NOT LIKE 'sqlite_%' ORDER BY 1;    # list table names
+
+windows: picom-trans -o {percent}      # change opacity (transparency) to {percent} for next clicked window
+windows: picom-trans -r                # reset all windows to original opacity (transparency)
+windows: xwininfo                      # print info for next clicked window
+windows: xprop                         # print info for next clicked window
