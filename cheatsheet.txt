@@ -1,39 +1,3 @@
-vim motion: {hjkl}                      # (n) move cursor
-vim motion: gj                          # (n) move cursor down a display line
-vim motion: gk                          # (n) move cursor up a display line
-vim motion: H                           # (n) jump to top of screen
-vim motion: M                           # (n) jump to middle of screen
-vim motion: L                           # (n) jump to bottom of screen
-vim motion: gM                          # (n) jump to middle of text line
-vim motion: gm                          # (n) jump to middle of display line
-vim motion: w                           # (n) jump forwards to the start of a word
-vim motion: W                           # (n) jump forwards to the start of a WORD
-vim motion: e                           # (n) jump forwards to the end of a word
-vim motion: E                           # (n) jump forwards to the end of a WORD
-vim motion: ge                          # (n) jump backwards to the end of a word
-vim motion: gE                          # (n) jump backwards to the end of a WORD
-vim motion: b                           # (n) jump backwards to the start of a word
-vim motion: B                           # (n) jump backwards to the start of a WORD
-vim motion: 0                           # (n) jump to the start of the line
-vim motion: g0                          # (n) jump to the start of the display line
-vim motion: ^                           # (n) jump to the first non-blank character of the line
-vim motion: g^                          # (n) jump to the first non-blank character of the display line
-vim motion: $                           # (n) jump to the end of the line
-vim motion: g$                          # (n) jump to the end of the display line
-vim motion: _                           # (n) jump to the first non-blank character {count}-1 lines below
-vim motion: g_                          # (n) jump to the last non-blank character {count}-1 lines below
-vim motion: -                           # (n) jump to the first non-blank character {count} lines above
-vim motion: + or <Ctrl-m>               # (n) jump to the first non-blank character {count} lines below
-vim motion: gg                          # (n) jump to the first line of the document
-vim motion: G                           # (n) jump to the last line of the document
-vim motion: {count}G                    # (n) jump to line {count}
-vim motion: f{char}                     # (n) jump forward to {char}
-vim motion: F{char}                     # (n) jump backward to {char}
-vim motion: t{char}                     # (n) jump forward to just before {char}
-vim motion: T{char}                     # (n) jump backward to just before {char}
-vim motion: }                           # (n) jump to next paragraph (or function/block, when editing code)
-vim motion: {                           # (n) jump to previous paragraph (or function/block, when editing code)
-vim motion: go                          # (n) jump to {count}th byte in buffer
 
 vim scroll: zz                          # (n) scroll so cursor is in center of screen
 vim scroll: zt                          # (n) scroll so cursor is at top of screen
@@ -688,7 +652,7 @@ vim-plug: :PlugClean!                 # (c) remove unlisted plugins without prom
 vim-plug: :PlugUpdate                 # (c) update all plugins
 vim-plug: :PlugUpdate [name ...]      # (c) update specific plugins
 vim-plug: :PlugUpgrade                # (c) update vim-plug itself
-vim-plug: :PlugStatus                 # (c) check status of plugins
+vim-plug: :PlugStatus                 # (c) check status of plugins, list plugins
 vim-plug: :PlugDiff                   # (c) show changes from last update and pending changes
 vim-plug: :PlugSnapshot [output path] # (c) generate script for restoring current plugins
 
@@ -1433,6 +1397,138 @@ vimium tabs: ^                   # Go to previously-visited tab on current windo
 vimium tabs: <<                  # Move tab to the left
 vimium tabs: >>                  # Move tab to the right
 
+qutebrowser: <Esc>               # (i)(v) goto normal mode
+qutebrowser: i                   # (n)(v) goto insert mode
+qutebrowser: v                   # (n)(i) goto visual mode (caret mode)
+qutebrowser: `                   # (n) set scroll mark
+qutebrowser: @                   # (n) run macro
+qutebrowser: <Tab>               # (n) cycle completion items
+qutebrowser: q                   # (n) record macro
+qutebrowser: R                   # (n) reload current tab bypassing cache
+qutebrowser: r                   # (n) reload current tab
+qutebrowser: {count}r            # (n) reload tab with index {count}
+qutebrowser: {count}T            # (n) select tab with index {count}
+qutebrowser: d                   # (n) close current tab
+qutebrowser: {count}d            # (n) close {count} tabs
+qutebrowser: u                   # (n) undo closing tab
+qutebrowser: f                   # (n) hint links, open in current tab
+qutebrowser: F                   # (n) hint links, open in new tab
+qutebrowser: gg                  # (n) scroll to top
+qutebrowser: G                   # (n) scroll to bottom
+qutebrowser: {count}G            # (n) scroll to {count}%
+qutebrowser: H                   # (n) back in history
+qutebrowser: J                   # (n) next tab
+qutebrowser: K                   # (n) previous tab
+qutebrowser: L                   # (n) forward in history
+qutebrowser: h                   # (n) scroll left
+qutebrowser: j                   # (n) scroll down
+qutebrowser: k                   # (n) scroll up
+qutebrowser: l                   # (n) scroll right
+qutebrowser: '                   # (n) jump to scroll mark
+qutebrowser: /                   # (n) search forward
+qutebrowser: ?                   # (n) search backward
+qutebrowser: .                   # (n) repeat previous command
+qutebrowser: m                   # (n) save quickmark
+qutebrowser: M                   # (n) save bookmark
+qutebrowser: n                   # (n) jump to next search result
+qutebrowser: {count}n            # (n) jump to next {count} search result
+qutebrowser: N                   # (n) jump to previous search result
+qutebrowser: {count}N            # (n) jump to previous {count} search result
+qutebrowser: b                   # (n) open quickmark
+qutebrowser: B                   # (n) open bookmark
+qutebrowser: yy                  # (n) copy/ yank url to clipboard
+qutebrowser: yY                  # (n) copy/ yank url to selection
+qutebrowser: yt                  # (n) copy/ yank title to clipboard
+qutebrowser: yT                  # (n) copy/ yank title to selection
+qutebrowser: pp                  # (n) open url from clipboard
+qutebrowser: pP                  # (n) open url from selection
+qutebrowser: Pp                  # (n) open url from clipboard in new tab
+qutebrowser: PP                  # (n) open url from selection in new tab
+qutebrowser: wp                  # (n) open url from clipboard in new window
+qutebrowser: wP                  # (n) open url from selection in new window
+qutebrowser: [[                  # (n) open "previous" link on page
+qutebrowser: ]]                  # (n) open "next" link on page
+qutebrowser: {{                  # (n) open "previous" link in new tab
+qutebrowser: }}                  # (n) open "next" link in new tab
+qutebrowser: <Ctrl-a>            # (n) increment number in url
+qutebrowser: <Ctrl-x>            # (n) decrement number in url
+qutebrowser: <Ctrl-f>            # (n) move page down
+qutebrowser: <Ctrl-b>            # (n) move page up
+qutebrowser: <Ctrl-d>            # (n) move page half down
+qutebrowser: <Ctrl-u>            # (n) move page half up
+qutebrowser: go                  # (n) edit current url and open in current tab
+qutebrowser: gO                  # (n) edit current url and open in new foreground tab
+qutebrowser: xo                  # (n) edit current url and open in new background tab
+qutebrowser: wO                  # (n) edit current url and open in new window
+qutebrowser: o                   # (n) open new url in current tab
+qutebrowser: O                   # (n) open new url in new foreground tab
+qutebrowser: xO                  # (n) open new url in new background tab
+qutebrowser: wo                  # (n) open new url in new window
+qutebrowser: {count}th           # (n) open previous history (back) in new tab
+qutebrowser: {count}wh           # (n) open previous history (back) in new window
+qutebrowser: {count}tl           # (n) open next history (forward) in new tab
+qutebrowser: {count}wl           # (n) open next history (forward) in new window
+qutebrowser: ;b                  # (n) open hint in new background tab
+qutebrowser: ;f                  # (n) open hint in new foreground tab
+qutebrowser: ;h                  # (n) hover over hint (mouse over)
+qutebrowser: ;i                  # (n) open hinted images
+qutebrowser: ;I                  # (n) open hinted images in new tab
+qutebrowser: ;t                  # (n) hint inputs
+qutebrowser: ;o                  # (n) copy hinted url to command line to open in current tab
+qutebrowser: ;O                  # (n) copy hinted url to command line to open in new tab
+qutebrowser: ;y                  # (n) yank hinted url to clipboard
+qutebrowser: ;Y                  # (n) yank hinted url to selection
+qutebrowser: ;r                  # (n) open multiple hinted links in new tabs in current window (rapid hinting)
+qutebrowser: ;R                  # (n) open multiple hinted links in new window (rapid hinting)
+qutebrowser: gt                  # (n) switch tabs by title or url
+qutebrowser: {count}gm           # (n) move tab to index
+qutebrowser: {count}gj           # (n) move tab right
+qutebrowser: {count}gk           # (n) move tab left
+qutebrowser: gC                  # (n) clone tab to new tab
+qutebrowser: gD                  # (n) detach tab to new window
+qutebrowser: gf                  # (n) view page source
+qutebrowser: gu                  # (n) navigate up in url hierarchy
+qutebrowser: gU                  # (n) navigate up in url hierarchy in new tab
+qutebrowser: sf                  # (n) save config
+qutebrowser: ss                  # (n) set (change) setting
+qutebrowser: ss                  # (n) set (change) setting temporarily
+qutebrowser: sk                  # (n) bind key
+qutebrowser: Ss                  # (n) show settings
+qutebrowser: wi                  # (n) open web inspector
+qutebrowser: gd                  # (n) download page
+qutebrowser: {count}ad           # (n) cancel download
+qutebrowser: co                  # (n) close all other tabs except current
+qutebrowser: cd                  # (n) clear downloads
+qutebrowser: <Alt-{num}>         # (n) jump to tab {num}
+qutebrowser: <Ctrl-Tab>          # (n) jump to previous tab
+qutebrowser: <Ctrl-v>            # (n) passthrough mode
+qutebrowser: <Ctrl-q>            # (n) quit
+qutebrowser: <Ctrl-h>            # (n) home
+qutebrowser: <Ctrl-s>            # (n) stop loading
+qutebrowser: <Ctrl-Alt-p>        # (n) print
+qutebrowser: <Ctrl-e>            # (i) open external editor
+qutebrowser: <Ctrl-p>, <up>      # (c) previous command in history
+qutebrowser: <Ctrl-n>, <down>    # (c) next command in history
+qutebrowser: <Ctrl-d>            # delete current item
+qutebrowser: tih                 # (n) toggle images temporarily for host and subdomain
+qutebrowser: tiu                 # (n) toggle images temporarily for exact url
+qutebrowser: tiH                 # (n) toggle images temporarily for host and all subdomains
+qutebrowser: tph                 # (n) toggle plugins temporarily for host and subdomain
+qutebrowser: tpu                 # (n) toggle plugins temporarily for exact url
+qutebrowser: tpH                 # (n) toggle plugins temporarily for host and all subdomains
+qutebrowser: tsh                 # (n) toggle scripts temporarily for host and subdomain
+qutebrowser: tsu                 # (n) toggle scripts temporarily for exact url
+qutebrowser: tsH                 # (n) toggle scripts temporarily for host and all subdomains
+qutebrowser: tIh                 # (n) toggle images permanently for host and subdomain
+qutebrowser: tIu                 # (n) toggle images permanently for exact url
+qutebrowser: tIH                 # (n) toggle images permanently for host and all subdomains
+qutebrowser: tPh                 # (n) toggle plugins permanently for host and subdomain
+qutebrowser: tPu                 # (n) toggle plugins permanently for exact url
+qutebrowser: tPH                 # (n) toggle plugins permanently for host and all subdomains
+qutebrowser: tSh                 # (n) toggle scripts permanently for host and subdomain
+qutebrowser: tSu                 # (n) toggle plugins permanently for exact url
+qutebrowser: tSH                 # (n) toggle plugins permanently for host and all subdomains
+
 rofi: Ctrl-v                          # Insert: Paste from clipboard
 rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
 rofi: Ctrl-u                          # Clear the line
@@ -1542,6 +1638,8 @@ pip install -e {path to dir with setup.py}          # install package in editabl
 pip install -r requirements.txt                     # install from requirements.txt
 pip freeze > requirements.txt                       # create requirements.txt
 pip install [package_name] -U                       # upgrade package (update)
+pip freeze | xargs pip uninstall -y                 # uninstall all packages
+pip-compile                                         # creates requirements.txt from requirements.in (command is from pip-tools)
 
 youtube-dl -c                                         # resume partially downloaded videos
 youtube-dl -i                                         # ignore errors
@@ -1561,22 +1659,43 @@ printer: cancel -a                                    # cancel all print jobs
 veracrypt                                             # open gui
 veracrypt -t                                          # enter terminal command
 
-bash jobs: {Ctrl-z}                                   # suspend foreground job
-bash jobs: bg                                         # restart background job
-bash jobs: jobs                                       # list all jobs
-bash jobs: fg [%2]                                    # bring job to foreground (defaults to most recent)
-bash jobs: <command> &                                # runs a command in the background
-bash jobs: kill %2                                    # kill job
-bash jobs: killall [command]                          # kill all processes that were started with [command]
+terminal jobs: <Ctrl-z>                                   # suspend foreground job
+terminal jobs: <Ctrl-c>                                   # kill foreground job
+terminal jobs: bg                                         # restart background job
+terminal jobs: jobs                                       # list all processes in current shell
+terminal jobs: ps                                         # list active processes
+terminal jobs: fg [%2]                                    # bring job to foreground (defaults to most recent)
+terminal jobs: {command} &                                # runs a command in the background
+terminal jobs: kill %2                                    # kill job
+terminal jobs: killall {command}                          # kill all processes that were started with {command}
 
-bash: env                                             # show all environment variables
-bash: set {name}={value}                              # set environment variable
-bash: unset {name}                                    # delete environment variable
+terminal: env                                             # show all environment variables
+terminal: set {name}={value}                              # set environment variable
+terminal: unset {name}                                    # delete environment variable
+terminal: reboot                                          # reboot (restart) computer
+terminal: shutdown                                        # shutdown computer
+terminal: !!                                              # repeat last command
+terminal: sudo !!                                         # repeat last command with sudo
+terminal: history                                         # show command history
+terminal: !{count}                                        # execute command {count} in history
+
+command line: <Ctrl-u>                                    # delete line
+command line: <Ctrl-r>                                    # search recent commands
+command line: <Ctrl-a>                                    # jump (move) to beginning (start) of line
+command line: <Ctrl-e>                                    # jump (move) to end of line
 
 lsusb                                                 # list all devices connected to usb ports
+lsblk                                                 # list block devices
+umount [mountpoint]                                   # unmount device at mountpoint
 
 python list: list.append({object})                    # adds object to the end of the list
 python list: list.extend({iterable})                  # adds each item in iterable to the end of list (combine)
+
+python regex: re.compile({expression})                # create compiled expression
+python regex: exp.search({string})                    # find match anywhere in string, returns match object
+python regex: exp.sub({string})                       # replace string with match
+python regex: match[0]                                # get matching string from match object
+
 
 tailwind: slate, gray, zinc, neutral, stone                   # gray colors
 tailwind: red, orange, amber, yellow                          # warm colors
@@ -1632,3 +1751,13 @@ tailwind: drop-shadow-[sm|empty|md|lg|xl|2xl|none]
 tailwind: box-shadow-[sm|empty|md|lg|xl|2xl|none]
 tailwind: shadow-inner
 tailwind: opacity-[percent]                     # (0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100)
+
+django-admin startproject {name} [dir]          # initialize django project
+django-admin startapp {name}                    # initialize django app
+django: python manage.py migrate
+django: python manage.py runserver [port]
+
+sqlite: ;                                       # terminate current statement
+sqlite: .quit                                   # exit console
+sqlite: pragma table_info({table_name})         # list columns in {table_name}
+sqlite: SELECT name FROM sqlite_master WHERE type IN ('table','view') AND name NOT LIKE 'sqlite_%' ORDER BY 1;    # list table names

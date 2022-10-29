@@ -1,4 +1,4 @@
-from typing import List  # noqa: F401 
+from typing import List  # noqa: F401
 import subprocess
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
@@ -52,7 +52,7 @@ keys = [
     Key([mod], 'b', lazy.spawn('firefox'), desc='Launch Firefox'),
     Key([mod, 'shift'], 'b', lazy.spawn('firefox -private-window'), desc='Launch Firefox private window'),
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
-    Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
+    Key([mod], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
 
     # wiki.archlinux.org/tile/Qtile
@@ -74,7 +74,7 @@ for i in groups:
     ])
 
 layouts = [
-    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=4), layout.Max(),
+    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=0, margin=10), layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -159,6 +159,7 @@ auto_minimize = True
 @hook.subscribe.startup_once
 def start_once():
     subprocess.call(['nitrogen', '--restore'])
+    subprocess.call(['picom', '--daemon'])
 
 # Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
@@ -168,4 +169,4 @@ def start_once():
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = 'LG3D'
+

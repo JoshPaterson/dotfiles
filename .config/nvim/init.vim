@@ -423,6 +423,7 @@ let g:switch_custom_definitions =
     \   switch#NormalizedCase(['permanent', 'temporary']),
     \   switch#NormalizedCase(['global', 'local']),
     \   switch#NormalizedCase(['show', 'hide']),
+    \   switch#NormalizedCase(['background', 'foreground']),
     \ ]
 
 
