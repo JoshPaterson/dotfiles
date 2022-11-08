@@ -1646,6 +1646,7 @@ git remote remove {branch}                                        # remove branc
 git remote add {remote} git@github.com:{username}/{repo}.git      # add branch
 git remote -v                                                     # show info about remotes
 git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info about remotes
+git add -u                                                        # add all tracked files (update)
 
 pip install -e {path to dir with setup.py}          # install package in editable mode
 pip install -r requirements.txt                     # install from requirements.txt
