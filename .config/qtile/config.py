@@ -44,12 +44,14 @@ keys = [
     # Start & Shutdown qtile
     Key([mod, 'control'], 'r', lazy.restart(), desc='Restart Qtile'),
     Key([mod, 'control'], 'q', lazy.shutdown(), desc='Shutdown Qtile'),
+    Key([mod, 'shift'], 'r', lazy.reload_config(), desc='Reload Qtile Config'),
 
     # Program launch bindings
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
     Key([mod], 'z', lazy.spawn('cheatsheet'), desc='Show cheatsheet'),
-    Key([mod], 'b', lazy.spawn('firefox'), desc='Launch Firefox'),
+    Key([mod, 'shift'], 'z', lazy.spawn('nvim ~/cheatsheet.txt'), desc='Edit cheatsheet'),
+    Key([mod], 'b', lazy.spawn('qutebrowser'), desc='Launch Qutebrowser'),
     Key([mod, 'shift'], 'b', lazy.spawn('firefox -private-window'), desc='Launch Firefox private window'),
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
     Key([mod], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),

@@ -79,7 +79,7 @@ vim info: 1<Ctrl-g>                   # (n) prints full file path, cursor positi
 vim info: 2<Ctrl-g>                   # (n) prints buffer number, full file path, cursor position, file status
 vim info: g<Ctrl-g>                   # (n) prints cursor position: column, line, word, character, and byte
 
-vim control: <Ctrl-l>                         # (n) redraw screen
+vim control: <Ctrl-l>                         # (n) redraw (refresh, reload) screen
 vim control: <Ctrl-z>                         # (n) suspend nvim
 
 vim insert mode: :h ins-special-keys       # (c) show help for control keys in insert mode
@@ -1196,6 +1196,7 @@ qtile program: <Super-Shift-Enter>    # launch vim
 qtile program: <Super-w>              # kill focused window
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
+qtile: <Super-Shift-r>                # reload config
 
 kitty: <Ctrl-Shift-h>                        # opens contents of terminal in text editor
 kitty: <Ctrl-Shift-Esc>                      # opens shell mode
@@ -1408,7 +1409,10 @@ qutebrowser: q                   # (n) record macro
 qutebrowser: R                   # (n) reload current tab bypassing cache
 qutebrowser: r                   # (n) reload current tab
 qutebrowser: {count}r            # (n) reload tab with index {count}
-qutebrowser: {count}T            # (n) select tab with index {count}
+qutebrowser: {count}T            # (n) goto tab with index {count}
+qutebrowser: g$                  # (n) goto last tab
+qutebrowser: g0                  # (n) goto first tab
+qutebrowser: g^                  # (n) goto first tab
 qutebrowser: d                   # (n) close current tab
 qutebrowser: {count}d            # (n) close {count} tabs
 qutebrowser: u                   # (n) undo closing tab
@@ -1431,6 +1435,8 @@ qutebrowser: ?                   # (n) search backward
 qutebrowser: .                   # (n) repeat previous command
 qutebrowser: m                   # (n) save quickmark
 qutebrowser: M                   # (n) save bookmark
+qutebrowser: gb                  # (n) load bookmark in current tab
+qutebrowser: gB                  # (n) load bookmark in new tab
 qutebrowser: n                   # (n) jump to next search result
 qutebrowser: {count}n            # (n) jump to next {count} search result
 qutebrowser: N                   # (n) jump to previous search result
@@ -1463,6 +1469,7 @@ qutebrowser: xo                  # (n) edit current url and open in new backgrou
 qutebrowser: wO                  # (n) edit current url and open in new window
 qutebrowser: o                   # (n) open new url in current tab
 qutebrowser: O                   # (n) open new url in new foreground tab
+qutebrowser: ga                  # (n) open new tab with home page url
 qutebrowser: xO                  # (n) open new url in new background tab
 qutebrowser: wo                  # (n) open new url in new window
 qutebrowser: {count}th           # (n) open previous history (back) in new tab
@@ -1475,6 +1482,7 @@ qutebrowser: ;h                  # (n) hover over hint (mouse over)
 qutebrowser: ;i                  # (n) open hinted images
 qutebrowser: ;I                  # (n) open hinted images in new tab
 qutebrowser: ;t                  # (n) hint inputs
+qutebrowser: gi                  # (n) goto first input
 qutebrowser: ;o                  # (n) copy hinted url to command line to open in current tab
 qutebrowser: ;O                  # (n) copy hinted url to command line to open in new tab
 qutebrowser: ;y                  # (n) yank hinted url to clipboard
@@ -1483,8 +1491,8 @@ qutebrowser: ;r                  # (n) open multiple hinted links in new tabs in
 qutebrowser: ;R                  # (n) open multiple hinted links in new window (rapid hinting)
 qutebrowser: gt                  # (n) switch tabs by title or url
 qutebrowser: {count}gm           # (n) move tab to index
-qutebrowser: {count}gj           # (n) move tab right
-qutebrowser: {count}gk           # (n) move tab left
+qutebrowser: {count}gr           # (n) move tab right
+qutebrowser: {count}gl           # (n) move tab left
 qutebrowser: gC                  # (n) clone tab to new tab
 qutebrowser: gD                  # (n) detach tab to new window
 qutebrowser: gf                  # (n) view page source
@@ -1529,6 +1537,9 @@ qutebrowser: tPH                 # (n) toggle plugins permanently for host and a
 qutebrowser: tSh                 # (n) toggle scripts permanently for host and subdomain
 qutebrowser: tSu                 # (n) toggle plugins permanently for exact url
 qutebrowser: tSH                 # (n) toggle plugins permanently for host and all subdomains
+qutebrowser: xb                  # (n) toggle statusbar
+qutebrowser: xt                  # (n) toggle tabs
+qutebrowser: xx                  # (n) toggle tabs and statusbar
 
 rofi: Ctrl-v                          # Insert: Paste from clipboard
 rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
@@ -1625,6 +1636,7 @@ linux: man 9 {command}                # kernel routines
 linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
 linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
+linux: sudo dpkg -i {.deb file}       # install .deb file
 
 git branch --set-upstream-to=origin/main main                     # set default remote for push and pull
 git branch -m master main                                         # change master to main
@@ -1679,6 +1691,8 @@ terminal: !!                                              # repeat last command
 terminal: sudo !!                                         # repeat last command with sudo
 terminal: history                                         # show command history
 terminal: !{count}                                        # execute command {count} in history
+terminal: wc                                              # count words in input
+terminal: wc -l                                           # count lines in input
 
 command line: <Ctrl-u>                                    # delete line
 command line: <Ctrl-r>                                    # search recent commands
@@ -1776,3 +1790,6 @@ system monitors: btop                          # show info about processes
 system monitors: ifconfig -a                   # list available network interfaces (e.g. for iftop)
 system monitors: sudo iftop -i wlx9cefd5faa194 # show network traffic over interface
 system monitors: sudo nethogs                  # show network traffic by process
+system monitors: ps                            # show processes from current shell
+system monitors: ps -e                         # show all processes
+system monitors: ps -ef                        # show all processes with more information
