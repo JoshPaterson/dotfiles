@@ -125,6 +125,8 @@ screens = [
             ],
             48,
         ),
+        wallpaper = '/home/josh/wallpapers/wp7427285-2256x1504-wallpapers.jpg',
+        wallpaper_mode = 'fill',
     ),
 ]
 
