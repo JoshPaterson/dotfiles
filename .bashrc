@@ -110,8 +110,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 
-eval "$(starship init bash)"
-
 export EDITOR="nvim"
 export RANGER_LOAD_DEFAULT_RC="FALSE"
 
@@ -124,4 +122,3 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-. "$HOME/.cargo/env"
