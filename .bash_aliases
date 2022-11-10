@@ -1,6 +1,6 @@
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='exa --icons'
+alias la='exa -aF --icons'
+alias ll='exa -alF --icons'
 
 alias e=$EDITOR
 
