@@ -122,3 +122,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config .config/poshthemes/cobalt2.omp.json)"
+
