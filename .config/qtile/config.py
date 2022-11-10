@@ -160,8 +160,10 @@ auto_minimize = True
 
 @hook.subscribe.startup_once
 def start_once():
-    subprocess.call(['nitrogen', '--restore'])
     subprocess.call(['picom', '--daemon'])
+    subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Natural Scrolling Enabled', '1'])
+    subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Tapping Enabled', '1'])
+    subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Tapping Drag Lock Enabled', '1'])
 
 # Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
