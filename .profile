@@ -26,4 +26,3 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 # /usr/bin/setxkbmap -option "caps:swapescape"
-. "$HOME/.cargo/env"
