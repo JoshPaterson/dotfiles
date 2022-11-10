@@ -1606,7 +1606,8 @@ pyenv virtualenv-delete [env_name]    # delete environment
 pyenv version-origin                  # show how the current environment is being selected
 pyenv install -l | grep '^  3.'       # show available versions of cpython
 pyenv update                          # update pyenv and list of available python versions
-pyenv local [version]                 # set environment name in .python-version file
+pyenv local {version}                 # set environment name in .python-version file
+pyenv global {version}                # set global python version (doesn't set $PYENV_VERSION environment variable)
 pyenv: $PYENV_VERSION                 # environment variable, looks for this first
 pyenv: .python-version                # file, looks for this second
 pyenv: ~/.pyenv/version               # file, looks for this third, uses system python otherwise
@@ -1637,6 +1638,25 @@ linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
 linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
 linux: sudo dpkg -i {.deb file}       # install .deb file
+linux: upower -i `upower -e | grep 'BAT'`  # show battery charge information
+
+alias: ls                             # exa --icons (show non-hidden files, like ls)
+alias: la                             # exa -aF --icons (show all files, including hidden, like ls -A)
+alias: ll                             # exa -alF --icons (show all files, including hidden in list, like ls -AlF)
+alias: e                              # $EDITOR (should be nvim)
+alias: ,todo                          # e ~/todo.txt
+alias: ,config                        # git --git-dir=$HOME/.git/ --work-tree=$HOME
+alias: pm                             # python manage.py
+alias: pmmm                           # python manage.py makemigrations
+alias: pmm                            # python manage.py migrate
+alias: pmrs                           # python manage.py runserver
+
+ls classifiers: @                     # symbolic link (or has extended attributes)
+ls classifiers: *                     # executable
+ls classifiers: =                     # socket
+ls classifiers: |                     # named pipe
+ls classifiers: >                     # door
+ls classifiers: /                     # directory
 
 git branch --set-upstream-to=origin/main main                     # set default remote for push and pull
 git branch -m master main                                         # change master to main
@@ -1647,6 +1667,7 @@ git remote add {remote} git@github.com:{username}/{repo}.git      # add branch
 git remote -v                                                     # show info about remotes
 git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info about remotes
 git add -u                                                        # add all tracked files (update)
+git restore --staged {file}                                       # remove file from staging area (un-add)
 
 pip install -e {path to dir with setup.py}          # install package in editable mode
 pip install -r requirements.txt                     # install from requirements.txt
