@@ -143,4 +143,4 @@ configuration {
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
-@theme "~/.config/rofi/srcery_rofi.rasi"
+@theme "~/.config/rofi/squared_everforest_rofi.rasi"
