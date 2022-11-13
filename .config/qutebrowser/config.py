@@ -130,3 +130,4 @@ config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always switching')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always switching')
 
+c.colors.webpage.preferred_color_scheme = 'dark'
