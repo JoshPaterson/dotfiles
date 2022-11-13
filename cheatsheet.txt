@@ -1208,7 +1208,7 @@ qtile program: <Super-m>v             # launch vnstat
 qtile program: <Super-m>n             # launch nethogs
 qtile program: <Super-m>i             # launch iftop for wifi
 qtile: <Super-Ctrl-r>                 # restart qtile
-qtile: <Super-Ctrl-q>                 # shutdown qtile
+qtile: <Super-Ctrl-q>                 # shutdown qtile (logout)
 qtile: <Super-Shift-r>                # reload config
 qtile: .local/share/qtile/qtile.log   # qtile log location
 
