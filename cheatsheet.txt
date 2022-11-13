@@ -1185,15 +1185,23 @@ qtile window: <Super-Ctrl-{hjkl}>     # grow window left
 qtile window: <Super-n>               # reset all window sizes
 qtile window: <Super-Shift-Enter>     # toggle between split and unsplit sides of stack
 qtile window: <Super-Tab>             # toggle between layouts
-qtile window: <Super-{1-9}>           # switch to group #
-qtile window: <Super-Shift-{1-9}>     # move focused window and switch to group #
-qtile program: <Super-Enter>          # launch terminal
-qtile program: <Super-r>              # launch rofi
-qtile program: <Super-b>              # launch firefox
+qtile window: <Super-{yuiop}>         # switch to group yuiop
+qtile window: <Super-Shift-{yuiop}>   # move focused window and switch to group yuiop
+qtile window: <Super-x>               # toggle bar
+qtile window: <Super-e>               # toggle fullscreen
+qtile program: <Super-Enter>          # launch kitty terminal
+qtile program: <Super-r>              # choose program to run with rofi
+qtile program: <Super-b>              # launch qutebrowser
+qtile program: <Super-Shift-b>        # launch private firefox window
 qtile program: <Super-t>              # launch thunderbird
-qtile program: <Super-f>              # launch ranger
-qtile program: <Super-Shift-Enter>    # launch vim
+qtile program: <Super-f>              # launch ranger file manager
+qtile program: <Super-Shift-f>        # launch nemo file manager
+qtile program: <Super-g>              # launch lazygit
+qtile program: <Super-Shift-Enter>    # launch nvim
 qtile program: <Super-w>              # kill focused window
+qtile program: <Super-z>              # show cheatsheet with rofi
+qtile program: <Super-Shift-z>        # edit cheatsheet
+qtile program: <Super-m>b             # launch btop
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
 qtile: <Super-Shift-r>                # reload config
@@ -1673,6 +1681,7 @@ git remote -v                                                     # show info ab
 git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info about remotes
 git add -u                                                        # add all tracked files (update)
 git restore --staged {file}                                       # remove file from staging area (un-add)
+git checkout .                                                    # undo unstaged changes
 
 pip install -e {path to dir with setup.py}          # install package in editable mode
 pip install -r requirements.txt                     # install from requirements.txt
