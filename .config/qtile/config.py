@@ -1,7 +1,7 @@
 from typing import List  # noqa: F401
 import subprocess
 from libqtile import bar, layout, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
 
 mod = 'mod4'
@@ -52,14 +52,21 @@ keys = [
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
     Key([mod], 'z', lazy.spawn('cheatsheet'), desc='Show cheatsheet'),
-    Key([mod, 'shift'], 'z', lazy.spawn('kitty nvim /home/josh/cheatsheet.txt'), desc='Edit cheatsheet'),
+    Key([mod, 'shift'], 'z', lazy.spawn(terminal + ' nvim /home/josh/cheatsheet.txt'), desc='Edit cheatsheet'),
     Key([mod], 'b', lazy.spawn('qutebrowser'), desc='Launch Qutebrowser'),
     Key([mod, 'shift'], 'b', lazy.spawn('firefox -private-window'), desc='Launch Firefox private window'),
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
     Key([mod, 'shift'], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),
-    Key([mod], 'f', lazy.spawn('kitty ranger'), desc='Launch Ranger'),
-    Key([mod], 'g', lazy.spawn('kitty lazygit'), desc='Launch Lazygit'),
+    Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
+    Key([mod], 'g', lazy.spawn(terminal + ' lazygit'), desc='Launch Lazygit'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
+    KeyChord([mod], 'm', [
+        Key([], 't', lazy.spawn(terminal + " top")),
+        Key([], 'h', lazy.spawn(terminal + " htop")),
+        Key([], 'b', lazy.spawn(terminal + " btop")),
+        ],
+        name='System Monitors',
+    )
 
     # wiki.archlinux.org/tile/Qtile
     # Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse sset Master toggle')),

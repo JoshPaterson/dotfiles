@@ -1201,10 +1201,13 @@ qtile program: <Super-Shift-Enter>    # launch nvim
 qtile program: <Super-w>              # kill focused window
 qtile program: <Super-z>              # show cheatsheet with rofi
 qtile program: <Super-Shift-z>        # edit cheatsheet
+qtile program: <Super-m>t             # launch top
+qtile program: <Super-m>b             # launch htop
 qtile program: <Super-m>b             # launch btop
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
 qtile: <Super-Shift-r>                # reload config
+qtile: .local/share/qtile/qtile.log   # qtile log location
 
 kitty: <Ctrl-Shift-h>                        # opens contents of terminal in text editor
 kitty: <Ctrl-Shift-Esc>                      # opens shell mode
