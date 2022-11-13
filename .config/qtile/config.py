@@ -40,6 +40,7 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], 'Tab', lazy.next_layout(), desc='Toggle between layouts'),
     Key([mod], 'w', lazy.window.kill(), desc='Kill focused window'),
+    Key([mod], 'x', lazy.hide_show_bar(), desc='Toggle the bar'),
 
     # Start & Shutdown qtile
     Key([mod, 'control'], 'r', lazy.restart(), desc='Restart Qtile'),
@@ -50,17 +51,19 @@ keys = [
     Key([mod], 'r', lazy.spawn('rofi -show run'), desc='Launch Rofi'),
     Key([mod], 'Return', lazy.spawn(terminal), desc='Launch terminal'),
     Key([mod], 'z', lazy.spawn('cheatsheet'), desc='Show cheatsheet'),
-    Key([mod, 'shift'], 'z', lazy.spawn('nvim ~/cheatsheet.txt'), desc='Edit cheatsheet'),
+    Key([mod, 'shift'], 'z', lazy.spawn('kitty nvim ~/cheatsheet.txt'), desc='Edit cheatsheet'),
     Key([mod], 'b', lazy.spawn('qutebrowser'), desc='Launch Qutebrowser'),
     Key([mod, 'shift'], 'b', lazy.spawn('firefox -private-window'), desc='Launch Firefox private window'),
     Key([mod], 't', lazy.spawn('thunderbird'), desc='Launch Thunderbird'),
-    Key([mod], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),
+    Key([mod, 'shift'], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),
+    Key([mod], 'f', lazy.spawn('kitty ranger'), desc='Launch Ranger'),
+    Key([mod], 'g', lazy.spawn('kitty lazygit'), desc='Launch Lazygit'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
 
     # wiki.archlinux.org/tile/Qtile
-    Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse sset Master toggle')),
-    Key([], "XF86AudioLowerVolume", lazy.spawn('amixer -D pulse sset Master 5%-')),
-    Key([], "XF86AudioRaiseVolume", lazy.spawn('amixer -D pulse sset Master 5%+')),
+    # Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse sset Master toggle')),
+    # Key([], "XF86AudioLowerVolume", lazy.spawn('amixer -D pulse sset Master 5%-')),
+    # Key([], "XF86AudioRaiseVolume", lazy.spawn('amixer -D pulse sset Master 5%+')),
 ]
 
 groups = [Group(i) for i in 'yuiop']
@@ -125,7 +128,7 @@ screens = [
             ],
             48,
         ),
-        wallpaper = '/home/josh/wallpapers/wp7427285-2256x1504-wallpapers.jpg',
+        wallpaper = '/home/josh/wallpapers/04020_jetincarina_2560x1600.jpg',
         wallpaper_mode = 'fill',
     ),
 ]
