@@ -61,9 +61,12 @@ keys = [
     Key([mod], 'g', lazy.spawn(terminal + ' lazygit'), desc='Launch Lazygit'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
     KeyChord([mod], 'm', [
-        Key([], 't', lazy.spawn(terminal + " top")),
-        Key([], 'h', lazy.spawn(terminal + " htop")),
-        Key([], 'b', lazy.spawn(terminal + " btop")),
+        Key([], 't', lazy.spawn(terminal + " top"), desc='Launch top'),
+        Key([], 'h', lazy.spawn(terminal + " htop", desc='Launch htop')),
+        Key([], 'b', lazy.spawn(terminal + " btop"), desc='Launch btop'),
+        Key([], 'v', lazy.spawn(terminal + " --hold vnstat"), desc='Launch vnstat'),
+        Key([], 'n', lazy.spawn(terminal + " ,nethogs"), desc='Launch nethogs'),
+        Key([], 'i', lazy.spawn(terminal + " ,iftop"), desc='Launch iftop for wifi'),
         ],
         name='System Monitors',
     )

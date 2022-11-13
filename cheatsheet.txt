@@ -1202,8 +1202,11 @@ qtile program: <Super-w>              # kill focused window
 qtile program: <Super-z>              # show cheatsheet with rofi
 qtile program: <Super-Shift-z>        # edit cheatsheet
 qtile program: <Super-m>t             # launch top
-qtile program: <Super-m>b             # launch htop
+qtile program: <Super-m>h             # launch htop
 qtile program: <Super-m>b             # launch btop
+qtile program: <Super-m>v             # launch vnstat
+qtile program: <Super-m>n             # launch nethogs
+qtile program: <Super-m>i             # launch iftop for wifi
 qtile: <Super-Ctrl-r>                 # restart qtile
 qtile: <Super-Ctrl-q>                 # shutdown qtile
 qtile: <Super-Shift-r>                # reload config

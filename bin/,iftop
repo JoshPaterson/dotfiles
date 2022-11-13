@@ -1,0 +1,3 @@
+#!/bin/bash
+TERM=xterm
+sudo iftop -i wlp166s0
