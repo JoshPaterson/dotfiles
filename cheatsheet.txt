@@ -1658,6 +1658,11 @@ ls classifiers: |                     # named pipe
 ls classifiers: >                     # door
 ls classifiers: /                     # directory
 
+ssh: ls -al ~/.ssh                    # check for existing ssh keys
+
+github: gh issue create               # create issue
+github: gh issue list                 # list issues
+
 git branch --set-upstream-to=origin/main main                     # set default remote for push and pull
 git branch -m master main                                         # change master to main
 git push --set-upstream {remote} {branch}                         # set default upstream for push only
