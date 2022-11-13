@@ -40,8 +40,8 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], 'Tab', lazy.next_layout(), desc='Toggle between layouts'),
     Key([mod], 'w', lazy.window.kill(), desc='Kill focused window'),
-    Key([mod], 'x', lazy.hide_show_bar(), desc='Toggle the bar'),
-    Key([mod], 'e', lazy.window.toggle_fullscreen(), desc='Toggle window fullscreen'),
+    Key([mod], 'v', lazy.hide_show_bar(), desc='Toggle the bar'),
+    Key([mod], 'x', lazy.window.toggle_fullscreen(), desc='Toggle window fullscreen'),
 
     # Start & Shutdown qtile
     Key([mod, 'control'], 'r', lazy.restart(), desc='Restart Qtile'),

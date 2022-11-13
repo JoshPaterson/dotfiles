@@ -1187,8 +1187,8 @@ qtile window: <Super-Shift-Enter>     # toggle between split and unsplit sides o
 qtile window: <Super-Tab>             # toggle between layouts
 qtile window: <Super-{yuiop}>         # switch to group yuiop
 qtile window: <Super-Shift-{yuiop}>   # move focused window and switch to group yuiop
-qtile window: <Super-x>               # toggle bar
-qtile window: <Super-e>               # toggle fullscreen
+qtile window: <Super-v>               # toggle bar
+qtile window: <Super-x>               # toggle fullscreen
 qtile program: <Super-Enter>          # launch kitty terminal
 qtile program: <Super-r>              # choose program to run with rofi
 qtile program: <Super-b>              # launch qutebrowser
