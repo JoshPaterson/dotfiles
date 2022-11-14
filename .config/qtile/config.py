@@ -82,7 +82,15 @@ keys = [
         Key([], 'a', lazy.spawn(terminal + " sudo bandwhich"), desc='Launch bandwhich'),
         ],
         name='System Monitors',
-    )
+    ),
+    KeyChord([mod], 'c', [
+        Key([], 'q', lazy.spawn(terminal + ' nvim /home/josh/.config/qtile/config.py'), desc='Edit qtile config'),
+        Key([], 'p', lazy.spawn(terminal + ' nvim /home/josh/.config/picom/picom.conf'), desc='Edit picom config'),
+        Key([], 'r', lazy.spawn(terminal + ' nvim /home/josh/.config/ranger/rc.conf'), desc='Edit ranger config'),
+        Key([], 'k', lazy.spawn(terminal + ' nvim /home/josh/.config/kitty/kitty.conf'), desc='Edit kitty config'),
+        ],
+        name='Edit Configs',
+    ),
 
     # wiki.archlinux.org/tile/Qtile
     # Key([], "XF86AudioMute", lazy.spawn('amixer -D pulse sset Master toggle')),
