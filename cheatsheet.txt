@@ -1180,6 +1180,7 @@ vim nerdtree-visual-selection: m      # (v) move selected files to another direc
 vim nerdtree-visual-selection: c      # (v) copy selected files to another directory
 
 qtile window: <Super-{hjkl}>          # move focus
+qtile window: <Super-space>           # cycle focus to next window
 qtile window: <Super-Shift-{hjkl}>    # move window left
 qtile window: <Super-Ctrl-{hjkl}>     # grow window left
 qtile window: <Super-n>               # reset all window sizes
