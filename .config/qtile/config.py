@@ -72,6 +72,7 @@ keys = [
     Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
     Key([mod], 'g', lazy.spawn(terminal + ' lazygit'), desc='Launch Lazygit'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
+    # System monitor bindings
     KeyChord([mod], 'm', [
         Key([], 't', lazy.spawn(terminal + ' top'), desc='Launch top'),
         Key([], 'h', lazy.spawn(terminal + ' htop', desc='Launch htop')),
@@ -80,6 +81,7 @@ keys = [
         Key([], 'n', lazy.spawn(terminal + ' ,nethogs'), desc='Launch nethogs'),
         Key([], 'i', lazy.spawn(terminal + ' ,iftop'), desc='Launch iftop for wifi'),
         Key([], 'a', lazy.spawn(terminal + ' sudo bandwhich'), desc='Launch bandwhich'),
+        Key([], 'p', lazy.spawn(terminal + ' ,powertop'), desc='Launch powertop'),
         ],
         name='System Monitors',
     ),
