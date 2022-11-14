@@ -79,6 +79,7 @@ keys = [
         Key([], 'v', lazy.spawn(terminal + " --hold vnstat"), desc='Launch vnstat'),
         Key([], 'n', lazy.spawn(terminal + " ,nethogs"), desc='Launch nethogs'),
         Key([], 'i', lazy.spawn(terminal + " ,iftop"), desc='Launch iftop for wifi'),
+        Key([], 'a', lazy.spawn(terminal + " sudo bandwhich"), desc='Launch bandwhich'),
         ],
         name='System Monitors',
     )
