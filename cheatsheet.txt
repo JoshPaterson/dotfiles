@@ -1505,8 +1505,8 @@ qutebrowser: ;t                  # (n) hint inputs
 qutebrowser: gi                  # (n) goto first input
 qutebrowser: ;o                  # (n) copy hinted url to command line to open in current tab
 qutebrowser: ;O                  # (n) copy hinted url to command line to open in new tab
-qutebrowser: ;y                  # (n) yank hinted url to clipboard
-qutebrowser: ;Y                  # (n) yank hinted url to selection
+qutebrowser: ;y                  # (n) yank (copy) hinted url to clipboard
+qutebrowser: ;Y                  # (n) yank (copy) hinted url to selection
 qutebrowser: ;r                  # (n) open multiple hinted links in new tabs in current window (rapid hinting)
 qutebrowser: ;R                  # (n) open multiple hinted links in new window (rapid hinting)
 qutebrowser: gt                  # (n) switch tabs by title or url
@@ -1659,6 +1659,8 @@ linux: man n {command}                # new manpages
 linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
 linux: sudo dpkg -i {.deb file}       # install .deb file
 linux: upower -i `upower -e | grep 'BAT'`  # show battery charge information
+linux: sudo tar xf {file.tar.gz} -C /usr/local/bin    # extract file to location
+
 
 alias: ls                             # exa --icons (show non-hidden files, like ls)
 alias: la                             # exa -aF --icons (show all files, including hidden, like ls -A)
