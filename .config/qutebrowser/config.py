@@ -131,3 +131,12 @@ config.bind('xt', 'config-cycle tabs.show always switching')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always switching')
 
 c.colors.webpage.preferred_color_scheme = 'dark'
+
+c.fonts.hints = '16pt FiraCode'
+c.fonts.statusbar = '16pt FiraCode'
+c.fonts.downloads = '16pt FiraCode'
+c.fonts.contextmenu = '16pt FiraCode'
+c.fonts.tabs.selected = '16pt FiraCode'
+c.fonts.tabs.unselected = '16pt FiraCode'
+c.fonts.completion.entry = '16pt FiraCode'
+c.fonts.completion.category = '16pt FiraCode'
