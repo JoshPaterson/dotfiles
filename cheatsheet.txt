@@ -1248,7 +1248,7 @@ ranger files: pp                      # paste
 ranger files: /                       # search for files :search
 ranger files: n                       # next match
 ranger files: N                       # prev match
-ranger files: <del>                   # delete
+ranger files: dD                      # delete highlighted file
 ranger: 1l                            # unzip selected file (uncompress)
 ranger commands: :                    # execute Range Command
 ranger commands: :mkdir [dir_name]    # make new directory
