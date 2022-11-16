@@ -1209,6 +1209,7 @@ qtile program: <Super-m>v             # launch vnstat
 qtile program: <Super-m>n             # launch nethogs
 qtile program: <Super-m>i             # launch iftop for wifi
 qtile program: <Super-m>a             # launch bandwhich
+qtile program: <Super-m>g             # launch gdu
 qtile program: <Super-c>q             # edit qtile config
 qtile program: <Super-c>p             # edit picom config
 qtile program: <Super-c>r             # edit ranger config
@@ -1832,7 +1833,7 @@ windows: picom-trans -r                # reset all windows to original opacity (
 windows: xwininfo                      # print info for next clicked window
 windows: xprop                         # print info for next clicked window
 
-system monitors: ncdu                          # show which directories are using the most disk space
+system monitors: gdu                           # show which directories are using the most disk space
 system monitors: vnstat                        # show stats about network traffic volume
 system monitors: top                           # show info about processes
 system monitors: htop                          # show info about processes

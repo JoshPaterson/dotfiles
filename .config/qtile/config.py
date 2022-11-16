@@ -81,6 +81,7 @@ keys = [
         Key([], 'i', lazy.spawn(terminal + ' ,iftop'), desc='Launch iftop for wifi'),
         Key([], 'a', lazy.spawn(terminal + ' sudo bandwhich'), desc='Launch bandwhich'),
         Key([], 'p', lazy.spawn(terminal + ' ,powertop'), desc='Launch powertop'),
+        Key([], 'g', lazy.spawn(terminal + ' gdu'), desc='Launch gdu'),
         ],
         name='System Monitors',
     ),
