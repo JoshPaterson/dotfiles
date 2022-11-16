@@ -1849,3 +1849,4 @@ system monitors: sudo nethogs                  # show network traffic by process
 system monitors: ps                            # show processes from current shell
 system monitors: ps -e                         # show all processes
 system monitors: ps -ef                        # show all processes with more information
+system monitors: powertop                      # show info about power usage
