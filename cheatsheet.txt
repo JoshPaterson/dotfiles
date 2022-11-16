@@ -1658,7 +1658,12 @@ linux: man 9 {command}                # kernel routines
 linux: man l {command}                # local documentation
 linux: man n {command}                # new manpages
 linux: source ~/.profile              # reload .profile, if capslock and esc get unswitched
-linux: sudo dpkg -i {.deb file}       # install .deb file
+linux: sudo dpkg -i {.deb file}        # install .deb file
+linux: sudo dpkg -r {package name}     # uninstall (remove) package
+linux: sudo dpkg -P {package name}     # uninstall (purge) package and config files
+linux: sudo dpkg -l                    # list all installed packages
+linux: sudo dpkg -l {package name}     # check if package is installed
+linux: sudo dpkg -l "*{package name}*" # search for package in installed packages
 linux: upower -i `upower -e | grep 'BAT'`  # show battery charge information
 linux: sudo tar xf {file.tar.gz} -C /usr/local/bin    # extract file to location
 
