@@ -208,6 +208,7 @@ def start_once():
     subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Natural Scrolling Enabled', '1'])
     subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Tapping Enabled', '1'])
     subprocess.call(['xinput', 'set-prop', 'PIXA3854:00 093A:0274 Touchpad', 'libinput Tapping Drag Lock Enabled', '1'])
+    subprocess.call(['dropbox', 'start'])
 
 # Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
