@@ -71,7 +71,10 @@ keys = [
     Key([mod, 'shift'], 'f', lazy.spawn('nemo'), desc='Launch Nemo'),
     Key([mod], 'f', lazy.spawn(terminal + ' ranger'), desc='Launch Ranger'),
     Key([mod], 'g', lazy.spawn(terminal + ' lazygit'), desc='Launch Lazygit'),
+    Key([mod], 'd', lazy.spawn('free42'), desc='Launch Free42'),
+    Key([mod, 'shift'], 'd', lazy.spawn('plus42'), desc='Launch Plus42'),
     Key([mod, 'shift'], 'Return', lazy.spawn(terminal + ' nvim'), desc='Launch Vim'),
+
     # System monitor bindings
     KeyChord([mod], 'm', [
         Key([], 't', lazy.spawn(terminal + ' top'), desc='Launch top'),
