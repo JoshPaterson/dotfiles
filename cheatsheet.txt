@@ -1892,3 +1892,202 @@ system monitors: ps                            # show processes from current she
 system monitors: ps -e                         # show all processes
 system monitors: ps -ef                        # show all processes with more information
 system monitors: powertop                      # show info about power usage
+
+lazygit global: <Ctrl-r>                    # switch to recent repo
+lazygit global: <Pageup>                    # scroll up main panel
+lazygit global: <Pagedown>                  # scroll down main panel
+lazygit global: m                           # view merge/ rebase options
+lazygit global: <Ctrl-p>                    # view custom patch options
+lazygit global: R                           # refresh
+lazygit global: x                           # open menu
+lazygit global: +                           # next screen mode (normal/half/full)
+lazygit global: _                           # next screen mode (normal/half/full)
+lazygit global: +                           # previous screen mode (normal/half/full)
+lazygit global: <Ctrl-s>                    # view filter by path options
+lazygit global: <Ctrl-e>, W                 # open diff menu
+lazygit global: @                           # open command log menu
+lazygit global: }                           # increase context around changes
+lazygit global: {                           # decrease context around changes
+lazygit global: :                           # execute custom command
+lazygit global: z                           # undo (via reflog) (experimental)
+lazygit global: <Ctrl-z>                    # redo (via reflog) (experimental)
+lazygit global: P                           # push
+lazygit global: p                           # pull
+lazygit list panel navigation: ,            # previous page
+lazygit list panel navigation: .            # next page
+lazygit list panel navigation: <            # scroll to top
+lazygit list panel navigation: /            # search
+lazygit list panel navigation: >            # scroll to bottom
+lazygit list panel navigation: H            # scroll left
+lazygit list panel navigation: L            # scroll right
+lazygit list panel navigation: ]            # next tab
+lazygit list panel navigation: [            # previous tab
+lazygit commit files: <Ctrl-o>              # copy the commit file name to the clipboard
+lazygit commit files: c                     # checkout file
+lazygit commit files: d                     # discard this commit's changes to this file
+lazygit commit files: o                     # open file
+lazygit commit files: e                     # edit file
+lazygit commit files: <Space>               # toggle file included in patch
+lazygit commit files: a                     # toggle all files included in patch
+lazygit commit files: <Enter>               # enter file to add selected lines to the patch (or toggle directory)
+lazygit commit files: `                     # toggle file tree view
+lazygit commits: <Ctrl-o>                   # copy commit SHA to clipboard
+lazygit commits: <Ctrl-r>                   # reset cherry-picked (copied) commits selection
+lazygit commits: b                          # view bisect options
+lazygit commits: s                          # squash down
+lazygit commits: f                          # fixup commit
+lazygit commits: r                          # reword commit
+lazygit commits: R                          # reword commit with editor
+lazygit commits: d                          # delete commit
+lazygit commits: e                          # edit commit
+lazygit commits: p                          # pick commit (when mid-rebase)
+lazygit commits: F                          # create fixup commit for this commit
+lazygit commits: S                          # squash all 'fixup!' commits above selected commit (autosquash)
+lazygit commits: <Ctrl-j>                   # move commit down one
+lazygit commits: <Ctrl-k>                   # move commit up one
+lazygit commits: v                          # paste commits (cherry pick)
+lazygit commits: A                          # amend commit with staged changes
+lazygit commits: a                          # reset commit author
+lazygit commits: t                          # revert commit
+lazygit commits: T                          # tag commit
+lazygit commits: <Ctrl-l>                   # open log menu
+lazygit commits: <Space>                    # checkout commit
+lazygit commits: y                          # copy commit attribute
+lazygit commits: o                          # open commit in browser
+lazygit commits: n                          # create new branch off of commit
+lazygit commits: g                          # view reset options
+lazygit commits: c                          # copy commit (cherry-pick)
+lazygit commits: C                          # copy commit range (cherry-pick)
+lazygit commits: <Enter>                    # view selected item's files
+lazygit files: <Ctrl-o>                     # copy the file name to the clipboard
+lazygit files: <Ctrl-w>                     # toggle whether or not whitespace changes are shown in the diff view
+lazygit files: d                            # view 'discard changes' options
+lazygit files: <Space>                      # toggle staged
+lazygit files: <Ctrl-b>                     # filter files (staged/ unstaged)
+lazygit files: c                            # commit changes
+lazygit files: w                            # commit changes without pre-commit hook
+lazygit files: A                            # amend last commit
+lazygit files: C                            # commit changes using git editor
+lazygit files: e                            # edit file
+lazygit files: o                            # open file
+lazygit files: i                            # ignore or exclude file
+lazygit files: r                            # refresh files
+lazygit files: s                            # stash all changes
+lazygit files: S                            # view stash options
+lazygit files: a                            # stage/ unstage all
+lazygit files: <Enter>                      # stage individual hunks/ lines for file, or collapse/ expand for directory
+lazygit files: g                            # view upstream reset options
+lazygit files: D                            # view reset options
+lazygit files: `                            # toggle file tree view
+lazygit files: M                            # open external merge tool (git mergetool)
+lazygit files: f                            # fetch
+lazygit local branches: <Ctrl-o>            # copy branch name to clipboard
+lazygit local branches: i                   # show git-flow options
+lazygit local branches: <Space>             # checkout
+lazygit local branches: n                   # new branch
+lazygit local branches: o                   # create pull request
+lazygit local branches: O                   # create pull request options
+lazygit local branches: <Ctrl-y>            # copy pull request URL to clipboard
+lazygit local branches: c                   # checkouot by name
+lazygit local branches: F                   # force checkout
+lazygit local branches: d                   # delete branch
+lazygit local branches: r                   # rebase checked-out branch onto this branch
+lazygit local branches: M                   # merge into currently checked out branch
+lazygit local branches: f                   # fast-forward this branch from its upstream
+lazygit local branches: g                   # view reset options
+lazygit local branches: R                   # rename branch
+lazygit local branches: u                   # set/ unset upstream
+lazygit local branches: <Enter>             # view commits
+lazygit main panel merging: e               # edit file
+lazygit main panel merging: o               # open file
+lazygit main panel merging: <Left>          # select previous conflict
+lazygit main panel merging: <Right>         # select next conflict
+lazygit main panel merging: <Up>            # select previous hunk
+lazygit main panel merging: <Down>          # select next hunk
+lazygit main panel merging: z               # undo
+lazygit main panel merging: M               # open external merge tool (git mergetool)
+lazygit main panel merging: <Space>         # pick hunk
+lazygit main panel merging: b               # pick all hunks
+lazygit main panel merging: <Escape>        # return to files panel
+lazygit main panel patch building: <Left>   # select previous hunk
+lazygit main panel patch building: <Right   # select next hunk
+lazygit main panel patch building: v        # toggle drag select
+lazygit main panel patch building: V        # toggle drag select 
+lazygit main panel patch building: a        # toggle select hunk
+lazygit main panel patch building: <Ctrl-o> # copy the selected text to the clipboard
+lazygit main panel patch building: o        # open file
+lazygit main panel patch building: e        # edit file
+lazygit main panel patch building: <Space>  # add/ remove line(s) to patch
+lazygit main panel patch building: <Escape> # exit custom patch builder
+lazygit main panel patch building: <Tab>    # move cursor between staged and unstaged boxes
+lazygit main panel staging: <Left>          # select previous hunk
+lazygit main panel staging: <Right>         # select next hunk
+lazygit main panel staging: v               # toggle drag select
+lazygit main panel staging: V               # toggle drag select
+lazygit main panel staging: a               # toggle select hunk
+lazygit main panel staging: <Ctrl-o>        # copy the selected text to the clipboard
+lazygit main panel staging: o               # open file
+lazygit main panel staging: e               # edit file
+lazygit main panel staging: <Escape>        # return to files panel
+lazygit main panel staging: <Tab>           # switch to other panel (staged/ unstaged changes)
+lazygit main panel staging: <Space>         # toggle line staged/ unstaged
+lazygit main panel staging: d               # delete change (git reset)
+lazygit main panel staging: E               # edit hunk
+lazygit reflog: <Ctrl-o>                    # copy commit SHA to clipboard
+lazygit reflog: <Space>                     # checkout commit
+lazygit reflog: y                           # copy commit attribute
+lazygit reflog: o                           # open commit in browser
+lazygit reflog: n                           # create new branch off of commit
+lazygit reflog: g                           # view reset options
+lazygit reflog: c                           # copy commit (cherry-pick)
+lazygit reflog: C                           # copy commit range (cherry-pick)
+lazygit reflog: <Ctrl-r>                    # reset cherry-picked (copied) commits selection
+lazygit reflog: <Enter>                     # view commits
+lazygit remote branches: <Space>            # checkout
+lazygit remote branches: n                  # new branch
+lazygit remote branches: M                  # merge into currently checked out branch
+lazygit remote branches: r                  # rebase checked-out branch onto this branch
+lazygit remote branches: d                  # delete branch
+lazygit remote branches: u                  # set as upstream of checked-out branch
+lazygit remote branches: <Escape>           # return to remotes list
+lazygit remote branches: g                  # view reset options
+lazygit remote branches: <Enter>            # view commits
+lazygit remotes: f                          # fetch remote
+lazygit remotes: n                          # add new remote
+lazygit remotes: d                          # remove remote
+lazygit remotes: e                          # edit remote
+lazygit stash: <Space>                      # apply
+lazygit stash: g                            # pop
+lazygit stash: d                            # drop
+lazygit stash: n                            # new branch
+lazygit stash: r                            # rename stash
+lazygit stash: <Enter>                      # view selected item's files
+lazygit status: e                           # edit config file
+lazygit status: o                           # open config file
+lazygit status: u                           # check for update
+lazygit status: <Enter>                     # switch to a recent repo
+lazygit status: a                           # show all branch logs
+lazygit sub-commits: <Ctrl-o>               # copy commit SHA to clipboard
+lazygit sub-commits: <Space>                # checkout commit
+lazygit sub-commits: y                      # copy commit attribute
+lazygit sub-commits: o                      # open commit in browser
+lazygit sub-commits: n                      # create new branch off of commit
+lazygit sub-commits: g                      # view reset options
+lazygit sub-commits: c                      # copy commit (cherry-pick)
+lazygit sub-commits: C                      # copy commit range (cherry-pick)
+lazygit sub-commits: <Ctrl-r>               # reset cherry-picked (copied) commits selection
+lazygit sub-commits: <Enter>                # view selected item's files
+lazygit submodules: <Ctrl-o>                # copy submodule name to clipboard
+lazygit submodules: <Enter>                 # enter submodule
+lazygit submodules: d                       # remove submodule
+lazygit submodules: u                       # update submodule
+lazygit submodules: n                       # add new submodule
+lazygit submodules: e                       # update submodule URL
+lazygit submodules: i                       # initialize submodule
+lazygit submodules: b                       # view bulk submodule options
+lazygit tags: <Space>                       # checkout
+lazygit tags: d                             # delete tag
+lazygit tags: P                             # push tag
+lazygit tags: n                             # create tag
+lazygit tags: g                             # view reset options
+lazygit tags: <Enter>                       # view commits
