@@ -1760,6 +1760,7 @@ youtube-dl --batch-file={./path_to_file}              # use video title as file 
 youtube-dl -x {url}                                   # download audio only of video at {url}
 youtube-dl -x --audio-format mp3 {url}                # download mp3 of video at {url}
 youtube-dl -f mp4                                     # specify format as mp4
+youtube-dl: #                                         # comments in batch file
 
 printer: lpstat                                       # show available printers
 printer: lpq                                          # show print queue
