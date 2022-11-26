@@ -1742,6 +1742,7 @@ git remote set-url {remote} git@github.com:{username}/{repo}.git  # show info ab
 git add -u                                                        # add all tracked files (update)
 git restore --staged {file}                                       # remove file from staging area (un-add)
 git checkout .                                                    # undo unstaged changes
+git checkout {filename}                                           # undo unstaged changes in particular file
 
 pip install -e {path to dir with setup.py}          # install package in editable mode
 pip install -r requirements.txt                     # install from requirements.txt
