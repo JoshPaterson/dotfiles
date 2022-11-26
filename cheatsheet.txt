@@ -55,7 +55,7 @@ vim edit: g={motion}                                  # (n) operator, autoindent
 vim edit: g!{motion}                                  # (n) operator, filter lines through external program
 vim edit: <Ctrl-a>                                    # (n) add {count} to the next number in the line
 vim edit: <Ctrl-x>                                    # (n) subtract {count} from the next number
-vim edit: g<Ctrl-a>                                   # (n) (visual) make consecutive numbers (add {count}*n to the number in the nth selected line)
+vim edit: g<Ctrl-a>                                   # (v) make consecutive numbers (add {count}*n to the number in the nth selected line)
 vim edit: gq{motion}                                  # (n) operator, format paragraph with par
 vim edit: gqq                                         # (n) format line with par
 vim edit: gw{motion}                                  # (n) operator, format paragraph with par and keep cursor in place
