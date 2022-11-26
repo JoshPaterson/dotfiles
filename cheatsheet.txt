@@ -1698,9 +1698,15 @@ linux: sudo dpkg -P {package name}     # uninstall (purge) package and config fi
 linux: sudo dpkg -l                    # list all installed packages
 linux: sudo dpkg -l {package name}     # check if package is installed
 linux: sudo dpkg -l "*{package name}*" # search for package in installed packages
+linux: sudo apt-get -f install         # install dependencies of a .deb file installed with dpkg
 linux: upower -i `upower -e | grep 'BAT'`  # show battery charge information
 linux: sudo tar xf {file.tar.gz} -C /usr/local/bin    # extract file to location
-
+linux: ln -s {target} {link_name}      # create symbolic link
+linux: ln {target} {link_name}         # create hard link
+linux: unzip {file.zip}                # unzip a zip file
+linux: unzip {file.zip} -d {dir}       # unzip to particular directory
+linux: unzip *.zip                     # unzip all zip files
+linux: exit                            # exit (close) shell
 
 alias: ls                             # exa --icons (show non-hidden files, like ls)
 alias: la                             # exa -aF --icons (show all files, including hidden, like ls -A)
