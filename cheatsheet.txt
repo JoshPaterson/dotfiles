@@ -1226,46 +1226,79 @@ kitty: <Ctrl-Shift-Esc>                      # opens shell mode
 ranger bookmarks: m - letter          # create bookmark
 ranger bookmarks: um - letter         # delete bookmark
 ranger bookmarks: ' or `              # go to a bookmark
-ranger bookmarks: gh                  # go to home
-ranger tabs: C-n                      # create new tab
-ranger tabs: C-w                      # close current tab
-ranger tabs: tab                      # next tab
-ranger tabs: <Shift-Tab>              # previous tab
+ranger bookmarks: gh, ''              # go to home directory
+ranger bookmarks: g/                  # go to root directory
+ranger tabs: <Ctrl-n>, gn             # create new tab
+ranger tabs: <Ctrl-w>, gc             # close current tab
+ranger tabs: <Tab>, gt                # next tab
+ranger tabs: <Shift-Tab>, gT          # previous tab
 ranger tabs: <Alt-{1-9}>              # goto / create tab #
+ranger tabs: gt                       # move tab
+ranger tabs: q, ZZ, ZQ                # quit current tab
+ranger tabs: Q                        # quit all tabs
 ranger movement: k                    # up
 ranger movement: j                    # down
 ranger movement: h                    # parent directory
 ranger movement: l                    # subdirectory
 ranger movement: gg                   # go to top of list
 ranger movement: G                    # go to bottom of list
-ranger movement: J                    # half page down
-ranger movement: K                    # half page up
+ranger movement: <Ctrl-d>, J          # half page down
+ranger movement: <Ctrl-u>, K          # half page up
 ranger movement: H                    # history Back
 ranger movement: L                    # history Forward
-ranger files: <CR>                    # open
+ranger movement: [                    # move up in parent directory column
+ranger movement: ]                    # move down in parent directory column
+ranger movement: }                    # traverse
+ranger movement: {                    # traverse backwards
+ranger files: <Enter>                 # open
 ranger files: r                       # open file with
-ranger files: z                       # toggle settings
-ranger files: o                       # change sort order
-ranger files: zh                      # view hidden files
-ranger files: cw                      # rename current file
+ranger files: t                       # tag file with a *
+ranger files: "{letter}               # tag file with a letter
+ranger files: cw                      # rename current file from blank
+ranger files: a                       # rename current file from existing name
 ranger files: yy                      # yank / copy
 ranger files: dd                      # cut
 ranger files: pp                      # paste
-ranger files: /                       # search for files :search
+ranger files: /                       # search filenames
 ranger files: n                       # next match
 ranger files: N                       # prev match
 ranger files: dD                      # delete highlighted file
-ranger: 1l                            # unzip selected file (uncompress)
+ranger files: dT                      # send highlighted files to trash
 ranger commands: :                    # execute Range Command
-ranger commands: :mkdir [dir_name]    # make new directory
+ranger commands: :mkdir {dir_name}    # make new directory
+ranger commands: :compress {filename} # add selected files to archive (custom)
+ranger commands: :extract_here        # extract selected file to current directory (custom)
+ranger commands: :e {filename}        # make new file and open in editor
 ranger commands: !                    # execute Shell Command
 ranger commands: chmod                # change file Permissions
 ranger commands: du                   # disk Usage Current Directory
-ranger subst: %f                      # substitute highlighted file
-ranger subst: %d                      # substitute current directory
-ranger subst: %s                      # substitute currently selected files
-ranger subst: %t                      # substitute currently tagged files
+ranger commands: S                    # open shell in current directory
+ranger commands: ?                    # show help, man page, settings, commands, key bindings
+ranger commands: W                    # show ranger log
+ranger commands: w                    # show task view
+ranger commands: +x                   # add executable permissions to selected files
+ranger commands: -x                   # remove executable permissions to selected files
+ranger commands: +{...}               # add permissions
+ranger commands: -{...}               # add permissions
+ranger commands: M{...}               # set linemode
+ranger commands: o{...}               # set attribute to sort by
+ranger commands: oc                   # sort by creation time (ctime)
+ranger commands: on                   # sort natural (alphabetical)
+ranger commands: d{...}               # delete
+ranger commands: y{...}               # yank
+ranger commands: p{...}               # paste
+ranger subst: %f                      # substitute highlighted file in console
+ranger subst: %d                      # substitute current directory in console
+ranger subst: %s                      # substitute currently selected files in console
+ranger subst: %t                      # substitute currently tagged files in console
 ranger subst: :bulkrename %s          # example for substitution
+ranger settings: <Ctrl-h>, zh         # toggle showing hidden files
+ranger settings: zp                   # toggle file preview
+ranger settings: zP                   # toggle directory previews
+ranger settings: zd                   # toggle separating directories from files
+ranger settings: zi                   # toggle image previews
+ranger settings: zs                   # toggle case sensitive sorting
+ranger search: ct
 
 firefox current pag: F6               # move to the next frame
 firefox current pag: Shift + F6       # move to the prev frame
