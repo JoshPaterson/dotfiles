@@ -125,3 +125,11 @@ fi
 eval "$(oh-my-posh init bash)"
 eval "$(oh-my-posh init bash --config .config/poshthemes/cobalt2.omp.json)"
 
+# prevents nested ranger instances
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        /usr/bin/ranger "$@"
+    else
+        exit
+    fi
+}
