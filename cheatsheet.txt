@@ -1596,38 +1596,38 @@ qutebrowser: xb                  # (n) toggle statusbar
 qutebrowser: xt                  # (n) toggle tabs
 qutebrowser: xx                  # (n) toggle tabs and statusbar
 
-rofi: Ctrl-v                          # Insert: Paste from clipboard
-rofi: Ctrl-Shift-v, Shift-Insert:     # Paste primary selection
-rofi: Ctrl-u                          # Clear the line
-rofi: Ctrl-                           # Beginning of line
-rofi: Ctrl-e                          # End of line
-rofi: Ctrl-f Right                    # Forward one character
-rofi: Alt-f, Ctrl-Right               # Forward one word
-rofi: Ctrl-b, Left                    # Back one character
-rofi: Alt-b, Ctrl-Left                # Back one word
-rofi: Ctrl-d, Delete                  # Delete character
-rofi: Ctrl-Alt-d                      # Delete word
-rofi: Ctrl-h, Backspace, Shift-Backspace # Backspace (delete previous character)
-rofi: Ctrl-Alt-h                      # Delete previous word
-rofi: Ctrl-j,Ctrl-m,Enter             # Accept entry
-rofi: Ctrl-n,Down                     # Select next entry
-rofi: Ctrl-p,Up                       # Select previous entry
-rofi: Page Up                         # Go to previous page
-rofi: Page Down                       # Go to next page
-rofi: Ctrl-Page Up                    # Go to previous column
-rofi: Ctrl-Page Down                  # Go to next column
-rofi: Ctrl-Enter                      # Use entered text as a command (in ssh/run modi)
-rofi: Shift-Enter                     # Launch the application in a terminal (in run mode)
-rofi: Shift-Enter                     # Return the selected entry and move to the next item while keeping rofi open. (in dmenu)
-rofi: Shift-Right                     # Switch to the next mode. The list can be customized with the -switchers argument.
-rofi: Shift-Left                      # Switch to the previous mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-Tab                        # Switch to the next mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-Shift-Tab                  # Switch to the previous mode. The list can be customized with the -switchers argument.
-rofi: Ctrl-space                      # Set selected item as input text.
-rofi: Shift-Del                       # Delete entry from history.
-rofi: grave                           # Toggle case sensitivity.
-rofi: Alt-grave                       # Toggle sorting.
-rofi: Alt-Shift-S                     # Take a screenshot and store it in the Pictures directory.
+rofi: <Ctrl-v>                                 # Insert: Paste from clipboard
+rofi: <Ctrl-Shift-v>, <Shift-Insert>           # Paste primary selection
+rofi: <Ctrl-u>                                 # Clear the line
+rofi: <Ctrl-a>                                 # Beginning of line
+rofi: <Ctrl-e>                                 # End of line
+rofi: <Ctrl-f>, <Right>                        # Forward one character
+rofi: <Alt-f>, <Ctrl-Right>                    # Forward one word
+rofi: <Ctrl-b, <Left>                          # Back one character
+rofi: <Alt-b>, <Ctrl-Left>                     # Back one word
+rofi: <Ctrl-d>, <Delete>                       # Delete character
+rofi: <Ctrl-Alt-d>                             # Delete word
+rofi: <Ctrl-h>, <Backspace>, <Shift-Backspace> # Backspace (delete previous character)
+rofi: <Ctrl-Alt-h>                             # Delete previous word
+rofi: <Ctrl-j>, <Ctrl-m>, <Enter>              # Accept entry
+rofi: <Ctrl-n>, <Down>                         # Select next entry
+rofi: <Ctrl-p>, <Up>                           # Select previous entry
+rofi: <Page Up>, <Left>                        # Go to previous page
+rofi: <Page Down>, <Right>                     # Go to next page
+rofi: <Ctrl-PageUp>                            # Go to previous column
+rofi: <Ctrl-PageDown>                          # Go to next column
+rofi: <Ctrl-Enter>                             # Use entered text as a command (in ssh/run modi)
+rofi: <Shift-Enter>                            # Launch the application in a terminal (in run mode)
+rofi: <Shift-Enter>                            # Return the selected entry and move to the next item while keeping rofi open. (in dmenu)
+rofi: <Shift-Right>                            # Switch to the next mode. The list can be customized with the -switchers argument.
+rofi: <Shift-Left>                             # Switch to the previous mode. The list can be customized with the -switchers argument.
+rofi: <Ctrl-Tab>                               # Switch to the next mode. The list can be customized with the -switchers argument.
+rofi: <Ctrl-Shift-Tab>                         # Switch to the previous mode. The list can be customized with the -switchers argument.
+rofi: <Ctrl-Space>                             # Set selected item as input text.
+rofi: <Shift-Del>                              # Delete entry from history.
+rofi: <Grave>                                  # Toggle case sensitivity.
+rofi: <Alt-Grave>                              # Toggle sorting.
+rofi: <Alt-Shift-S>                            # Take a screenshot and store it in the Pictures directory.
 
 markdown: # H1                        # heading 1
 markdown: ## H2                       # heading 2
